@@ -15,7 +15,12 @@ class MainWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        window?.setFrame(NSRect.init(x: 0, y: 0, width: 400, height: 700), display: true)
+//        NSLog(NSScreen.mainScreen()?.frame.origin.y);
+//        var bounds = UIScreen.mainScreen().bounds
+//        var width = bounds.size.width
+//        var height = bounds.size.height
+        
+        window?.setFrame(NSRect.init(x: 0, y: 0, width: (NSScreen.mainScreen()?.frame.size.width)!, height: (NSScreen.mainScreen()?.frame.size.height)!), display: true)
         window?.center()
     }
 }
