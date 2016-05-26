@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC9FDD5B1CF7419600533B23 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FDD5A1CF7419600533B23 /* MainWindow.swift */; };
 		FCDCFB071CF6DA36009ABCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB061CF6DA36009ABCEB /* AppDelegate.swift */; };
 		FCDCFB091CF6DA36009ABCEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB081CF6DA36009ABCEB /* ViewController.swift */; };
 		FCDCFB0B1CF6DA36009ABCEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB0A1CF6DA36009ABCEB /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC9FDD5A1CF7419600533B23 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		FCDCFB031CF6DA36009ABCEB /* keynav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = keynav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDCFB061CF6DA36009ABCEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCDCFB081CF6DA36009ABCEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				FCDCFB0A1CF6DA36009ABCEB /* Assets.xcassets */,
 				FCDCFB0C1CF6DA36009ABCEB /* Main.storyboard */,
 				FCDCFB0F1CF6DA36009ABCEB /* Info.plist */,
+				FC9FDD5A1CF7419600533B23 /* MainWindow.swift */,
 			);
 			path = keynav;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCDCFB091CF6DA36009ABCEB /* ViewController.swift in Sources */,
+				FC9FDD5B1CF7419600533B23 /* MainWindow.swift in Sources */,
 				FCDCFB071CF6DA36009ABCEB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +479,7 @@
 				FCDCFB2A1CF6DA36009ABCEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCDCFB2B1CF6DA36009ABCEB /* Build configuration list for PBXNativeTarget "keynavTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +488,7 @@
 				FCDCFB2D1CF6DA36009ABCEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCDCFB2E1CF6DA36009ABCEB /* Build configuration list for PBXNativeTarget "keynavUITests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +497,7 @@
 				FCDCFB301CF6DA36009ABCEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

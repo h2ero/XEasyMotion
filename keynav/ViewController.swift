@@ -23,13 +23,10 @@ class ViewController: NSViewController  {
     override func viewWillAppear() {
         gradView.layer?.backgroundColor = NSColor.clearColor().CGColor
         //box.layer?.setNeedsDisplay()
-    }
-
-    override var representedObject: AnyObject? {
-        didSet {
+        
         // Update the view, if already loaded.
-        gradView.layer?.backgroundColor = NSColor.blueColor().CGColor
-            let backgroundColor = NSColor.whiteColor()
+        //gradView.layer?.backgroundColor = NSColor.blueColor().CGColor
+        let backgroundColor = NSColor.whiteColor()
         backgroundColor.setFill()
         NSRectFill(NSMakeRect(0, 20, 300.0, 178.0))
         
@@ -49,6 +46,10 @@ class ViewController: NSViewController  {
         aBezier.lineWidth = 2.0
         aBezier.stroke()
         
+    }
+
+    override var representedObject: AnyObject? {
+        didSet {
         }
     }
     
