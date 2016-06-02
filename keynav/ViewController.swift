@@ -23,7 +23,6 @@ class ViewController: NSViewController  {
     override func viewWillAppear() {
         //gradView.layer?.backgroundColor = NSColor.clearColor().CGColor
         //box.layer?.setNeedsDisplay()
-        
         // Update the view, if already loaded.
         //gradView.layer?.backgroundColor = NSColor.blueColor().CGColor
 
@@ -37,4 +36,3 @@ class ViewController: NSViewController  {
     
 
 }
-
