@@ -22,16 +22,7 @@ class GradView: NSView{
     override func drawRect(dirtyRect: NSRect)
     {
         // 设置透明
-        NSColor.clearColor().set()
-        NSRectFill(frame)
-        
-        let s = bounds.size
-        NSLog(String(s.width))
-        NSLog(String(s.height))
-        let  rect = NSRect(x: 0.5 * s.width - 1, y: 0.5 * s.height - 1, width: 2, height: 2)
-        let circlePath = NSBezierPath()
-        circlePath.appendBezierPathWithRect(rect)
-        circlePath.fill()
+//        NSColor.clearColor().set()
         drawGrad()
     }
     func drawGrad() {

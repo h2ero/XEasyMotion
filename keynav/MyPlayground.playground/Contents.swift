@@ -82,7 +82,8 @@ class GradView: NSView{
 }
 
 var vRect = NSRect(x: 0,y: 0,width: 500,height: 500)
-var view = GradView(frame:vRect)
-view.wantsLayer = true
-view.layer?.backgroundColor = NSColor.windowBackgroundColor().CGColor
-XCPlaygroundPage.currentPage.liveView = view
+//var view = GradView(frame:vRect)
+var win = NSWindow.init(contentRect: vRect, styleMask: NSBorderlessWindowMask, backing: NSBackingStoreType.Buffered, defer: false)
+//view.wantsLayer = true
+//view.layer?.backgroundColor = NSColor.windowBackgroundColor().CGColor
+//XCPlaygroundPage.currentPage.liveView = view

@@ -14,19 +14,37 @@ class ViewController: NSViewController  {
     @IBOutlet var gradView: NSView!
     override func viewDidLoad() {
         super.viewDidLoad()
-//            self.view.wantsLayer = true
-
-
-        // Do any additional setup after loading the view.
+//        let presOptions: NSApplicationPresentationOptions = ([.FullScreen,.AutoHideMenuBar])
+//        /*These are all of the options for NSApplicationPresentationOptions
+//         .Default
+//         .AutoHideDock              |   /
+//         .AutoHideMenuBar           |   /
+//         .DisableForceQuit          |   /
+//         .DisableMenuBarTransparency|   /
+//         .FullScreen                |   /
+//         .HideDock                  |   /
+//         .HideMenuBar               |   /
+//         .DisableAppleMenu          |   /
+//         .DisableProcessSwitching   |   /
+//         .DisableSessionTermination |   /
+//         .DisableHideApplication    |   /
+//         .AutoHideToolbar
+//         .HideMenuBar               |   /
+//         .DisableAppleMenu          |   /
+//         .DisableProcessSwitching   |   /
+//         .DisableSessionTermination |   /
+//         .DisableHideApplication    |   /
+//         .AutoHideToolbar */
+//
+//        let optionsDictionary = [NSFullScreenModeApplicationPresentationOptions :
+//            NSNumber(unsignedLong: presOptions.rawValue)]
+//        
+//        self.view.enterFullScreenMode(NSScreen.mainScreen()!, withOptions:optionsDictionary)
+//        self.view.wantsLayer = true
     }
     
     override func viewWillAppear() {
-        //gradView.layer?.backgroundColor = NSColor.clearColor().CGColor
-        //box.layer?.setNeedsDisplay()
-        // Update the view, if already loaded.
-        //gradView.layer?.backgroundColor = NSColor.blueColor().CGColor
-
-        
+        gradView.layer?.backgroundColor = NSColor.clearColor().CGColor
     }
 
     override var representedObject: AnyObject? {

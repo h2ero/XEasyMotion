@@ -19,10 +19,9 @@ class MainWindowController: NSWindowController {
         
     }
     
-    func resizeWindow() -> Bool {
-        window?.setFrame(NSRect.init(x: 0, y: 0, width: (NSScreen.mainScreen()?.frame.size.width)!, height: ((NSScreen.mainScreen()?.frame.height)!)), display: true)
-        window?.center()
-        return true
+    func resizeWindow() {
+        window?.setFrame(NSRect.init(x: 0, y: 0, width: (NSScreen.screens()![0].frame.size.width), height: ((NSScreen.mainScreen()!.frame.size.height))), display: true)
+        window?.backgroundColor = NSColor.clearColor()
     }
     
 }
