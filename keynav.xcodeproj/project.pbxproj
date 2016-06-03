@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC1EE6ED1CF888B500ABC6A6 /* GradView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EE6EC1CF888B500ABC6A6 /* GradView.swift */; };
 		FC2677A91CF74D3600EB7E9D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2677A81CF74D3600EB7E9D /* MainWindowController.swift */; };
+		FC740B501D01D6CB00CCE546 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC740B4F1D01D6CB00CCE546 /* Util.swift */; };
 		FC9FDD5B1CF7419600533B23 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FDD5A1CF7419600533B23 /* MainWindow.swift */; };
 		FCCB381B1D01C05400EFC908 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB381A1D01C05400EFC908 /* ViewController.swift */; };
 		FCDCFB071CF6DA36009ABCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB061CF6DA36009ABCEB /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		FC1EE6EC1CF888B500ABC6A6 /* GradView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradView.swift; sourceTree = "<group>"; };
 		FC2677A81CF74D3600EB7E9D /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		FC740B4F1D01D6CB00CCE546 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		FC9FDD5A1CF7419600533B23 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		FCCB381A1D01C05400EFC908 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCD141901D004AC8002DC3D3 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				FC1EE6EC1CF888B500ABC6A6 /* GradView.swift */,
 				FCD141901D004AC8002DC3D3 /* MyPlayground.playground */,
 				FCCB381A1D01C05400EFC908 /* ViewController.swift */,
+				FC740B4F1D01D6CB00CCE546 /* Util.swift */,
 			);
 			path = keynav;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCCB381B1D01C05400EFC908 /* ViewController.swift in Sources */,
+				FC740B501D01D6CB00CCE546 /* Util.swift in Sources */,
 				FC1EE6ED1CF888B500ABC6A6 /* GradView.swift in Sources */,
 				FC9FDD5B1CF7419600533B23 /* MainWindow.swift in Sources */,
 				FC2677A91CF74D3600EB7E9D /* MainWindowController.swift in Sources */,

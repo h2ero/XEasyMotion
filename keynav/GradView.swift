@@ -11,9 +11,9 @@ import Foundation
 class GradView: NSView{
     
     internal let hintChars : [[String]] = [
-        ["a","f","k"],
-        ["s","h","l"],
-        ["d","j",";"]
+        ["A","F","K"],
+        ["S","H","L"],
+        ["D","J",";"]
     ]
     
     let hitCharBaseFontSize:CGFloat = 40;
