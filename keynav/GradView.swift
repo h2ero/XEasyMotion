@@ -16,7 +16,8 @@ class GradView: NSView{
         ["d","j",";"]
     ]
     
-    let hitCharSize:CGFloat = 40;
+    let hitCharBaseFontSize:CGFloat = 40;
+    let hitCharMinFontSize:CGFloat = 12;
     
     override func drawRect(dirtyRect: NSRect)
     {
@@ -52,7 +53,7 @@ class GradView: NSView{
         
         for (x, row) in hintChars.enumerate(){
             for(y, hintChar) in row.enumerate(){
-                drawChar(hintChar, x:  xAxis[x] - (hitCharSize/2), y: yAxis[y] - (hitCharSize / 2))
+                drawChar(hintChar, x:  xAxis[x] - (getHintCharFontSize()/2), y: yAxis[y] - (getHintCharFontSize() / 2))
             }
         }
     }
@@ -75,7 +76,7 @@ class GradView: NSView{
     
     func drawChar(text:NSString,x:CGFloat, y:CGFloat)  {
         let p = NSMakePoint(x, y)
-        let font = NSFont.systemFontOfSize(hitCharSize)
+        let font = NSFont.systemFontOfSize(getHintCharFontSize())
         let paraStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
         let fontColor = NSColor.greenColor()
         
@@ -85,6 +86,9 @@ class GradView: NSView{
             NSForegroundColorAttributeName: fontColor
         ]
         text.drawAtPoint(p, withAttributes: attrs)
+    }
+    func getHintCharFontSize() -> CGFloat {
+        return max(hitCharBaseFontSize * bounds.size.width / 1000 , hitCharMinFontSize);
     }
     
 }

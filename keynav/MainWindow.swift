@@ -19,12 +19,15 @@ class MainWindow: NSWindow {
     }
     
     override init(contentRect: NSRect, styleMask aStyle: Int, backing bufferingType: NSBackingStoreType, `defer` flag: Bool) {
-        super.init(contentRect: contentRect, styleMask: aStyle, backing: bufferingType, `defer`: flag)
+        super.init(contentRect: contentRect, styleMask: NSBorderlessWindowMask, backing: bufferingType, defer: flag)
+    
+        // z-index
+        self.level = Int(CGWindowLevelForKey(CGWindowLevelKey.StatusWindowLevelKey));
+
         
         self.backgroundColor = NSColor.clearColor()
         self.opaque = false
         self.titleVisibility = .Hidden
-        
         
         self.backgroundColor = NSColor.whiteColor()
     }
