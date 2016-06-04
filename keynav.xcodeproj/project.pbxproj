@@ -11,7 +11,6 @@
 		FC2677A91CF74D3600EB7E9D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2677A81CF74D3600EB7E9D /* MainWindowController.swift */; };
 		FC740B501D01D6CB00CCE546 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC740B4F1D01D6CB00CCE546 /* Util.swift */; };
 		FC740B541D024CEB00CCE546 /* HotKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC740B531D024CEB00CCE546 /* HotKeys.swift */; };
-		FC740B5A1D02668400CCE546 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC740B591D02668400CCE546 /* Test.swift */; };
 		FC740B5E1D02766D00CCE546 /* Constents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC740B5D1D02766D00CCE546 /* Constents.swift */; };
 		FC9FDD5B1CF7419600533B23 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FDD5A1CF7419600533B23 /* MainWindow.swift */; };
 		FCCB381B1D01C05400EFC908 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB381A1D01C05400EFC908 /* ViewController.swift */; };
@@ -46,7 +45,6 @@
 		FC2677A81CF74D3600EB7E9D /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		FC740B4F1D01D6CB00CCE546 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		FC740B531D024CEB00CCE546 /* HotKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotKeys.swift; sourceTree = "<group>"; };
-		FC740B591D02668400CCE546 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		FC740B5D1D02766D00CCE546 /* Constents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constents.swift; sourceTree = "<group>"; };
 		FC9FDD5A1CF7419600533B23 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		FCCB381A1D01C05400EFC908 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 				FCCB381A1D01C05400EFC908 /* ViewController.swift */,
 				FC740B4F1D01D6CB00CCE546 /* Util.swift */,
 				FC740B531D024CEB00CCE546 /* HotKeys.swift */,
-				FC740B591D02668400CCE546 /* Test.swift */,
 				FC740B5D1D02766D00CCE546 /* Constents.swift */,
 				FCFD066F1D028C810005D284 /* ConolePlay.playground */,
 				FCFD06741D02FB8F0005D284 /* AboutWindowController.swift */,
@@ -291,7 +288,6 @@
 				FC1EE6ED1CF888B500ABC6A6 /* GradView.swift in Sources */,
 				FC740B5E1D02766D00CCE546 /* Constents.swift in Sources */,
 				FC9FDD5B1CF7419600533B23 /* MainWindow.swift in Sources */,
-				FC740B5A1D02668400CCE546 /* Test.swift in Sources */,
 				FC2677A91CF74D3600EB7E9D /* MainWindowController.swift in Sources */,
 				FCDCFB071CF6DA36009ABCEB /* AppDelegate.swift in Sources */,
 			);

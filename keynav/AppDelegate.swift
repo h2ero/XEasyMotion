@@ -34,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     static func addActiveKeyBind()  {
-        Test.register(UInt32(kVK_ANSI_I), modifiers: UInt32(cmdKey), block:{_ in
+        HotKeys.register(UInt32(kVK_ANSI_I), modifiers: UInt32(cmdKey), block:{_ in
                 MainWindowController.maxWindow()
                 AppDelegate.addHitKeyBind();
                 AppDelegate.addClickBind()
@@ -44,7 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     static func addHitKeyBind()  {
         for (keyCode, _) in Constents.hintCharsKeyCodeMap{
             NSLog(String(keyCode))
-            Test.register(UInt32(keyCode), modifiers: UInt32(activeFlag), block:{
+            HotKeys.register(UInt32(keyCode), modifiers: UInt32(activeFlag), block:{
                 (id:EventHotKeyID) in MainWindowController.resizeWindow(Int(id.id))
             var (x,y) = MainWindowController.getWinCenterPoint()
             Util.moveMouse(x, y: y)
@@ -53,14 +53,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     static func addClickBind()  {
-        Test.register(UInt32(kVK_Return), modifiers: UInt32(activeFlag), block:{_ in
+        HotKeys.register(UInt32(kVK_Return), modifiers: UInt32(activeFlag), block:{_ in
             var (x,y) = MainWindowController.getWinCenterPoint()
             MainWindowController.hideWindow()
             Util.click(x, y: y)
             AppDelegate.removeHintKeyBind();
             },id:UInt32(kVK_Return));
         
-        Test.register(UInt32(kVK_Return), modifiers: UInt32(shiftKey), block:{_ in
+        HotKeys.register(UInt32(kVK_Return), modifiers: UInt32(shiftKey), block:{_ in
             var (x,y) = MainWindowController.getWinCenterPoint()
             MainWindowController.hideWindow()
             Util.rightClick(x, y: y)
@@ -69,10 +69,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     static func removeHintKeyBind(){
         for (keyCode, _) in Constents.hintCharsKeyCodeMap{
-            Test.unregister(UInt32(keyCode))
+            HotKeys.unregister(UInt32(keyCode))
         }
-//        Test.unregister(UInt32(kVK_Return))
-
+        HotKeys.unregister(UInt32(kVK_Return))
+        HotKeys.unregister(UInt32(kVK_Return + kVK_Shift))
     }
   
     func showStatusBarMenu(){

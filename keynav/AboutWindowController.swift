@@ -12,6 +12,8 @@ class AboutWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
+        window!.title = "About XEasyMotion"
+        window!.center()
     }
     
 }

@@ -1,20 +1,18 @@
 //
 //  HotKeys.swift
-//  keynav
+//  awesome4mac
 //
-//  Created by h2ero on 6/4/16.
-//  Copyright © 2016 h2ero. All rights reserved.
+//  Created by shuoshichen on 15/12/26.
+//  Copyright © 2015年 com.imhuihui. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 import Carbon
 
-class HotKey {
-    
+class HotKeys {
     private let hotKey: UInt32
     private let block: (id:EventHotKeyID) -> ()
     private var registered = true
-    
     private static var keyCodeHotKeys:[UInt32:EventHotKeyRef] = [:]
     
     typealias action = (id:EventHotKeyID) -> Void
@@ -23,7 +21,7 @@ class HotKey {
     private init(hotKeyID: UInt32, block: (id:EventHotKeyID) -> ()) {
         self.hotKey = hotKeyID
         self.block = block
-        HotKey.shortcuts[hotKey] = block
+        HotKeys.shortcuts[hotKey] = block
     }
     
     static func registerHandler() {
@@ -32,31 +30,33 @@ class HotKey {
         
         InstallEventHandler(GetApplicationEventTarget(), {(handlerRef: EventHandlerCallRef, eventRef: EventRef, ptr: UnsafeMutablePointer<Void>) -> OSStatus in
             var hotKeyID: EventHotKeyID = EventHotKeyID()
-            
             GetEventParameter(eventRef, OSType(kEventParamDirectObject), EventParamType(typeEventHotKeyID), nil, sizeof(EventHotKeyID), nil, &hotKeyID)
             //call defined action based on hotKeyID
-            HotKey.shortcuts[hotKeyID.id]!(id: hotKeyID)
+            HotKeys.shortcuts[hotKeyID.id]!(id: hotKeyID)
             return noErr
             }, 1, &eventType, nil, &eventHandler) == noErr
     }
     
     private static var token: dispatch_once_t = 0
     
-    class func register(keyCode: UInt32, modifiers: UInt32, block: (id:EventHotKeyID) -> (), id: UInt32) -> HotKey? {
+    class func register(keyCode: UInt32, modifiers: UInt32, block: (id:EventHotKeyID) -> (), id: UInt32) -> HotKeys? {
         dispatch_once(&token) {
-            HotKey.registerHandler()
+            HotKeys.registerHandler()
+        }
+        if HotKeys.keyCodeHotKeys[id] != nil {
+            return nil
         }
         var hotKey: EventHotKeyRef = nil
         let hotKeyID = EventHotKeyID(signature:OSType(10000), id: id)
         RegisterEventHotKey(keyCode, modifiers, hotKeyID, GetApplicationEventTarget(), OptionBits(0), &hotKey)
-        HotKey.keyCodeHotKeys[keyCode] = hotKey
-        return HotKey(hotKeyID: id, block: block)
+        HotKeys.keyCodeHotKeys[id] = hotKey
+        return HotKeys(hotKeyID: id, block: block)
     }
     
-    func unregister(hotKey : EventHotKeyRef) {
-        guard registered else {return}
-        UnregisterEventHotKey(hotKey)
-        // RemoveEventHandler(eventHandler)
-        registered = false
+    static func unregister(id:UInt32) {
+        if HotKeys.keyCodeHotKeys[id] != nil {
+            UnregisterEventHotKey(HotKeys.keyCodeHotKeys[id]!)
+            HotKeys.keyCodeHotKeys[id] = nil
+        }
     }
 }
