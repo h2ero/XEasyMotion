@@ -22,14 +22,15 @@ class Util {
     static func click(x:CGFloat,y:CGFloat){
         let screenFrame = NSScreen.mainScreen()?.frame
         let point = NSMakePoint(x, screenFrame!.size.height - y)
+        NSLog("== Click == POS: %f , %f", x, y)
         postMouseEvent(CGMouseButton.Left, type: CGEventType.LeftMouseDown, point: point);
         postMouseEvent(CGMouseButton.Left, type: CGEventType.LeftMouseUp, point: point);
     }
     
-    static func rightClick(x:CGFloat,y:CGFloat){
+    static func rightClick(x: CGFloat, y: CGFloat){
         let screenFrame = NSScreen.mainScreen()?.frame
         let point = NSMakePoint(x, screenFrame!.size.height - y)
-        NSLog("right click")
+        NSLog("== Right Click == POS: %f , %f, %s , %s", x, y, String(x), String(y))
         postMouseEvent(CGMouseButton.Right, type: CGEventType.RightMouseDown, point: point);
         postMouseEvent(CGMouseButton.Right, type: CGEventType.RightMouseUp, point: point);
     }

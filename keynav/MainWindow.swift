@@ -25,15 +25,18 @@ class MainWindow: NSWindow {
             Int(CGWindowLevelForKey(CGWindowLevelKey.MainMenuWindowLevelKey))
         
         self.animationBehavior = .None
+        self.alphaValue = 1.0
         
         self.opaque = false
-        self.hidesOnDeactivate = true
+//        self.hidesOnDeactivate = true
         self.backgroundColor = NSColor.clearColor()
         self.titleVisibility = .Hidden
     }
     
     override var canBecomeKeyWindow: Bool {
-        return true
+        return false
     }
-    
+    override var canBecomeMainWindow: Bool{
+        return false;
+    }
 }

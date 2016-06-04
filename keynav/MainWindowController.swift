@@ -22,6 +22,7 @@ class MainWindowController: NSWindowController {
     }
     
     static func resizeWindow(id:Int) {
+        
         let hitChar = Constents.hintCharsKeyCodeMap[id]
         NSLog(hitChar!)
         var windowFrame = windowFirst?.frame
@@ -46,14 +47,14 @@ class MainWindowController: NSWindowController {
     }
     
     static func hideWindow(){
+        windowFirst?.setIsVisible(false)
         windowFirst?.orderOut(self)
     }
     
     static func getWinCenterPoint() -> (CGFloat,CGFloat){
         let x = (windowFirst?.frame.origin.x)!  + ((windowFirst?.frame.size.width)! / 2 )
         let y = (windowFirst?.frame.origin.y)! + ((windowFirst?.frame.size.height)! / 2 )
-        NSLog(String(x))
-        NSLog(String(y))
+        NSLog("win center: %f, %f", CGFloat(x), CGFloat(y))
         return (CGFloat(x) , CGFloat(y))
     }
 }

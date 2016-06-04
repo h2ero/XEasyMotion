@@ -18,14 +18,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var m_aboutWindowController : AboutWindowController!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
-//        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-//        AppDelegate.mainWindowController = storyboard.instantiateControllerWithIdentifier("MainWindowController") as? MainWindowController
         NSMenu.setMenuBarVisible(false)
         MainWindowController.maxWindow()
         AppDelegate.addHitKeyBind()
         AppDelegate.addClickBind()
         AppDelegate.addActiveKeyBind()
+//        MainWindowController.hideWindow()
         showStatusBarMenu()
     }
 
@@ -46,25 +44,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSLog(String(keyCode))
             HotKeys.register(UInt32(keyCode), modifiers: UInt32(activeFlag), block:{
                 (id:EventHotKeyID) in MainWindowController.resizeWindow(Int(id.id))
-            var (x,y) = MainWindowController.getWinCenterPoint()
-            Util.moveMouse(x, y: y)
+//            let (x,y) = MainWindowController.getWinCenterPoint()
+//            Util.moveMouse(x, y: y)
                 } , id: UInt32(keyCode))
         }
     }
     
     static func addClickBind()  {
         HotKeys.register(UInt32(kVK_Return), modifiers: UInt32(activeFlag), block:{_ in
-            var (x,y) = MainWindowController.getWinCenterPoint()
-            MainWindowController.hideWindow()
-            Util.click(x, y: y)
-            AppDelegate.removeHintKeyBind();
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                // do some async stuff
+                MainWindowController.hideWindow()
+                AppDelegate.removeHintKeyBind();
+                NSOperationQueue.mainQueue().addOperationWithBlock {
+                    // do some main thread stuff stuff
+                    let (x,y) = MainWindowController.getWinCenterPoint()
+                    Util.click(x, y: y)
+                }
+            }
+            
             },id:UInt32(kVK_Return));
         
         HotKeys.register(UInt32(kVK_Return), modifiers: UInt32(shiftKey), block:{_ in
-            var (x,y) = MainWindowController.getWinCenterPoint()
-            MainWindowController.hideWindow()
-            Util.rightClick(x, y: y)
-            AppDelegate.removeHintKeyBind();
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                // do some async stuff
+                MainWindowController.hideWindow()
+                AppDelegate.removeHintKeyBind();
+                NSOperationQueue.mainQueue().addOperationWithBlock {
+                    // do some main thread stuff stuff
+                    let (x,y) = MainWindowController.getWinCenterPoint()
+                    Util.rightClick(x, y: y)
+                }
+            }
             },id:UInt32(kVK_Return + kVK_Shift));
     }
     static func removeHintKeyBind(){

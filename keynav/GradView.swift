@@ -74,5 +74,6 @@ class GradView: NSView{
         return max(Constents.hitCharBaseFontSize * bounds.size.width / 1000 , Constents.hitCharMinFontSize);
     }
     
+    
 }
 

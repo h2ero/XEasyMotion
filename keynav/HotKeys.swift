@@ -59,4 +59,10 @@ class HotKeys {
             HotKeys.keyCodeHotKeys[id] = nil
         }
     }
+    static func  unRegisterAll()
+    {
+        for (keyCode, _) in HotKeys.keyCodeHotKeys {
+            HotKeys.unregister(UInt32(keyCode))
+        }
+    }
 }
