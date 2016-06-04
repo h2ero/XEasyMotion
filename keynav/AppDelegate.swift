@@ -13,6 +13,8 @@ import Carbon
 class AppDelegate: NSObject, NSApplicationDelegate {
 
 //    static var mainWindowController: MainWindowController?
+    @IBOutlet var statusMenu: NSMenu?
+    var statusItem: NSStatusItem? = nil
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
@@ -23,6 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         AppDelegate.addHitKeyBind()
         AppDelegate.addClickBind()
         AppDelegate.addActiveKeyBind()
+        showStatusBarMenu()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -71,5 +74,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     }
   
+    func showStatusBarMenu(){
+        
+        self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2 )
+        self.statusItem!.menu = self.statusMenu
+        if let button = self.statusItem!.button {
+            button.image = NSImage(named: "statusBarIcon")
+            button.action = #selector(AppDelegate.doSomethingWithMenuSelection(_:))
+            
+        }
+        // show menu
+        let menu = NSMenu()
+        menu.addItem(NSMenuItem(title: "Abount XEasyMontion", action: #selector(AppDelegate.doSomethingWithMenuSelection(_:)), keyEquivalent: "P"))
+        menu.addItem(NSMenuItem.separatorItem())
+        menu.addItem(NSMenuItem(title: "Exit", action: #selector(AppDelegate.doSomethingWithMenuSelection(_:)), keyEquivalent: "q"))
+        
+        self.statusItem!.menu = menu
+    }
+    
+    @IBAction func doSomethingWithMenuSelection(sender : AnyObject) {
+        print("Action pressed")
+    }
 }
 
