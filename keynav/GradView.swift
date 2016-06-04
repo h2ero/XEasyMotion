@@ -29,9 +29,9 @@ class GradView: NSView{
             bounds.size.width / 6 * 5
         ]
         let yAxis:[CGFloat] = [
-            bounds.size.height / 6,
+            bounds.size.height / 6 * 5,
             bounds.size.height / 6 * 3,
-            bounds.size.height / 6 * 5
+            bounds.size.height / 6
         ]
         
         for (y, row) in Constents.hintChars.enumerate(){

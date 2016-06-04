@@ -39,6 +39,7 @@ class MainWindowController: NSWindowController {
         let windowFirst = NSApplication.sharedApplication().windows.first
         var windowFrame = windowFirst?.frame
         windowFrame!.size =  NSScreen.screens()![0].frame.size
+        windowFrame!.origin  = NSMakePoint(0, 0)
         windowFirst?.setFrame(windowFrame!,display: true)
         windowFirst?.center()
     }
