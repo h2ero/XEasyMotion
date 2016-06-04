@@ -16,7 +16,7 @@ class MainWindow: NSWindow {
     
     override init(contentRect: NSRect, styleMask aStyle: Int, backing bufferingType: NSBackingStoreType, `defer` flag: Bool) {
         
-        super.init(contentRect: contentRect, styleMask: NSBorderlessWindowMask, backing: NSBackingStoreType.Buffered, defer: false)
+        super.init(contentRect: contentRect, styleMask: NSBorderlessWindowMask|NSFullSizeContentViewWindowMask, backing: NSBackingStoreType.Buffered, defer: false)
     
         // z-index
         self.level = Int(CGWindowLevelForKey(CGWindowLevelKey.StatusWindowLevelKey)) +
@@ -31,7 +31,7 @@ class MainWindow: NSWindow {
     }
     
     override var canBecomeKeyWindow: Bool {
-        return false
+        return true
     }
     
 }

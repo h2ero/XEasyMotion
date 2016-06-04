@@ -12,10 +12,10 @@ import Cocoa
 class Util {
     static func moveMouse(x:CGFloat,y:CGFloat) ->NSPoint{
         let screenFrame = NSScreen.mainScreen()?.frame
-        var point = NSPoint.init(x: x,y: screenFrame!.size.height - y)
+        let point = NSPoint.init(x: x,y: screenFrame!.size.height - y)
         CGDisplayMoveCursorToPoint(CGMainDisplayID(), point)
-        point = CGPointMake(point.x, point.y)
-        CGDisplayMoveCursorToPoint(CGMainDisplayID(), point)
+//        point = CGPointMake(point.x, point.y)
+//        CGDisplayMoveCursorToPoint(CGMainDisplayID(), point)
         return point
     }
     
