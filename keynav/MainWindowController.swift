@@ -19,7 +19,10 @@ class MainWindowController: NSWindowController {
         // max
         self.maxWindow()
     }
-    func resizeWindow(hintChar:String) {
+    func resizeWindow(id:Int) {
+        NSLog(String(id))
+        let hitChar = Constents.hintCharsKeyCodeMap[id]
+        NSLog(hitChar!)
         var windowFrame = self.frame
         let oldWidth = windowFrame!.size.width
         let oldHeight = windowFrame!.size.height

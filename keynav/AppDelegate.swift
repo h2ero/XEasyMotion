@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Carbon
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -25,13 +26,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func addKeyBind()  {
-        Test.register(UInt32(kVK_ANSI_E), modifiers: UInt32(activeFlag), block: {
-            AppDelegate.mainWindowController!.resizeWindow(kVK_ANSI_E)
-        } , id: UInt32(kVK_ANSI_E))
+        for (keyCode, _) in Constents.hintCharsKeyCodeMap{
+            NSLog(String(keyCode))
+            Test.register(UInt32(keyCode), modifiers: UInt32(activeFlag), block:{
+                (id:EventHotKeyID) in AppDelegate.mainWindowController!.resizeWindow(Int(id.id))
+                } , id: UInt32(keyCode))
+        }
     }
-    
-    static func testA(s:String)   {
-        NSLog(s)
-    }
+  
 }
 

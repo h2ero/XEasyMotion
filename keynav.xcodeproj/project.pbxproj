@@ -44,7 +44,6 @@
 		FC2677A81CF74D3600EB7E9D /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		FC740B4F1D01D6CB00CCE546 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		FC740B531D024CEB00CCE546 /* HotKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotKeys.swift; sourceTree = "<group>"; };
-		FC740B551D024DD400CCE546 /* keynav-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "keynav-Bridging-Header.h"; sourceTree = "<group>"; };
 		FC740B591D02668400CCE546 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		FC740B5D1D02766D00CCE546 /* Constents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constents.swift; sourceTree = "<group>"; };
 		FC9FDD5A1CF7419600533B23 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		FCDCFB1F1CF6DA36009ABCEB /* keynavUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = keynavUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDCFB231CF6DA36009ABCEB /* keynavUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keynavUITests.swift; sourceTree = "<group>"; };
 		FCDCFB251CF6DA36009ABCEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCFD066F1D028C810005D284 /* ConolePlay.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ConolePlay.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +122,9 @@
 				FCCB381A1D01C05400EFC908 /* ViewController.swift */,
 				FC740B4F1D01D6CB00CCE546 /* Util.swift */,
 				FC740B531D024CEB00CCE546 /* HotKeys.swift */,
-				FC740B551D024DD400CCE546 /* keynav-Bridging-Header.h */,
 				FC740B591D02668400CCE546 /* Test.swift */,
 				FC740B5D1D02766D00CCE546 /* Constents.swift */,
+				FCFD066F1D028C810005D284 /* ConolePlay.playground */,
 			);
 			path = keynav;
 			sourceTree = "<group>";
@@ -424,7 +424,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = h2ero.keynav;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "keynav/keynav-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -439,7 +439,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = h2ero.keynav;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "keynav/keynav-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

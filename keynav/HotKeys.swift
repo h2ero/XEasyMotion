@@ -12,13 +12,13 @@ import Carbon
 class HotKey {
     
     private let hotKey: UInt32
-    private let block: () -> ()
+    private let block: (id:EventHotKeyID) -> ()
     private var registered = true
     
-    typealias action = () -> Void
+    typealias action = (id:EventHotKeyID) -> Void
     static var shortcuts = [UInt32:action]()
     
-    private init(hotKeyID: UInt32, block: () -> ()) {
+    private init(hotKeyID: UInt32, block: (id:EventHotKeyID) -> ()) {
         self.hotKey = hotKeyID
         self.block = block
         HotKey.shortcuts[hotKey] = block
@@ -30,16 +30,17 @@ class HotKey {
         
         InstallEventHandler(GetApplicationEventTarget(), {(handlerRef: EventHandlerCallRef, eventRef: EventRef, ptr: UnsafeMutablePointer<Void>) -> OSStatus in
             var hotKeyID: EventHotKeyID = EventHotKeyID()
+            
             GetEventParameter(eventRef, OSType(kEventParamDirectObject), EventParamType(typeEventHotKeyID), nil, sizeof(EventHotKeyID), nil, &hotKeyID)
             //call defined action based on hotKeyID
-            HotKey.shortcuts[hotKeyID.id]!()
+            HotKey.shortcuts[hotKeyID.id]!(id: hotKeyID)
             return noErr
             }, 1, &eventType, nil, &eventHandler) == noErr
     }
     
     private static var token: dispatch_once_t = 0
     
-    class func register(keyCode: UInt32, modifiers: UInt32, block: () -> (), id: UInt32) -> HotKey? {
+    class func register(keyCode: UInt32, modifiers: UInt32, block: (id:EventHotKeyID) -> (), id: UInt32) -> HotKey? {
         dispatch_once(&token) {
             HotKey.registerHandler()
         }

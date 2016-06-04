@@ -34,8 +34,8 @@ class GradView: NSView{
             bounds.size.height / 6 * 5
         ]
         
-        for (x, row) in Constents.hintChars.enumerate(){
-            for(y, hintChar) in row.enumerate(){
+        for (y, row) in Constents.hintChars.enumerate(){
+            for(x, hintChar) in row.enumerate(){
                 drawChar(hintChar, x:  xAxis[x] - (getHintCharFontSize()/2), y: yAxis[y] - (getHintCharFontSize() / 2))
             }
         }
@@ -71,7 +71,7 @@ class GradView: NSView{
         text.drawAtPoint(p, withAttributes: attrs)
     }
     func getHintCharFontSize() -> CGFloat {
-        return max(Constents.hitCharBaseFontSize * bounds.size.width / 1000 , contents.hitCharMinFontSize);
+        return max(Constents.hitCharBaseFontSize * bounds.size.width / 1000 , Constents.hitCharMinFontSize);
     }
     
 }
