@@ -12,12 +12,12 @@ import Carbon
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    static var mainWindowController: MainWindowController?
+//    static var mainWindowController: MainWindowController?
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        AppDelegate.mainWindowController = storyboard.instantiateControllerWithIdentifier("MainWindowController") as? MainWindowController
+//        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+//        AppDelegate.mainWindowController = storyboard.instantiateControllerWithIdentifier("MainWindowController") as? MainWindowController
         addKeyBind()
     }
 
@@ -32,7 +32,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 (id:EventHotKeyID) in MainWindowController.resizeWindow(Int(id.id))
                 } , id: UInt32(keyCode))
         }
-        NSLog(String(NSApplication.sharedApplication().windows[0].frame.size.height))
     }
     
 

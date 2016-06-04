@@ -40,5 +40,5 @@ static func getPostion(hintChar:String, startX :CGFloat, startY:CGFloat, width:C
 }
 }
 
-Util.getPostion("K", startX: 0, startY: 0, width: 300, height: 300)
+//Util.getPostion("K", startX: 0, startY: 0, width: 300, height: 300)
 //Util.getPostion("K", startX: 0, startY: 0, width: 3, height: 3)
