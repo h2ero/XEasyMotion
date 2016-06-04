@@ -87,3 +87,4 @@ var win = NSWindow.init(contentRect: vRect, styleMask: NSBorderlessWindowMask, b
 //view.wantsLayer = true
 //view.layer?.backgroundColor = NSColor.windowBackgroundColor().CGColor
 //XCPlaygroundPage.currentPage.liveView = view
+

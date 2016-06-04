@@ -16,8 +16,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
-        AppDelegate.mainWindowController = MainWindowController()
-        AppDelegate.mainWindowController!.showWindow(self)
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        AppDelegate.mainWindowController = storyboard.instantiateControllerWithIdentifier("MainWindowController") as? MainWindowController
         addKeyBind()
     }
 
@@ -29,10 +29,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         for (keyCode, _) in Constents.hintCharsKeyCodeMap{
             NSLog(String(keyCode))
             Test.register(UInt32(keyCode), modifiers: UInt32(activeFlag), block:{
-                (id:EventHotKeyID) in AppDelegate.mainWindowController!.resizeWindow(Int(id.id))
+                (id:EventHotKeyID) in MainWindowController.resizeWindow(Int(id.id))
                 } , id: UInt32(keyCode))
         }
+        NSLog(String(NSApplication.sharedApplication().windows[0].frame.size.height))
     }
+    
+
+    
   
 }
 
