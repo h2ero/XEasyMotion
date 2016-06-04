@@ -86,7 +86,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let menu = NSMenu()
         menu.addItem(NSMenuItem(title: "Abount XEasyMontion", action: #selector(AppDelegate.showAbout(_:)), keyEquivalent: "P"))
         menu.addItem(NSMenuItem.separatorItem())
-//        menu.addItem(NSMenuItem(title: "Exit", action: #selector(AppDelegate.doSomethingWithMenuSelection(_:)), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: "Exit", action: #selector(AppDelegate.exitNow(_:)), keyEquivalent: "q"))
         
         self.statusItem!.menu = menu
     }
@@ -95,6 +95,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let storyboard : NSStoryboard = NSStoryboard(name: "Main", bundle: nil)
         self.m_aboutWindowController = storyboard.instantiateControllerWithIdentifier("AboutWindowController") as! AboutWindowController
         self.m_aboutWindowController.showWindow(self)
+    }
+    @IBAction func exitNow(sender: AnyObject) {
+        NSApplication.sharedApplication().terminate(self)
     }
 }
 
