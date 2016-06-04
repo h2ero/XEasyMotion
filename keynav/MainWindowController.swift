@@ -12,6 +12,8 @@ import Cocoa
 
 class MainWindowController: NSWindowController {
     
+    static let windowFirst = NSApplication.sharedApplication().windows.first
+    
     
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -20,7 +22,6 @@ class MainWindowController: NSWindowController {
     }
     
     static func resizeWindow(id:Int) {
-        let windowFirst = NSApplication.sharedApplication().windows.first
         let hitChar = Constents.hintCharsKeyCodeMap[id]
         NSLog(hitChar!)
         var windowFrame = windowFirst?.frame
@@ -36,21 +37,19 @@ class MainWindowController: NSWindowController {
     }
     
     static func maxWindow() {
-        let windowFirst = NSApplication.sharedApplication().windows.first
         var windowFrame = windowFirst?.frame
         windowFrame!.size =  NSScreen.screens()![0].frame.size
         windowFrame!.origin  = NSMakePoint(0, 0)
         windowFirst?.setFrame(windowFrame!,display: true)
+        windowFirst?.orderFront(self)
         windowFirst?.center()
     }
     
     static func hideWindow(){
-        let windowFirst = NSApplication.sharedApplication().windows.first
         windowFirst?.orderOut(self)
     }
     
     static func getWinCenterPoint() -> (CGFloat,CGFloat){
-        let windowFirst = NSApplication.sharedApplication().windows.first
         let x = (windowFirst?.frame.origin.x)!  + ((windowFirst?.frame.size.width)! / 2 )
         let y = (windowFirst?.frame.origin.y)! + ((windowFirst?.frame.size.height)! / 2 )
         NSLog(String(x))

@@ -51,6 +51,7 @@ class Util {
                     break breakLabel;
                 }
             }
+            
         }
         
         return (CGFloat(x) * xStep + startX , (-CGFloat(y) * yStep) + height - yStep + startY)
