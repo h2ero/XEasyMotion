@@ -18,6 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
 //        let storyboard = NSStoryboard(name: "Main", bundle: nil)
 //        AppDelegate.mainWindowController = storyboard.instantiateControllerWithIdentifier("MainWindowController") as? MainWindowController
+        NSMenu.setMenuBarVisible(false)
         MainWindowController.maxWindow()
         AppDelegate.addHitKeyBind()
         AppDelegate.addClickBind()
@@ -41,6 +42,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSLog(String(keyCode))
             Test.register(UInt32(keyCode), modifiers: UInt32(activeFlag), block:{
                 (id:EventHotKeyID) in MainWindowController.resizeWindow(Int(id.id))
+            var (x,y) = MainWindowController.getWinCenterPoint()
+            Util.moveMouse(x, y: y)
                 } , id: UInt32(keyCode))
         }
     }
@@ -49,15 +52,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Test.register(UInt32(kVK_Return), modifiers: UInt32(activeFlag), block:{_ in
             var (x,y) = MainWindowController.getWinCenterPoint()
             MainWindowController.hideWindow()
+            Util.click(x, y: y)
+            AppDelegate.removeHintKeyBind();
+            },id:UInt32(kVK_Return));
+        
+        Test.register(UInt32(kVK_Return), modifiers: UInt32(shiftKey), block:{_ in
+            var (x,y) = MainWindowController.getWinCenterPoint()
+            MainWindowController.hideWindow()
             Util.rightClick(x, y: y)
             AppDelegate.removeHintKeyBind();
-            },id:UInt32(kVK_ANSI_KeypadEnter));
+            },id:UInt32(kVK_Return + kVK_Shift));
     }
     static func removeHintKeyBind(){
         for (keyCode, _) in Constents.hintCharsKeyCodeMap{
             Test.unregister(UInt32(keyCode))
         }
-        Test.unregister(UInt32(kVK_Return))
+//        Test.unregister(UInt32(kVK_Return))
 
     }
   

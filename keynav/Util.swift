@@ -26,7 +26,8 @@ class Util {
     }
     
     static func rightClick(x:CGFloat,y:CGFloat){
-        let point = moveMouse(x, y: y)
+        let screenFrame = NSScreen.mainScreen()?.frame
+        let point = NSMakePoint(x, screenFrame!.size.height - y)
         postMouseEvent(CGMouseButton.Right, type: CGEventType.RightMouseDown, point: point);
         postMouseEvent(CGMouseButton.Right, type: CGEventType.RightMouseUp, point: point);
     }

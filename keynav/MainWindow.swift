@@ -20,12 +20,14 @@ class MainWindow: NSWindow {
     
         // z-index
         self.level = Int(CGWindowLevelForKey(CGWindowLevelKey.StatusWindowLevelKey)) +
-            Int(CGWindowLevelForKey(CGWindowLevelKey.DockWindowLevelKey)) + 1
+            Int(CGWindowLevelForKey(CGWindowLevelKey.DockWindowLevelKey)) +
+            Int(CGWindowLevelForKey(CGWindowLevelKey.PopUpMenuWindowLevelKey))
+            Int(CGWindowLevelForKey(CGWindowLevelKey.MainMenuWindowLevelKey))
         
         self.animationBehavior = .None
         
         self.opaque = false
-//        self.hidesOnDeactivate = true
+        self.hidesOnDeactivate = true
         self.backgroundColor = NSColor.clearColor()
         self.titleVisibility = .Hidden
     }

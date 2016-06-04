@@ -43,14 +43,20 @@ class Test {
         dispatch_once(&token) {
             Test.registerHandler()
         }
+        if Test.keyCodeHotKeys[id] != nil {
+            return nil
+        }
         var hotKey: EventHotKeyRef = nil
         let hotKeyID = EventHotKeyID(signature:OSType(10000), id: id)
         RegisterEventHotKey(keyCode, modifiers, hotKeyID, GetApplicationEventTarget(), OptionBits(0), &hotKey)
-                Test.keyCodeHotKeys[keyCode] = hotKey
+        Test.keyCodeHotKeys[id] = hotKey
         return Test(hotKeyID: id, block: block)
     }
     
-    static func unregister(keyCode :UInt32) {
-        UnregisterEventHotKey(Test.keyCodeHotKeys[keyCode]!)
+    static func unregister(id:UInt32) {
+        if Test.keyCodeHotKeys[id] != nil {
+            UnregisterEventHotKey(Test.keyCodeHotKeys[id]!)
+        Test.keyCodeHotKeys[id] = nil
+        }
     }
 }
