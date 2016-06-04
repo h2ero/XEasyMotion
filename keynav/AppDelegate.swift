@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //    static var mainWindowController: MainWindowController?
     @IBOutlet var statusMenu: NSMenu?
     var statusItem: NSStatusItem? = nil
+    var m_aboutWindowController : AboutWindowController!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
@@ -80,20 +81,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.statusItem!.menu = self.statusMenu
         if let button = self.statusItem!.button {
             button.image = NSImage(named: "statusBarIcon")
-            button.action = #selector(AppDelegate.doSomethingWithMenuSelection(_:))
-            
         }
         // show menu
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "Abount XEasyMontion", action: #selector(AppDelegate.doSomethingWithMenuSelection(_:)), keyEquivalent: "P"))
+        menu.addItem(NSMenuItem(title: "Abount XEasyMontion", action: #selector(AppDelegate.showAbout(_:)), keyEquivalent: "P"))
         menu.addItem(NSMenuItem.separatorItem())
-        menu.addItem(NSMenuItem(title: "Exit", action: #selector(AppDelegate.doSomethingWithMenuSelection(_:)), keyEquivalent: "q"))
+//        menu.addItem(NSMenuItem(title: "Exit", action: #selector(AppDelegate.doSomethingWithMenuSelection(_:)), keyEquivalent: "q"))
         
         self.statusItem!.menu = menu
     }
     
-    @IBAction func doSomethingWithMenuSelection(sender : AnyObject) {
-        print("Action pressed")
+    @IBAction func showAbout(sender : AnyObject) {
+        let storyboard : NSStoryboard = NSStoryboard(name: "Main", bundle: nil)
+        self.m_aboutWindowController = storyboard.instantiateControllerWithIdentifier("AboutWindowController") as! AboutWindowController
+        self.m_aboutWindowController.showWindow(self)
     }
 }
 

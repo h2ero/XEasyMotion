@@ -637,6 +637,7 @@
                                 </menu>
                             </menuItem>
                         </items>
+                        <accessibility identifier="statusMenu"/>
                     </menu>
                     <connections>
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
@@ -679,6 +680,55 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="74" y="680"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="3Xv-MD-naY">
+            <objects>
+                <windowController storyboardIdentifier="AboutWindowController" id="nGk-Q7-cMa" customClass="AboutWindowController" customModule="keynav" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="aWa-g6-XdM">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+                    </window>
+                    <connections>
+                        <segue destination="710-Kh-jf4" kind="relationship" relationship="window.shadowedContentViewController" id="1ld-QO-vPJ"/>
+                    </connections>
+                </windowController>
+                <customObject id="Wjk-u4-lTC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-450" y="1343"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="eVh-i0-fX3">
+            <objects>
+                <viewController id="710-Kh-jf4" customClass="AboutViewController" customModule="keynav" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="wis-v0-0dd">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mt6-cG-Nnx">
+                                <rect key="frame" x="199" y="166" width="83" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="XEasyMotion" id="pTg-5Q-rOE">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Avq-Gk-KOh">
+                                <rect key="frame" x="167" y="127" width="146" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="h2ero&lt;root@h2ero.cn&gt;" id="psd-MA-sjE">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="WDF-G1-pQQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="257" y="1318"/>
         </scene>
     </scenes>
 </document>

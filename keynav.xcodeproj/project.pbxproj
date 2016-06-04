@@ -20,6 +20,8 @@
 		FCDCFB0E1CF6DA36009ABCEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB0C1CF6DA36009ABCEB /* Main.storyboard */; };
 		FCDCFB191CF6DA36009ABCEB /* keynavTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB181CF6DA36009ABCEB /* keynavTests.swift */; };
 		FCDCFB241CF6DA36009ABCEB /* keynavUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB231CF6DA36009ABCEB /* keynavUITests.swift */; };
+		FCFD06751D02FB8F0005D284 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFD06741D02FB8F0005D284 /* AboutWindowController.swift */; };
+		FCFD06771D0302A40005D284 /* AboutViewControoler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFD06761D0302A40005D284 /* AboutViewControoler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		FCDCFB231CF6DA36009ABCEB /* keynavUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keynavUITests.swift; sourceTree = "<group>"; };
 		FCDCFB251CF6DA36009ABCEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCFD066F1D028C810005D284 /* ConolePlay.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ConolePlay.playground; sourceTree = "<group>"; };
+		FCFD06741D02FB8F0005D284 /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
+		FCFD06761D0302A40005D284 /* AboutViewControoler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewControoler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 				FC740B591D02668400CCE546 /* Test.swift */,
 				FC740B5D1D02766D00CCE546 /* Constents.swift */,
 				FCFD066F1D028C810005D284 /* ConolePlay.playground */,
+				FCFD06741D02FB8F0005D284 /* AboutWindowController.swift */,
+				FCFD06761D0302A40005D284 /* AboutViewControoler.swift */,
 			);
 			path = keynav;
 			sourceTree = "<group>";
@@ -278,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCCB381B1D01C05400EFC908 /* ViewController.swift in Sources */,
+				FCFD06771D0302A40005D284 /* AboutViewControoler.swift in Sources */,
+				FCFD06751D02FB8F0005D284 /* AboutWindowController.swift in Sources */,
 				FC740B541D024CEB00CCE546 /* HotKeys.swift in Sources */,
 				FC740B501D01D6CB00CCE546 /* Util.swift in Sources */,
 				FC1EE6ED1CF888B500ABC6A6 /* GradView.swift in Sources */,
