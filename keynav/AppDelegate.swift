@@ -19,14 +19,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        let storyboard = NSStoryboard(name: "Main", bundle: nil)
 //        AppDelegate.mainWindowController = storyboard.instantiateControllerWithIdentifier("MainWindowController") as? MainWindowController
         MainWindowController.maxWindow()
-        addKeyBind()
+        addHitKeyBind()
+        addClickBind()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
     }
 
-    func addKeyBind()  {
+    func addHitKeyBind()  {
         for (keyCode, _) in Constents.hintCharsKeyCodeMap{
             NSLog(String(keyCode))
             Test.register(UInt32(keyCode), modifiers: UInt32(activeFlag), block:{
@@ -35,8 +36,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    func addClickBind()  {
+            Test.register(UInt32(kVK_Return), modifiers: UInt32(activeFlag), block:{_ in
+                var (x,y) = MainWindowController.getWinCenterPoint()
+                MainWindowController.hideWindow()
+                Util.rightClick(x, y: y)
+                AppDelegate.removeHintKeyBind();
+                },id:UInt32(kVK_ANSI_KeypadEnter));
+    }
+    static func removeHintKeyBind(){
+        for (keyCode, _) in Constents.hintCharsKeyCodeMap{
+            Test.unregister(UInt32(keyCode))
+        }
+//        Test.unregister(UInt32(kVK_Return))
 
-    
+    }
   
 }
 

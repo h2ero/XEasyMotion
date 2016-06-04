@@ -15,6 +15,8 @@ class HotKey {
     private let block: (id:EventHotKeyID) -> ()
     private var registered = true
     
+    private static var keyCodeHotKeys:[UInt32:EventHotKeyRef] = [:]
+    
     typealias action = (id:EventHotKeyID) -> Void
     static var shortcuts = [UInt32:action]()
     
@@ -47,6 +49,14 @@ class HotKey {
         var hotKey: EventHotKeyRef = nil
         let hotKeyID = EventHotKeyID(signature:OSType(10000), id: id)
         RegisterEventHotKey(keyCode, modifiers, hotKeyID, GetApplicationEventTarget(), OptionBits(0), &hotKey)
+        HotKey.keyCodeHotKeys[keyCode] = hotKey
         return HotKey(hotKeyID: id, block: block)
+    }
+    
+    func unregister(hotKey : EventHotKeyRef) {
+        guard registered else {return}
+        UnregisterEventHotKey(hotKey)
+        // RemoveEventHandler(eventHandler)
+        registered = false
     }
 }

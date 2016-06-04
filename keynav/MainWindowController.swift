@@ -44,8 +44,17 @@ class MainWindowController: NSWindowController {
         windowFirst?.center()
     }
     
-    func hideWindow(){
+    static func hideWindow(){
         let windowFirst = NSApplication.sharedApplication().windows.first
         windowFirst?.orderOut(self)
+    }
+    
+    static func getWinCenterPoint() -> (CGFloat,CGFloat){
+        let windowFirst = NSApplication.sharedApplication().windows.first
+        let x = (windowFirst?.frame.origin.x)!  + ((windowFirst?.frame.size.width)! / 2 )
+        let y = (windowFirst?.frame.origin.y)! + ((windowFirst?.frame.size.height)! / 2 )
+        NSLog(String(x))
+        NSLog(String(y))
+        return (CGFloat(x) , CGFloat(y))
     }
 }
