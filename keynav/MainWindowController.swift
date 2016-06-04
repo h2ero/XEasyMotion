@@ -18,9 +18,8 @@ class MainWindowController: NSWindowController {
         super.windowDidLoad()
         // max
         self.maxWindow()
-        self.resizeWindow()
     }
-    func resizeWindow() {
+    func resizeWindow(hintChar:String) {
         var windowFrame = self.frame
         let oldWidth = windowFrame!.size.width
         let oldHeight = windowFrame!.size.height

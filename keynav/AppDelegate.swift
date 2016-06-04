@@ -11,18 +11,27 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var mainWindowController: MainWindowController?
+    static var mainWindowController: MainWindowController?
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
-        let mainWindowController = MainWindowController()
-        mainWindowController.showWindow(self)
+        AppDelegate.mainWindowController = MainWindowController()
+        AppDelegate.mainWindowController!.showWindow(self)
+        addKeyBind()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
     }
 
-
+    func addKeyBind()  {
+        Test.register(UInt32(kVK_ANSI_E), modifiers: UInt32(activeFlag), block: {
+            AppDelegate.mainWindowController!.resizeWindow(kVK_ANSI_E)
+        } , id: UInt32(kVK_ANSI_E))
+    }
+    
+    static func testA(s:String)   {
+        NSLog(s)
+    }
 }
 

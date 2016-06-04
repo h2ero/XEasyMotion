@@ -10,15 +10,7 @@ import Cocoa
 import Foundation
 class GradView: NSView{
     
-    internal let hintChars : [[String]] = [
-        ["A","F","K"],
-        ["S","H","L"],
-        ["D","J",";"]
-    ]
-    
-    let hitCharBaseFontSize:CGFloat = 40;
-    let hitCharMinFontSize:CGFloat = 12;
-    
+      
     override func drawRect(dirtyRect: NSRect)
     {
         // 设置透明
@@ -42,7 +34,7 @@ class GradView: NSView{
             bounds.size.height / 6 * 5
         ]
         
-        for (x, row) in hintChars.enumerate(){
+        for (x, row) in Constents.hintChars.enumerate(){
             for(y, hintChar) in row.enumerate(){
                 drawChar(hintChar, x:  xAxis[x] - (getHintCharFontSize()/2), y: yAxis[y] - (getHintCharFontSize() / 2))
             }
@@ -79,7 +71,7 @@ class GradView: NSView{
         text.drawAtPoint(p, withAttributes: attrs)
     }
     func getHintCharFontSize() -> CGFloat {
-        return max(hitCharBaseFontSize * bounds.size.width / 1000 , hitCharMinFontSize);
+        return max(Constents.hitCharBaseFontSize * bounds.size.width / 1000 , contents.hitCharMinFontSize);
     }
     
 }
