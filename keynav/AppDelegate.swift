@@ -18,6 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
 //        let storyboard = NSStoryboard(name: "Main", bundle: nil)
 //        AppDelegate.mainWindowController = storyboard.instantiateControllerWithIdentifier("MainWindowController") as? MainWindowController
+        MainWindowController.maxWindow()
         addKeyBind()
     }
 

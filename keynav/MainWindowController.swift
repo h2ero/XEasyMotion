@@ -16,8 +16,7 @@ class MainWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         // max
-        self.maxWindow()
-        
+//        self.maxWindow()
     }
     
     static func resizeWindow(id:Int) {
@@ -36,10 +35,16 @@ class MainWindowController: NSWindowController {
         windowFirst?.setFrame(windowFrame!,display: true,animate: true)
     }
     
-    func maxWindow() {
-        window?.setFrame(NSRect.init(x: 0, y: 0, width: (NSScreen.screens()![0].frame.size.width), height: ((NSScreen.mainScreen()!.frame.size.height))), display: true)
-        window?.backgroundColor = NSColor.clearColor()
-                window?.orderOut(self)
-        window?.center()
+    static func maxWindow() {
+        let windowFirst = NSApplication.sharedApplication().windows.first
+        var windowFrame = windowFirst?.frame
+        windowFrame!.size =  NSScreen.screens()![0].frame.size
+        windowFirst?.setFrame(windowFrame!,display: true)
+        windowFirst?.center()
+    }
+    
+    func hideWindow(){
+        let windowFirst = NSApplication.sharedApplication().windows.first
+        windowFirst?.orderOut(self)
     }
 }

@@ -11,13 +11,13 @@ import AppKit
 
 class ViewController: NSViewController  {
 
-    @IBOutlet var gradView: NSView!
+//    @IBOutlet var gradView: NSView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear() {
-        gradView.layer?.backgroundColor = NSColor.clearColor().CGColor
+//        gradView.layer?.backgroundColor = NSColor.clearColor().CGColor
     }
 
     override var representedObject: AnyObject? {
