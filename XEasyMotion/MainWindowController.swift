@@ -9,6 +9,7 @@
 import Foundation
 
 import Cocoa
+import Carbon
 
 class MainWindowController: NSWindowController {
     
@@ -19,10 +20,10 @@ class MainWindowController: NSWindowController {
     
     static func resizeWindow(id:Int) {
         let windowFirst = Util.getWindowFirst()
+        var windowFrame = windowFirst.frame
         
         let hitChar = Constents.hintCharsKeyCodeMap[id]
         NSLog(hitChar!)
-        var windowFrame = windowFirst.frame
         let oldWidth = windowFrame.size.width
         let oldHeight = windowFrame.size.height
         let toAdd = CGFloat(0.33333)
@@ -58,6 +59,25 @@ class MainWindowController: NSWindowController {
         let y = (windowFirst.frame.origin.y) + ((windowFirst.frame.size.height) / 2 )
         Log.write(Log.INFO, catelog: "nomarl", value: "win center: x:\(x), \(y)")
         return (CGFloat(x) , CGFloat(y))
+    }
+    
+    static func moveWindow(dirction:Int){
+        let windowFirst = Util.getWindowFirst()
+        var windowFrame = windowFirst.frame
+        Log.write(Log.INFO  , catelog: "move", value: dirction)
+        Log.write(Log.INFO  , catelog: "move", value: dirction - kVK_Shift)
+        Log.write(Log.INFO  , catelog: "move", value: Constents.moveKeyCode["LEFT"]!)
+        
+        if  dirction - kVK_Shift  == Constents.moveKeyCode["LEFT"]  {
+            windowFrame.origin.x = windowFrame.origin.x - windowFrame.size.width
+        }else if  dirction - kVK_Shift  == Constents.moveKeyCode["RIGHT"]  {
+            windowFrame.origin.x = windowFrame.origin.x + windowFrame.size.width
+        }else if  dirction - kVK_Shift  == Constents.moveKeyCode["UP"]  {
+            windowFrame.origin.y = windowFrame.origin.y + windowFrame.size.height
+        }else if  dirction - kVK_Shift  == Constents.moveKeyCode["DOWN"]  {
+            windowFrame.origin.y = windowFrame.origin.y - windowFrame.size.height
+        }
+        windowFirst.setFrame(windowFrame,display: true,animate: true)
     }
     
 }
