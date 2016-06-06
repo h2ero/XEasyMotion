@@ -64,9 +64,6 @@ class MainWindowController: NSWindowController {
     static func moveWindow(dirction:Int){
         let windowFirst = Util.getWindowFirst()
         var windowFrame = windowFirst.frame
-        Log.write(Log.INFO  , catelog: "move", value: dirction)
-        Log.write(Log.INFO  , catelog: "move", value: dirction - kVK_Shift)
-        Log.write(Log.INFO  , catelog: "move", value: Constents.moveKeyCode["LEFT"]!)
         
         if  dirction - kVK_Shift  == Constents.moveKeyCode["LEFT"]  {
             windowFrame.origin.x = windowFrame.origin.x - windowFrame.size.width
