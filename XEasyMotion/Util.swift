@@ -67,4 +67,8 @@ class Util {
     static func getAppName() -> String {
         return NSBundle.mainBundle().infoDictionary!["CFBundleName"] as! String
     }
+    
+    static func getWindowFirst() -> NSWindow {
+        return NSApplication.sharedApplication().windows.first!
+    }
 }

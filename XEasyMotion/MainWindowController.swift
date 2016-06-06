@@ -12,9 +12,6 @@ import Cocoa
 
 class MainWindowController: NSWindowController {
     
-    static let windowFirst = NSApplication.sharedApplication().windows.first
-    
-    
     override func windowDidLoad() {
         super.windowDidLoad()
         // max
@@ -22,39 +19,45 @@ class MainWindowController: NSWindowController {
     }
     
     static func resizeWindow(id:Int) {
+        let windowFirst = Util.getWindowFirst()
         
         let hitChar = Constents.hintCharsKeyCodeMap[id]
         NSLog(hitChar!)
-        var windowFrame = windowFirst?.frame
-        let oldWidth = windowFrame!.size.width
-        let oldHeight = windowFrame!.size.height
+        var windowFrame = windowFirst.frame
+        let oldWidth = windowFrame.size.width
+        let oldHeight = windowFrame.size.height
         let toAdd = CGFloat(0.33333)
         let newWidth = oldWidth  * toAdd
         let newHeight = oldHeight * toAdd
         // get x , y
-        windowFrame!.size = NSMakeSize(newWidth, newHeight)
-        (windowFrame!.origin.x, windowFrame!.origin.y) =  Util.getPostion(hitChar!, startX: (windowFrame?.origin.x)!, startY: (windowFrame?.origin.y)!, width: oldWidth, height: oldHeight)
-        windowFirst?.setFrame(windowFrame!,display: true,animate: true)
+        windowFrame.size = NSMakeSize(newWidth, newHeight)
+        (windowFrame.origin.x, windowFrame.origin.y) =  Util.getPostion(hitChar!, startX: (windowFrame.origin.x), startY: (windowFrame.origin.y), width: oldWidth, height: oldHeight)
+        windowFirst.setFrame(windowFrame,display: true,animate: true)
     }
     
     static func maxWindow() {
-        var windowFrame = windowFirst?.frame
-        windowFrame!.size =  NSScreen.screens()![0].frame.size
-        windowFrame!.origin  = NSMakePoint(0, 0)
-        windowFirst?.setFrame(windowFrame!,display: true)
-        windowFirst?.orderFront(self)
-        windowFirst?.center()
+        let windowFirst = Util.getWindowFirst()
+        var windowFrame = windowFirst.frame
+        windowFrame.size =  NSScreen.mainScreen()!.frame.size
+        
+        windowFrame.origin  = NSMakePoint(0, 0)
+        windowFirst.setFrame(windowFrame,display: true)
+        windowFirst.orderFront(self)
+        windowFirst.center()
     }
     
     static func hideWindow(){
-        windowFirst?.setIsVisible(false)
-        windowFirst?.orderOut(self)
+        let windowFirst = Util.getWindowFirst()
+        windowFirst.setIsVisible(false)
+        windowFirst.orderOut(self)
     }
     
     static func getWinCenterPoint() -> (CGFloat,CGFloat){
-        let x = (windowFirst?.frame.origin.x)!  + ((windowFirst?.frame.size.width)! / 2 )
-        let y = (windowFirst?.frame.origin.y)! + ((windowFirst?.frame.size.height)! / 2 )
-        Log.write(Log.INFO, catelog: "nomarl", value: "win center: x:\(x), y:\(y)")
+        let windowFirst = Util.getWindowFirst()
+        let x = (windowFirst.frame.origin.x)  + ((windowFirst.frame.size.width) / 2 )
+        let y = (windowFirst.frame.origin.y) + ((windowFirst.frame.size.height) / 2 )
+        Log.write(Log.INFO, catelog: "nomarl", value: "win center: x:\(x), \(y)")
         return (CGFloat(x) , CGFloat(y))
     }
+    
 }
