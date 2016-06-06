@@ -14,6 +14,7 @@
 		FC740B5E1D02766D00CCE546 /* Constents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC740B5D1D02766D00CCE546 /* Constents.swift */; };
 		FC9FDD5B1CF7419600533B23 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FDD5A1CF7419600533B23 /* MainWindow.swift */; };
 		FCCB381B1D01C05400EFC908 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB381A1D01C05400EFC908 /* ViewController.swift */; };
+		FCD93D621D054B04000184B8 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD93D611D054B04000184B8 /* Log.swift */; };
 		FCDCFB071CF6DA36009ABCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB061CF6DA36009ABCEB /* AppDelegate.swift */; };
 		FCDCFB0B1CF6DA36009ABCEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB0A1CF6DA36009ABCEB /* Assets.xcassets */; };
 		FCDCFB0E1CF6DA36009ABCEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB0C1CF6DA36009ABCEB /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		FC9FDD5A1CF7419600533B23 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		FCCB381A1D01C05400EFC908 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCD141901D004AC8002DC3D3 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		FCD93D611D054B04000184B8 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		FCDCFB031CF6DA36009ABCEB /* XEasyMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XEasyMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDCFB061CF6DA36009ABCEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCDCFB0A1CF6DA36009ABCEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				FCFD066F1D028C810005D284 /* ConolePlay.playground */,
 				FCFD06741D02FB8F0005D284 /* AboutWindowController.swift */,
 				FCFD06761D0302A40005D284 /* AboutViewControoler.swift */,
+				FCD93D611D054B04000184B8 /* Log.swift */,
 			);
 			path = XEasyMotion;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			files = (
 				FCCB381B1D01C05400EFC908 /* ViewController.swift in Sources */,
 				FCFD06771D0302A40005D284 /* AboutViewControoler.swift in Sources */,
+				FCD93D621D054B04000184B8 /* Log.swift in Sources */,
 				FCFD06751D02FB8F0005D284 /* AboutWindowController.swift in Sources */,
 				FC740B541D024CEB00CCE546 /* HotKeys.swift in Sources */,
 				FC740B501D01D6CB00CCE546 /* Util.swift in Sources */,
@@ -429,6 +433,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = h2ero.XEasyMotion;
 				PRODUCT_NAME = XEasyMotion;
+				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -444,6 +449,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = h2ero.XEasyMotion;
 				PRODUCT_NAME = XEasyMotion;
+				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;

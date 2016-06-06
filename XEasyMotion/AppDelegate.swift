@@ -41,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     static func addHitKeyBind()  {
         for (keyCode, _) in Constents.hintCharsKeyCodeMap{
-            NSLog(String(keyCode))
+            Log.write(Log.INFO, catelog: "register key code", value: keyCode)
             HotKeys.register(UInt32(keyCode), modifiers: UInt32(activeFlag), block:{
                 (id:EventHotKeyID) in MainWindowController.resizeWindow(Int(id.id))
 //            let (x,y) = MainWindowController.getWinCenterPoint()

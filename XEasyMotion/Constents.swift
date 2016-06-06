@@ -31,4 +31,5 @@ class Constents {
     
     static let hitCharBaseFontSize:CGFloat = 40;
     static let hitCharMinFontSize:CGFloat = 12;
+    
 }

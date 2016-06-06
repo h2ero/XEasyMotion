@@ -1,15 +1,25 @@
+//
+//  Log.swift
+//  XEasyMotion
+//
+//  Created by h2ero on 6/6/16.
+//  Copyright © 2016 h2ero. All rights reserved.
+//
+
 import Foundation
 class Log {
+    static let (ERROR,INFO) = ("Error",  "Info")
     static let mainBundle = NSBundle.mainBundle()
     static let bundleID = mainBundle.bundleIdentifier! as String
     static let bundleName = mainBundle.infoDictionary!["CFBundleName"]
     static let bundleVersion = mainBundle.infoDictionary!["CFBundleShortVersionString"]
-//    static let tempDirectory = NSTemporaryDirectory()
+    //    static let tempDirectory = NSTemporaryDirectory()
     static let tempDirectory = "/tmp/"
     static var logName = Log.tempDirectory.stringByAppendingString("\(Log.bundleID).log")
     
     
-    static func write(value:String) {
+    static func write(errLevel:String, catelog:String, value:AnyObject) {
+        let value = "[\(errLevel)][\(catelog)] " + String(value)
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
@@ -24,4 +34,3 @@ class Log {
         NSLog(value)
     }
 }
-Log.write("233")
