@@ -17,6 +17,14 @@ class GradView: NSView{
 //        NSColor.clearColor().set()
         drawGrad()
     }
+    func drawPoint(){
+        let s = bounds.size
+        let rect = NSMakeRect(0.5 * s.width - 1, 0.5 * s.height - 1, 5, 5);
+        let circlePath = NSBezierPath()
+        circlePath.appendBezierPathWithOvalInRect(rect)
+        NSColor.grayColor().setFill()
+        circlePath.fill()
+    }
     func drawGrad() {
         drawHorizLine(1/3.0)
         drawHorizLine(2/3.0)
@@ -39,6 +47,7 @@ class GradView: NSView{
                 drawChar(hintChar, x:  xAxis[x] - (getHintCharFontSize()/2), y: yAxis[y] - (getHintCharFontSize() / 2))
             }
         }
+        drawPoint()
     }
     
     func drawLine(p1:CGPoint ,p2 :CGPoint){

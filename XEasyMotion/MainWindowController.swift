@@ -54,7 +54,7 @@ class MainWindowController: NSWindowController {
     static func getWinCenterPoint() -> (CGFloat,CGFloat){
         let x = (windowFirst?.frame.origin.x)!  + ((windowFirst?.frame.size.width)! / 2 )
         let y = (windowFirst?.frame.origin.y)! + ((windowFirst?.frame.size.height)! / 2 )
-        NSLog("win center: %f, %f", CGFloat(x), CGFloat(y))
+        Log.write(Log.INFO, catelog: "nomarl", value: "win center: x:\(x), y:\(y)")
         return (CGFloat(x) , CGFloat(y))
     }
 }

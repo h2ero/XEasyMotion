@@ -40,6 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     static func addHitKeyBind()  {
+        Log.write(Log.INFO, catelog: "register key code", value: "start")
         for (keyCode, _) in Constents.hintCharsKeyCodeMap{
             Log.write(Log.INFO, catelog: "register key code", value: keyCode)
             HotKeys.register(UInt32(keyCode), modifiers: UInt32(activeFlag), block:{
@@ -48,6 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //            Util.moveMouse(x, y: y)
                 } , id: UInt32(keyCode))
         }
+        Log.write(Log.INFO, catelog: "register key code", value: "end")
     }
     
     static func addClickBind()  {
