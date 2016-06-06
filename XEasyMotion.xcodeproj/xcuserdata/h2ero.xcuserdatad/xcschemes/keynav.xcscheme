@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FCDCFB021CF6DA36009ABCEB"
-               BuildableName = "keynav.app"
-               BlueprintName = "keynav"
-               ReferencedContainer = "container:keynav.xcodeproj">
+               BuildableName = "XEasyMotion.app"
+               BlueprintName = "XEasyMotion"
+               ReferencedContainer = "container:XEasyMotion.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FCDCFB131CF6DA36009ABCEB"
-               BuildableName = "keynavTests.xctest"
-               BlueprintName = "keynavTests"
-               ReferencedContainer = "container:keynav.xcodeproj">
+               BuildableName = "XEasyMotion.xctest"
+               BlueprintName = "XEasyMotionTests"
+               ReferencedContainer = "container:XEasyMotion.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FCDCFB1E1CF6DA36009ABCEB"
-               BuildableName = "keynavUITests.xctest"
-               BlueprintName = "keynavUITests"
-               ReferencedContainer = "container:keynav.xcodeproj">
+               BuildableName = "XEasyMotion.xctest"
+               BlueprintName = "XEasyMotionUITests"
+               ReferencedContainer = "container:XEasyMotion.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FCDCFB021CF6DA36009ABCEB"
-            BuildableName = "keynav.app"
-            BlueprintName = "keynav"
-            ReferencedContainer = "container:keynav.xcodeproj">
+            BuildableName = "XEasyMotion.app"
+            BlueprintName = "XEasyMotion"
+            ReferencedContainer = "container:XEasyMotion.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FCDCFB021CF6DA36009ABCEB"
-            BuildableName = "keynav.app"
-            BlueprintName = "keynav"
-            ReferencedContainer = "container:keynav.xcodeproj">
+            BuildableName = "XEasyMotion.app"
+            BlueprintName = "XEasyMotion"
+            ReferencedContainer = "container:XEasyMotion.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FCDCFB021CF6DA36009ABCEB"
-            BuildableName = "keynav.app"
-            BlueprintName = "keynav"
-            ReferencedContainer = "container:keynav.xcodeproj">
+            BuildableName = "XEasyMotion.app"
+            BlueprintName = "XEasyMotion"
+            ReferencedContainer = "container:XEasyMotion.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -49,15 +49,15 @@
 		FC9FDD5A1CF7419600533B23 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		FCCB381A1D01C05400EFC908 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCD141901D004AC8002DC3D3 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
-		FCDCFB031CF6DA36009ABCEB /* keynav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = keynav.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCDCFB031CF6DA36009ABCEB /* XEasyMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XEasyMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDCFB061CF6DA36009ABCEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCDCFB0A1CF6DA36009ABCEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCDCFB0D1CF6DA36009ABCEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCDCFB0F1CF6DA36009ABCEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FCDCFB141CF6DA36009ABCEB /* keynavTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = keynavTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCDCFB141CF6DA36009ABCEB /* XEasyMotion.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XEasyMotion.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDCFB181CF6DA36009ABCEB /* keynavTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keynavTests.swift; sourceTree = "<group>"; };
 		FCDCFB1A1CF6DA36009ABCEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FCDCFB1F1CF6DA36009ABCEB /* keynavUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = keynavUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCDCFB1F1CF6DA36009ABCEB /* XEasyMotion.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XEasyMotion.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDCFB231CF6DA36009ABCEB /* keynavUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keynavUITests.swift; sourceTree = "<group>"; };
 		FCDCFB251CF6DA36009ABCEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCFD066F1D028C810005D284 /* ConolePlay.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ConolePlay.playground; sourceTree = "<group>"; };
@@ -93,9 +93,9 @@
 		FCDCFAFA1CF6DA36009ABCEB = {
 			isa = PBXGroup;
 			children = (
-				FCDCFB051CF6DA36009ABCEB /* keynav */,
-				FCDCFB171CF6DA36009ABCEB /* keynavTests */,
-				FCDCFB221CF6DA36009ABCEB /* keynavUITests */,
+				FCDCFB051CF6DA36009ABCEB /* XEasyMotion */,
+				FCDCFB171CF6DA36009ABCEB /* XEasyMotionTests */,
+				FCDCFB221CF6DA36009ABCEB /* XEasyMotionUITests */,
 				FCDCFB041CF6DA36009ABCEB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,14 +103,14 @@
 		FCDCFB041CF6DA36009ABCEB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FCDCFB031CF6DA36009ABCEB /* keynav.app */,
-				FCDCFB141CF6DA36009ABCEB /* keynavTests.xctest */,
-				FCDCFB1F1CF6DA36009ABCEB /* keynavUITests.xctest */,
+				FCDCFB031CF6DA36009ABCEB /* XEasyMotion.app */,
+				FCDCFB141CF6DA36009ABCEB /* XEasyMotion.xctest */,
+				FCDCFB1F1CF6DA36009ABCEB /* XEasyMotion.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FCDCFB051CF6DA36009ABCEB /* keynav */ = {
+		FCDCFB051CF6DA36009ABCEB /* XEasyMotion */ = {
 			isa = PBXGroup;
 			children = (
 				FCDCFB061CF6DA36009ABCEB /* AppDelegate.swift */,
@@ -129,33 +129,34 @@
 				FCFD06741D02FB8F0005D284 /* AboutWindowController.swift */,
 				FCFD06761D0302A40005D284 /* AboutViewControoler.swift */,
 			);
-			path = keynav;
+			path = XEasyMotion;
 			sourceTree = "<group>";
 		};
-		FCDCFB171CF6DA36009ABCEB /* keynavTests */ = {
+		FCDCFB171CF6DA36009ABCEB /* XEasyMotionTests */ = {
 			isa = PBXGroup;
 			children = (
 				FCDCFB181CF6DA36009ABCEB /* keynavTests.swift */,
 				FCDCFB1A1CF6DA36009ABCEB /* Info.plist */,
 			);
-			path = keynavTests;
+			name = XEasyMotionTests;
+			path = XEasyMotioinTests;
 			sourceTree = "<group>";
 		};
-		FCDCFB221CF6DA36009ABCEB /* keynavUITests */ = {
+		FCDCFB221CF6DA36009ABCEB /* XEasyMotionUITests */ = {
 			isa = PBXGroup;
 			children = (
 				FCDCFB231CF6DA36009ABCEB /* keynavUITests.swift */,
 				FCDCFB251CF6DA36009ABCEB /* Info.plist */,
 			);
-			path = keynavUITests;
+			path = XEasyMotionUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FCDCFB021CF6DA36009ABCEB /* keynav */ = {
+		FCDCFB021CF6DA36009ABCEB /* XEasyMotion */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FCDCFB281CF6DA36009ABCEB /* Build configuration list for PBXNativeTarget "keynav" */;
+			buildConfigurationList = FCDCFB281CF6DA36009ABCEB /* Build configuration list for PBXNativeTarget "XEasyMotion" */;
 			buildPhases = (
 				FCDCFAFF1CF6DA36009ABCEB /* Sources */,
 				FCDCFB001CF6DA36009ABCEB /* Frameworks */,
@@ -165,14 +166,14 @@
 			);
 			dependencies = (
 			);
-			name = keynav;
+			name = XEasyMotion;
 			productName = keynav;
-			productReference = FCDCFB031CF6DA36009ABCEB /* keynav.app */;
+			productReference = FCDCFB031CF6DA36009ABCEB /* XEasyMotion.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FCDCFB131CF6DA36009ABCEB /* keynavTests */ = {
+		FCDCFB131CF6DA36009ABCEB /* XEasyMotionTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FCDCFB2B1CF6DA36009ABCEB /* Build configuration list for PBXNativeTarget "keynavTests" */;
+			buildConfigurationList = FCDCFB2B1CF6DA36009ABCEB /* Build configuration list for PBXNativeTarget "XEasyMotionTests" */;
 			buildPhases = (
 				FCDCFB101CF6DA36009ABCEB /* Sources */,
 				FCDCFB111CF6DA36009ABCEB /* Frameworks */,
@@ -183,14 +184,14 @@
 			dependencies = (
 				FCDCFB161CF6DA36009ABCEB /* PBXTargetDependency */,
 			);
-			name = keynavTests;
+			name = XEasyMotionTests;
 			productName = keynavTests;
-			productReference = FCDCFB141CF6DA36009ABCEB /* keynavTests.xctest */;
+			productReference = FCDCFB141CF6DA36009ABCEB /* XEasyMotion.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FCDCFB1E1CF6DA36009ABCEB /* keynavUITests */ = {
+		FCDCFB1E1CF6DA36009ABCEB /* XEasyMotionUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FCDCFB2E1CF6DA36009ABCEB /* Build configuration list for PBXNativeTarget "keynavUITests" */;
+			buildConfigurationList = FCDCFB2E1CF6DA36009ABCEB /* Build configuration list for PBXNativeTarget "XEasyMotionUITests" */;
 			buildPhases = (
 				FCDCFB1B1CF6DA36009ABCEB /* Sources */,
 				FCDCFB1C1CF6DA36009ABCEB /* Frameworks */,
@@ -201,9 +202,9 @@
 			dependencies = (
 				FCDCFB211CF6DA36009ABCEB /* PBXTargetDependency */,
 			);
-			name = keynavUITests;
+			name = XEasyMotionUITests;
 			productName = keynavUITests;
-			productReference = FCDCFB1F1CF6DA36009ABCEB /* keynavUITests.xctest */;
+			productReference = FCDCFB1F1CF6DA36009ABCEB /* XEasyMotion.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -229,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FCDCFAFE1CF6DA36009ABCEB /* Build configuration list for PBXProject "keynav" */;
+			buildConfigurationList = FCDCFAFE1CF6DA36009ABCEB /* Build configuration list for PBXProject "XEasyMotion" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -242,9 +243,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FCDCFB021CF6DA36009ABCEB /* keynav */,
-				FCDCFB131CF6DA36009ABCEB /* keynavTests */,
-				FCDCFB1E1CF6DA36009ABCEB /* keynavUITests */,
+				FCDCFB021CF6DA36009ABCEB /* XEasyMotion */,
+				FCDCFB131CF6DA36009ABCEB /* XEasyMotionTests */,
+				FCDCFB1E1CF6DA36009ABCEB /* XEasyMotionUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -314,12 +315,12 @@
 /* Begin PBXTargetDependency section */
 		FCDCFB161CF6DA36009ABCEB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FCDCFB021CF6DA36009ABCEB /* keynav */;
+			target = FCDCFB021CF6DA36009ABCEB /* XEasyMotion */;
 			targetProxy = FCDCFB151CF6DA36009ABCEB /* PBXContainerItemProxy */;
 		};
 		FCDCFB211CF6DA36009ABCEB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FCDCFB021CF6DA36009ABCEB /* keynav */;
+			target = FCDCFB021CF6DA36009ABCEB /* XEasyMotion */;
 			targetProxy = FCDCFB201CF6DA36009ABCEB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -424,10 +425,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = keynav/Info.plist;
+				INFOPLIST_FILE = XEasyMotion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = h2ero.keynav;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = XEasyMotion;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -439,10 +440,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = keynav/Info.plist;
+				INFOPLIST_FILE = XEasyMotion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = h2ero.keynav;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = XEasyMotion;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
@@ -455,8 +456,8 @@
 				INFOPLIST_FILE = keynavTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = h2ero.keynavTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/keynav.app/Contents/MacOS/keynav";
+				PRODUCT_NAME = XEasyMotion;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XEasyMotion.app/Contents/MacOS/XEasyMotion";
 			};
 			name = Debug;
 		};
@@ -468,8 +469,8 @@
 				INFOPLIST_FILE = keynavTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = h2ero.keynavTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/keynav.app/Contents/MacOS/keynav";
+				PRODUCT_NAME = XEasyMotion;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XEasyMotion.app/Contents/MacOS/XEasyMotion";
 			};
 			name = Release;
 		};
@@ -480,7 +481,7 @@
 				INFOPLIST_FILE = keynavUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = h2ero.keynavUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = XEasyMotion;
 				TEST_TARGET_NAME = keynav;
 			};
 			name = Debug;
@@ -492,7 +493,7 @@
 				INFOPLIST_FILE = keynavUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = h2ero.keynavUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = XEasyMotion;
 				TEST_TARGET_NAME = keynav;
 			};
 			name = Release;
@@ -500,7 +501,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FCDCFAFE1CF6DA36009ABCEB /* Build configuration list for PBXProject "keynav" */ = {
+		FCDCFAFE1CF6DA36009ABCEB /* Build configuration list for PBXProject "XEasyMotion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FCDCFB261CF6DA36009ABCEB /* Debug */,
@@ -509,7 +510,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FCDCFB281CF6DA36009ABCEB /* Build configuration list for PBXNativeTarget "keynav" */ = {
+		FCDCFB281CF6DA36009ABCEB /* Build configuration list for PBXNativeTarget "XEasyMotion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FCDCFB291CF6DA36009ABCEB /* Debug */,
@@ -518,7 +519,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FCDCFB2B1CF6DA36009ABCEB /* Build configuration list for PBXNativeTarget "keynavTests" */ = {
+		FCDCFB2B1CF6DA36009ABCEB /* Build configuration list for PBXNativeTarget "XEasyMotionTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FCDCFB2C1CF6DA36009ABCEB /* Debug */,
@@ -527,7 +528,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FCDCFB2E1CF6DA36009ABCEB /* Build configuration list for PBXNativeTarget "keynavUITests" */ = {
+		FCDCFB2E1CF6DA36009ABCEB /* Build configuration list for PBXNativeTarget "XEasyMotionUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FCDCFB2F1CF6DA36009ABCEB /* Debug */,

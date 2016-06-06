@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:keynav.xcodeproj">
+      location = "self:/Users/h2ero/h2ero/swift/keynav/XEasyMotion.xcodeproj">
    </FileRef>
 </Workspace>
