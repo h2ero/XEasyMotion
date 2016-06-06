@@ -15,9 +15,7 @@ class AboutViewController: NSViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         appNameTextFiled.selectable = true
-        let appVersion  = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
-        let appName = NSBundle.mainBundle().infoDictionary!["CFBundleName"] as! String
-        appNameTextFiled.stringValue =  appName + "  " + appVersion
+        appNameTextFiled.stringValue =  Util.getAppName() + "  " + Util.getAppVersion()
     }
     
     override func viewWillAppear() {

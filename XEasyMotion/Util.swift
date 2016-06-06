@@ -60,5 +60,11 @@ class Util {
         
         return (CGFloat(x) * xStep + startX , (-CGFloat(y) * yStep) + height - yStep + startY)
     }
+    static func getAppVersion() -> String {
+        return NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+    }
     
+    static func getAppName() -> String {
+        return NSBundle.mainBundle().infoDictionary!["CFBundleName"] as! String
+    }
 }
