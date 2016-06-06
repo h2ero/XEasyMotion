@@ -12,10 +12,9 @@ import Cocoa
 
 class MainWindowController: NSWindowController {
     
+    static var startY:CGFloat = 0;
     override func windowDidLoad() {
         super.windowDidLoad()
-        // max
-//        self.maxWindow()
     }
     
     static func resizeWindow(id:Int) {
@@ -33,14 +32,15 @@ class MainWindowController: NSWindowController {
         windowFrame.size = NSMakeSize(newWidth, newHeight)
         (windowFrame.origin.x, windowFrame.origin.y) =  Util.getPostion(hitChar!, startX: (windowFrame.origin.x), startY: (windowFrame.origin.y), width: oldWidth, height: oldHeight)
         windowFirst.setFrame(windowFrame,display: true,animate: true)
+        
     }
     
     static func maxWindow() {
         let windowFirst = Util.getWindowFirst()
         var windowFrame = windowFirst.frame
         windowFrame.size =  NSScreen.mainScreen()!.frame.size
-        
         windowFrame.origin  = NSMakePoint(0, 0)
+        
         windowFirst.setFrame(windowFrame,display: true)
         windowFirst.orderFront(self)
         windowFirst.center()

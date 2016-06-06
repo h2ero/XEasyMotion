@@ -56,11 +56,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         HotKeys.register(UInt32(kVK_Return), modifiers: UInt32(activeFlag), block:{_ in
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
                 // do some async stuff
+                let (x,y) = MainWindowController.getWinCenterPoint()
                 MainWindowController.hideWindow()
                 AppDelegate.removeHintKeyBind();
                 NSOperationQueue.mainQueue().addOperationWithBlock {
                     // do some main thread stuff stuff
-                    let (x,y) = MainWindowController.getWinCenterPoint()
                     Util.click(x, y: y)
                 }
             }
@@ -70,11 +70,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         HotKeys.register(UInt32(kVK_Return), modifiers: UInt32(shiftKey), block:{_ in
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
                 // do some async stuff
+                let (x,y) = MainWindowController.getWinCenterPoint()
                 MainWindowController.hideWindow()
                 AppDelegate.removeHintKeyBind();
                 NSOperationQueue.mainQueue().addOperationWithBlock {
                     // do some main thread stuff stuff
-                    let (x,y) = MainWindowController.getWinCenterPoint()
                     Util.rightClick(x, y: y)
                 }
             }

@@ -20,9 +20,9 @@ class Util {
     }
     
     static func click(x:CGFloat,y:CGFloat){
-        let screenFrame = NSScreen.mainScreen()?.frame
-        let point = NSMakePoint(x, screenFrame!.size.height - y)
-        Log.write(Log.INFO, catelog: "event", value: "== Click == POS: x:\(x) , y:\(y)")
+        let screenFrame = NSScreen.screens()?.first?.frame
+        let point = NSMakePoint(x, (screenFrame?.size.height)!-y)
+        Log.write(Log.INFO, catelog: "event", value: "== Click == POS: x:\(point.x) , y:\(point.y)")
         postMouseEvent(CGMouseButton.Left, type: CGEventType.LeftMouseDown, point: point);
         postMouseEvent(CGMouseButton.Left, type: CGEventType.LeftMouseUp, point: point);
     }
@@ -30,7 +30,7 @@ class Util {
     static func rightClick(x: CGFloat, y: CGFloat){
         let screenFrame = NSScreen.mainScreen()?.frame
         let point = NSMakePoint(x, screenFrame!.size.height - y)
-        Log.write(Log.INFO, catelog: "event", value: "== Right Click == POS: x:\(x) ,y:\(y)")
+        Log.write(Log.INFO, catelog: "event", value: "== Right Click == POS: x:\(point.x) , y:\(point.y)")
         postMouseEvent(CGMouseButton.Right, type: CGEventType.RightMouseDown, point: point);
         postMouseEvent(CGMouseButton.Right, type: CGEventType.RightMouseUp, point: point);
     }
