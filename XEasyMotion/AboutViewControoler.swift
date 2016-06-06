@@ -11,8 +11,13 @@ import AppKit
 
 class AboutViewController: NSViewController  {
     
+    @IBOutlet weak var appNameTextFiled : NSTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        appNameTextFiled.selectable = true
+        let appVersion  = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+        let appName = NSBundle.mainBundle().infoDictionary!["CFBundleName"] as! String
+        appNameTextFiled.stringValue =  appName + "  " + appVersion
     }
     
     override func viewWillAppear() {

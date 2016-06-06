@@ -427,7 +427,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = XEasyMotion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = h2ero.keynav;
+				PRODUCT_BUNDLE_IDENTIFIER = h2ero.XEasyMotion;
 				PRODUCT_NAME = XEasyMotion;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -442,7 +442,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = XEasyMotion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = h2ero.keynav;
+				PRODUCT_BUNDLE_IDENTIFIER = h2ero.XEasyMotion;
 				PRODUCT_NAME = XEasyMotion;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
