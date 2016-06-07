@@ -37,6 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             MainWindowController.maxWindow()
             AppDelegate.addHitKeyBind();
             AppDelegate.addClickBind()
+            AppDelegate.addMoveKeyBind();
             } , id: UInt32(kVK_ANSI_I))
     }
     
@@ -97,7 +98,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         
         for ( _,keyCode) in Constents.moveKeyCode {
-            HotKeys.unregister(UInt32(keyCode))
+            HotKeys.unregister(UInt32(keyCode + kVK_Shift))
         }
         
         HotKeys.unregister(UInt32(kVK_Return))
@@ -113,7 +114,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         // show menu
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "Abount XEasyMontion", action: #selector(AppDelegate.showAbout(_:)), keyEquivalent: "P"))
+        menu.addItem(NSMenuItem(title: "Abount \(Util.getAppName())", action: #selector(AppDelegate.showAbout(_:)), keyEquivalent: "P"))
         menu.addItem(NSMenuItem.separatorItem())
         menu.addItem(NSMenuItem(title: "Exit", action: #selector(AppDelegate.exitNow(_:)), keyEquivalent: "q"))
         
