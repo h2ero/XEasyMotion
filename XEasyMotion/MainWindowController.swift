@@ -65,13 +65,13 @@ class MainWindowController: NSWindowController {
         let windowFirst = Util.getWindowFirst()
         var windowFrame = windowFirst.frame
         
-        if  dirction - kVK_Shift  == Constents.moveKeyCode["LEFT"]  {
+        if  dirction - shiftKey == Constents.moveKeyCode["LEFT"]  {
             windowFrame.origin.x = windowFrame.origin.x - windowFrame.size.width
-        }else if  dirction - kVK_Shift  == Constents.moveKeyCode["RIGHT"]  {
+        }else if  dirction - shiftKey  == Constents.moveKeyCode["RIGHT"]  {
             windowFrame.origin.x = windowFrame.origin.x + windowFrame.size.width
-        }else if  dirction - kVK_Shift  == Constents.moveKeyCode["UP"]  {
+        }else if  dirction - shiftKey  == Constents.moveKeyCode["UP"]  {
             windowFrame.origin.y = windowFrame.origin.y + windowFrame.size.height
-        }else if  dirction - kVK_Shift  == Constents.moveKeyCode["DOWN"]  {
+        }else if  dirction - shiftKey  == Constents.moveKeyCode["DOWN"]  {
             windowFrame.origin.y = windowFrame.origin.y - windowFrame.size.height
         }
         windowFirst.setFrame(windowFrame,display: true,animate: true)

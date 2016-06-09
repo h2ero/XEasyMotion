@@ -58,8 +58,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         for (_, keyCode) in Constents.moveKeyCode {
             Log.write(Log.INFO, catelog: "register key code", value: keyCode)
             HotKeys.register(UInt32(keyCode), modifiers: UInt32(shiftKey), block:{
-                (id:EventHotKeyID) in MainWindowController.moveWindow(Int(id.id))
-                })
+                (id:EventHotKeyID) in
+                Log.write(Log.INFO, catelog: "move", value: String(id.id))
+                MainWindowController.moveWindow(Int(id.id))
+            })
         }
         
     }
@@ -91,16 +93,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     static func removeHintKeyBind(){
         for (keyCode, _) in Constents.hintCharsKeyCodeMap{
-            HotKeys.unregister(UInt32(keyCode))
+            HotKeys.unregister(UInt32(keyCode + activeFlag))
         }
         
         
         for ( _,keyCode) in Constents.moveKeyCode {
-            HotKeys.unregister(UInt32(keyCode + kVK_Shift))
+            Log.write(Log.INFO, catelog: "remove move key", value: String(UInt32(keyCode + shiftKey)))
+            HotKeys.unregister(UInt32(keyCode + shiftKey))
         }
         
-        HotKeys.unregister(UInt32(kVK_Return))
-        HotKeys.unregister(UInt32(kVK_Return + kVK_Shift))
+        HotKeys.unregister(UInt32(kVK_Return + activeFlag))
+        HotKeys.unregister(UInt32(kVK_Return + shiftKey))
     }
     
     func showStatusBarMenu(){

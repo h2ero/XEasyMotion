@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import Carbon
 
 class Util {
     static func moveMouse(x:CGFloat,y:CGFloat) ->NSPoint{
@@ -71,4 +72,10 @@ class Util {
     static func getWindowFirst() -> NSWindow {
         return NSApplication.sharedApplication().windows.first!
     }
+    
+    static func getChar( ch: UInt32 ) -> String {
+        return String(UnicodeScalar(ch))
+    }
+    
+ 
 }

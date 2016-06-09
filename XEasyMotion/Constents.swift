@@ -33,10 +33,10 @@ class Constents {
     static let hitCharMinFontSize:CGFloat = 12;
     
     static let  moveKeyCode :[String:Int] = [
-        "UP"              : kVK_ANSI_K         ,
-        "LEFT"            : kVK_ANSI_H         , 
-        "RIGHT"           : kVK_ANSI_L         , 
+        "UP"              : kVK_ANSI_K,
+        "LEFT"            : kVK_ANSI_H,
+        "RIGHT"           : kVK_ANSI_L,
         "DOWN"            : kVK_ANSI_J
-    ]                      
+    ]
     
 }
