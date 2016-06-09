@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //    static var mainWindowController: MainWindowController?
     @IBOutlet var statusMenu: NSMenu?
     var statusItem: NSStatusItem? = nil
-    var m_aboutWindowController : AboutWindowController!
+    var aboutWindowController : AboutWindowController!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         NSMenu.setMenuBarVisible(false)
@@ -80,12 +80,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         HotKeys.register(UInt32(kVK_Return), modifiers: UInt32(shiftKey), block:{_ in
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                // do some async stuff
                 let (x,y) = MainWindowController.getWinCenterPoint()
                 MainWindowController.hideWindow()
                 AppDelegate.removeHintKeyBind();
                 NSOperationQueue.mainQueue().addOperationWithBlock {
-                    // do some main thread stuff stuff
                     Util.rightClick(x, y: y)
                 }
             }
@@ -123,8 +121,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func showAbout(sender : AnyObject) {
         let storyboard : NSStoryboard = NSStoryboard(name: "Main", bundle: nil)
-        self.m_aboutWindowController = storyboard.instantiateControllerWithIdentifier("AboutWindowController") as! AboutWindowController
-        self.m_aboutWindowController.showWindow(self)
+        self.aboutWindowController = storyboard.instantiateControllerWithIdentifier("AboutWindowController") as! AboutWindowController
+        self.aboutWindowController.showWindow(self)
     }
     @IBAction func exitNow(sender: AnyObject) {
         NSApplication.sharedApplication().terminate(self)
