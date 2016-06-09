@@ -38,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             AppDelegate.addHitKeyBind();
             AppDelegate.addClickBind()
             AppDelegate.addMoveKeyBind();
-            } , id: UInt32(kVK_ANSI_I))
+            })
     }
     
     static func addHitKeyBind()  {
@@ -49,7 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 (id:EventHotKeyID) in MainWindowController.resizeWindow(Int(id.id))
                 //            let (x,y) = MainWindowController.getWinCenterPoint()
                 //            Util.moveMouse(x, y: y)
-                } , id: UInt32(keyCode))
+                })
         }
         Log.write(Log.INFO, catelog: "register key code", value: "end")
     }
@@ -59,7 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             Log.write(Log.INFO, catelog: "register key code", value: keyCode)
             HotKeys.register(UInt32(keyCode), modifiers: UInt32(shiftKey), block:{
                 (id:EventHotKeyID) in MainWindowController.moveWindow(Int(id.id))
-                } , id: UInt32(keyCode + kVK_Shift))
+                })
         }
         
     }
@@ -76,7 +76,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 }
             }
             
-            },id:UInt32(kVK_Return));
+            });
         
         HotKeys.register(UInt32(kVK_Return), modifiers: UInt32(shiftKey), block:{_ in
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
@@ -87,7 +87,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     Util.rightClick(x, y: y)
                 }
             }
-            },id:UInt32(kVK_Return + kVK_Shift));
+            });
     }
     static func removeHintKeyBind(){
         for (keyCode, _) in Constents.hintCharsKeyCodeMap{
