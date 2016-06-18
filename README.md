@@ -14,7 +14,15 @@ https://github.com/h2ero/XEasyMotion/releases
 * `shift enter` right click
 * `cmd+i` call XEasyMotion
 
-## relate projects
+## Todo
+There are many things to do.
+
+* hint by text, color or object (btn, label... etc)
+* add dotfile for config
+
+
+## Relate projects
 
 * [jordansissel/keynav](https://github.com/jordansissel/keynav)
+* [trishume/QuickMouse](https://github.com/trishume/QuickMouse)
 * [shortcat](https://shortcatapp.com/)
