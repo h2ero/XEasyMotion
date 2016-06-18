@@ -10,6 +10,11 @@ import Foundation
 import Carbon
 
 class Constents {
+    // mode: simple, hit_chars, orc
+    static let modeSimple = "simple";
+    static let modeHintChars = "hitChars";
+    static let mode = Constents.modeSimple
+    
     static let hintChars : [[String]] = [
         ["A","K","F"],
         ["H","S","L"],

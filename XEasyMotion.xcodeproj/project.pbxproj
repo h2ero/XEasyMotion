@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FC1EE6ED1CF888B500ABC6A6 /* GradView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EE6EC1CF888B500ABC6A6 /* GradView.swift */; };
 		FC2677A91CF74D3600EB7E9D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2677A81CF74D3600EB7E9D /* MainWindowController.swift */; };
+		FC5A2C291D15124A00472D06 /* SettingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A2C281D15124A00472D06 /* SettingWindowController.swift */; };
+		FC5A2C2B1D15129400472D06 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A2C2A1D15129400472D06 /* SettingViewController.swift */; };
 		FC740B501D01D6CB00CCE546 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC740B4F1D01D6CB00CCE546 /* Util.swift */; };
 		FC740B541D024CEB00CCE546 /* HotKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC740B531D024CEB00CCE546 /* HotKeys.swift */; };
 		FC740B5E1D02766D00CCE546 /* Constents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC740B5D1D02766D00CCE546 /* Constents.swift */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		FC1EE6EC1CF888B500ABC6A6 /* GradView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradView.swift; sourceTree = "<group>"; };
 		FC2677A81CF74D3600EB7E9D /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		FC5A2C281D15124A00472D06 /* SettingWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingWindowController.swift; sourceTree = "<group>"; };
+		FC5A2C2A1D15129400472D06 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FC740B4F1D01D6CB00CCE546 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		FC740B531D024CEB00CCE546 /* HotKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotKeys.swift; sourceTree = "<group>"; };
 		FC740B5D1D02766D00CCE546 /* Constents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constents.swift; sourceTree = "<group>"; };
@@ -131,7 +135,9 @@
 				FC740B5D1D02766D00CCE546 /* Constents.swift */,
 				FCFD066F1D028C810005D284 /* ConolePlay.playground */,
 				FCFD06741D02FB8F0005D284 /* AboutWindowController.swift */,
+				FC5A2C281D15124A00472D06 /* SettingWindowController.swift */,
 				FCFD06761D0302A40005D284 /* AboutViewControoler.swift */,
+				FC5A2C2A1D15129400472D06 /* SettingViewController.swift */,
 				FCD93D611D054B04000184B8 /* Log.swift */,
 				FCCB5B641D094CAB00AD8902 /* Keybind.swift */,
 			);
@@ -292,12 +298,14 @@
 				FCCB5B651D094CAB00AD8902 /* Keybind.swift in Sources */,
 				FCD93D621D054B04000184B8 /* Log.swift in Sources */,
 				FCFD06751D02FB8F0005D284 /* AboutWindowController.swift in Sources */,
+				FC5A2C2B1D15129400472D06 /* SettingViewController.swift in Sources */,
 				FC740B541D024CEB00CCE546 /* HotKeys.swift in Sources */,
 				FC740B501D01D6CB00CCE546 /* Util.swift in Sources */,
 				FC1EE6ED1CF888B500ABC6A6 /* GradView.swift in Sources */,
 				FC740B5E1D02766D00CCE546 /* Constents.swift in Sources */,
 				FC9FDD5B1CF7419600533B23 /* MainWindow.swift in Sources */,
 				FC2677A91CF74D3600EB7E9D /* MainWindowController.swift in Sources */,
+				FC5A2C291D15124A00472D06 /* SettingWindowController.swift in Sources */,
 				FCDCFB071CF6DA36009ABCEB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

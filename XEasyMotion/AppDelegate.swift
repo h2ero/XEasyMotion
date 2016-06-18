@@ -16,6 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet var statusMenu: NSMenu?
     var statusItem: NSStatusItem? = nil
     var aboutWindowController : AboutWindowController!
+    var settingWindowController : SettingWindowController!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         NSMenu.setMenuBarVisible(false)
@@ -42,9 +43,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         // show menu
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "Abount \(Util.getAppName())", action: #selector(AppDelegate.showAbout(_:)), keyEquivalent: "P"))
+        
+        menu.addItem(NSMenuItem(title: "Abount \(Util.getAppName())", action: #selector(AppDelegate.showAbout(_:)), keyEquivalent: "A"))
+        
+        menu.addItem(NSMenuItem(title: "Setting", action: #selector(AppDelegate.showSetting(_:)), keyEquivalent: "S"))
+        
         menu.addItem(NSMenuItem.separatorItem())
-        menu.addItem(NSMenuItem(title: "Exit", action: #selector(AppDelegate.exitNow(_:)), keyEquivalent: "q"))
+        
+        menu.addItem(NSMenuItem(title: "Exit", action: #selector(AppDelegate.exitNow(_:)), keyEquivalent: "Q"))
         
         self.statusItem!.menu = menu
     }
@@ -56,6 +62,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     @IBAction func exitNow(sender: AnyObject) {
         NSApplication.sharedApplication().terminate(self)
+    }
+    
+    @IBAction func showSetting(sender : AnyObject) {
+        let storyboard : NSStoryboard = NSStoryboard(name: "Main", bundle: nil)
+        self.settingWindowController = storyboard.instantiateControllerWithIdentifier("SettingWindowController") as! SettingWindowController
+        self.settingWindowController.showWindow(self)
     }
 }
 

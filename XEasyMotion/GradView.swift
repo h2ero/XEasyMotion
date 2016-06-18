@@ -26,10 +26,11 @@ class GradView: NSView{
         circlePath.fill()
     }
     func drawGrad() {
-        drawHorizLine(1/3.0)
-        drawHorizLine(2/3.0)
-        drawVertLie(1/3.0)
-        drawVertLie(2/3.0)
+        if Constents.mode == Constents.modeHintChars {
+            drawHorizLine(1/3.0)
+            drawHorizLine(2/3.0)
+            drawVertLine(1/3.0)
+            drawVertLine(2/3.0)
         // draw chars
         let xAxis:[CGFloat] = [
             bounds.size.width / 6,
@@ -42,10 +43,20 @@ class GradView: NSView{
             bounds.size.height / 6
         ]
         
-        for (y, row) in Constents.hintChars.enumerate(){
-            for(x, hintChar) in row.enumerate(){
-                drawChar(hintChar, x:  xAxis[x] - (getHintCharFontSize()/2), y: yAxis[y] - (getHintCharFontSize() / 2))
+            for (y, row) in Constents.hintChars.enumerate(){
+                for(x, hintChar) in row.enumerate(){
+                    drawChar(hintChar, x:  xAxis[x] - (getHintCharFontSize()/2), y: yAxis[y] - (getHintCharFontSize() / 2))
+                }
             }
+        } else {
+            
+            drawHorizLine(0)
+            drawHorizLine(1/2.0)
+            drawHorizLine(1.0)
+            
+            drawVertLine(0)
+            drawVertLine(1/2.0)
+            drawVertLine(1.0)
         }
         drawPoint()
     }
@@ -61,7 +72,7 @@ class GradView: NSView{
         drawLine(NSMakePoint(x, 0),p2: NSMakePoint(x,bounds.size.height))
     }
     
-    func drawVertLie(frac:CGFloat){
+    func drawVertLine(frac:CGFloat){
         let y = frac * bounds.size.height
         drawLine(NSMakePoint(0, y),p2: NSMakePoint(bounds.size.width,y))
     }
@@ -83,6 +94,4 @@ class GradView: NSView{
         return max(Constents.hitCharBaseFontSize * bounds.size.width / 1000 , Constents.hitCharMinFontSize);
     }
     
-    
 }
-
