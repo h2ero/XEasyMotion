@@ -1,6 +1,8 @@
 # XEasyMotion
 using keyboard control mouse on MacOS ( OS X ), like keynav.
 
+<img src="http://g.recordit.co/UMROzRKQ1x.gif">
+
 ## Download
 https://github.com/h2ero/XEasyMotion/releases
 
