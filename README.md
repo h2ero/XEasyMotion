@@ -15,3 +15,4 @@ https://github.com/h2ero/XEasyMotion/releases
 ## relate projects
 
 [jordansissel/keynav](https://github.com/jordansissel/keynav)
+[shortcat](https://shortcatapp.com/)
