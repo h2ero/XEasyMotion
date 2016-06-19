@@ -25,6 +25,7 @@ class MainWindow: NSWindow {
             Int(CGWindowLevelForKey(CGWindowLevelKey.MainMenuWindowLevelKey))
         
         self.animationBehavior = .None
+        
         self.alphaValue = 1.0
         
         self.opaque = false

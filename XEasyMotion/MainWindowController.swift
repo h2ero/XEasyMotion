@@ -51,7 +51,7 @@ class MainWindowController: NSWindowController {
             }
             windowFrame.size = NSMakeSize(newWidth, newHeight)
         }
-        windowFirst.setFrame(windowFrame,display: true,animate: true)
+        windowFirst.setFrame(windowFrame,display: true,animate: Constents.animation)
         
     }
     
@@ -93,7 +93,7 @@ class MainWindowController: NSWindowController {
         }else if  dirction - shiftKey  == Constents.moveKeyCode["DOWN"]  {
             windowFrame.origin.y = windowFrame.origin.y - windowFrame.size.height
         }
-        windowFirst.setFrame(windowFrame,display: true,animate: true)
+        windowFirst.setFrame(windowFrame,display: true,animate: Constents.animation)
     }
     
 }

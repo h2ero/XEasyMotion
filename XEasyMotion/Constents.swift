@@ -14,6 +14,7 @@ class Constents {
     static let modeSimple = "simple";
     static let modeHintChars = "hitChars";
     static let mode = Constents.modeSimple
+    static let animation = false
     
     static let hintChars : [[String]] = [
         ["A","K","F"],
