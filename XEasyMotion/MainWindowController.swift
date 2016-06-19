@@ -23,7 +23,7 @@ class MainWindowController: NSWindowController {
         var windowFrame = windowFirst.frame
         
         let hitChar = Constents.hintCharsKeyCodeMap[id - activeFlag]
-        NSLog(hitChar!)
+        Log.write(Log.INFO, catelog: "resize", value: hitChar!)
         if Constents.mode == Constents.modeHintChars {
             let oldWidth = windowFrame.size.width
             let oldHeight = windowFrame.size.height
