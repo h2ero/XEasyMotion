@@ -7,22 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC1740681D168C2C0016B1B3 /* XEasyMotionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1740671D168C2C0016B1B3 /* XEasyMotionUITests.swift */; };
+		FC17406A1D168CB10016B1B3 /* XEasyMotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1740691D168CB10016B1B3 /* XEasyMotionTests.swift */; };
 		FC1EE6ED1CF888B500ABC6A6 /* GradView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EE6EC1CF888B500ABC6A6 /* GradView.swift */; };
 		FC2677A91CF74D3600EB7E9D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2677A81CF74D3600EB7E9D /* MainWindowController.swift */; };
+		FC407E0B1D1687C10035ABCF /* SimpleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC407E0A1D1687C10035ABCF /* SimpleMode.swift */; };
 		FC5A2C291D15124A00472D06 /* SettingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A2C281D15124A00472D06 /* SettingWindowController.swift */; };
 		FC5A2C2B1D15129400472D06 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A2C2A1D15129400472D06 /* SettingViewController.swift */; };
 		FC740B501D01D6CB00CCE546 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC740B4F1D01D6CB00CCE546 /* Util.swift */; };
 		FC740B541D024CEB00CCE546 /* HotKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC740B531D024CEB00CCE546 /* HotKeys.swift */; };
 		FC740B5E1D02766D00CCE546 /* Constents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC740B5D1D02766D00CCE546 /* Constents.swift */; };
 		FC9FDD5B1CF7419600533B23 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FDD5A1CF7419600533B23 /* MainWindow.swift */; };
+		FCA7F3F91D162F6000BCE328 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA7F3F81D162F6000BCE328 /* Yaml.framework */; };
+		FCA7F3FC1D16303300BCE328 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F3FB1D16303300BCE328 /* Config.swift */; };
+		FCA7F4011D163DCF00BCE328 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F4001D163DCF00BCE328 /* Mode.swift */; };
 		FCCB381B1D01C05400EFC908 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB381A1D01C05400EFC908 /* ViewController.swift */; };
 		FCCB5B651D094CAB00AD8902 /* Keybind.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB5B641D094CAB00AD8902 /* Keybind.swift */; };
 		FCD93D621D054B04000184B8 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD93D611D054B04000184B8 /* Log.swift */; };
 		FCDCFB071CF6DA36009ABCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB061CF6DA36009ABCEB /* AppDelegate.swift */; };
 		FCDCFB0B1CF6DA36009ABCEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB0A1CF6DA36009ABCEB /* Assets.xcassets */; };
 		FCDCFB0E1CF6DA36009ABCEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDCFB0C1CF6DA36009ABCEB /* Main.storyboard */; };
-		FCDCFB191CF6DA36009ABCEB /* keynavTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB181CF6DA36009ABCEB /* keynavTests.swift */; };
-		FCDCFB241CF6DA36009ABCEB /* keynavUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCFB231CF6DA36009ABCEB /* keynavUITests.swift */; };
 		FCFD06751D02FB8F0005D284 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFD06741D02FB8F0005D284 /* AboutWindowController.swift */; };
 		FCFD06771D0302A40005D284 /* AboutViewControoler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFD06761D0302A40005D284 /* AboutViewControoler.swift */; };
 /* End PBXBuildFile section */
@@ -45,14 +49,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC1740671D168C2C0016B1B3 /* XEasyMotionUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEasyMotionUITests.swift; sourceTree = "<group>"; };
+		FC1740691D168CB10016B1B3 /* XEasyMotionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEasyMotionTests.swift; sourceTree = "<group>"; };
 		FC1EE6EC1CF888B500ABC6A6 /* GradView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradView.swift; sourceTree = "<group>"; };
 		FC2677A81CF74D3600EB7E9D /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		FC407E0A1D1687C10035ABCF /* SimpleMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleMode.swift; sourceTree = "<group>"; };
 		FC5A2C281D15124A00472D06 /* SettingWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingWindowController.swift; sourceTree = "<group>"; };
 		FC5A2C2A1D15129400472D06 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FC740B4F1D01D6CB00CCE546 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		FC740B531D024CEB00CCE546 /* HotKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotKeys.swift; sourceTree = "<group>"; };
 		FC740B5D1D02766D00CCE546 /* Constents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constents.swift; sourceTree = "<group>"; };
 		FC9FDD5A1CF7419600533B23 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
+		FCA7F3F81D162F6000BCE328 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/Mac/Yaml.framework; sourceTree = "<group>"; };
+		FCA7F3FB1D16303300BCE328 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		FCA7F4001D163DCF00BCE328 /* Mode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		FCCB381A1D01C05400EFC908 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCCB5B641D094CAB00AD8902 /* Keybind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keybind.swift; sourceTree = "<group>"; };
 		FCD141901D004AC8002DC3D3 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
@@ -63,10 +73,8 @@
 		FCDCFB0D1CF6DA36009ABCEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCDCFB0F1CF6DA36009ABCEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCDCFB141CF6DA36009ABCEB /* XEasyMotion.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XEasyMotion.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FCDCFB181CF6DA36009ABCEB /* keynavTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keynavTests.swift; sourceTree = "<group>"; };
 		FCDCFB1A1CF6DA36009ABCEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCDCFB1F1CF6DA36009ABCEB /* XEasyMotion.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XEasyMotion.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FCDCFB231CF6DA36009ABCEB /* keynavUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keynavUITests.swift; sourceTree = "<group>"; };
 		FCDCFB251CF6DA36009ABCEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCFD066F1D028C810005D284 /* ConolePlay.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ConolePlay.playground; sourceTree = "<group>"; };
 		FCFD06741D02FB8F0005D284 /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
@@ -78,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA7F3F91D162F6000BCE328 /* Yaml.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,9 +107,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FCA7F3FF1D163DBF00BCE328 /* Mode */ = {
+			isa = PBXGroup;
+			children = (
+				FCA7F4001D163DCF00BCE328 /* Mode.swift */,
+				FC407E0A1D1687C10035ABCF /* SimpleMode.swift */,
+			);
+			path = Mode;
+			sourceTree = "<group>";
+		};
 		FCDCFAFA1CF6DA36009ABCEB = {
 			isa = PBXGroup;
 			children = (
+				FCA7F3F81D162F6000BCE328 /* Yaml.framework */,
 				FCDCFB051CF6DA36009ABCEB /* XEasyMotion */,
 				FCDCFB171CF6DA36009ABCEB /* XEasyMotionTests */,
 				FCDCFB221CF6DA36009ABCEB /* XEasyMotionUITests */,
@@ -121,6 +140,7 @@
 		FCDCFB051CF6DA36009ABCEB /* XEasyMotion */ = {
 			isa = PBXGroup;
 			children = (
+				FCA7F3FF1D163DBF00BCE328 /* Mode */,
 				FCDCFB061CF6DA36009ABCEB /* AppDelegate.swift */,
 				FCDCFB0A1CF6DA36009ABCEB /* Assets.xcassets */,
 				FCDCFB0C1CF6DA36009ABCEB /* Main.storyboard */,
@@ -140,6 +160,7 @@
 				FC5A2C2A1D15129400472D06 /* SettingViewController.swift */,
 				FCD93D611D054B04000184B8 /* Log.swift */,
 				FCCB5B641D094CAB00AD8902 /* Keybind.swift */,
+				FCA7F3FB1D16303300BCE328 /* Config.swift */,
 			);
 			path = XEasyMotion;
 			sourceTree = "<group>";
@@ -147,7 +168,7 @@
 		FCDCFB171CF6DA36009ABCEB /* XEasyMotionTests */ = {
 			isa = PBXGroup;
 			children = (
-				FCDCFB181CF6DA36009ABCEB /* keynavTests.swift */,
+				FC1740691D168CB10016B1B3 /* XEasyMotionTests.swift */,
 				FCDCFB1A1CF6DA36009ABCEB /* Info.plist */,
 			);
 			name = XEasyMotionTests;
@@ -157,7 +178,7 @@
 		FCDCFB221CF6DA36009ABCEB /* XEasyMotionUITests */ = {
 			isa = PBXGroup;
 			children = (
-				FCDCFB231CF6DA36009ABCEB /* keynavUITests.swift */,
+				FC1740671D168C2C0016B1B3 /* XEasyMotionUITests.swift */,
 				FCDCFB251CF6DA36009ABCEB /* Info.plist */,
 			);
 			path = XEasyMotionUITests;
@@ -173,6 +194,7 @@
 				FCDCFAFF1CF6DA36009ABCEB /* Sources */,
 				FCDCFB001CF6DA36009ABCEB /* Frameworks */,
 				FCDCFB011CF6DA36009ABCEB /* Resources */,
+				FCA7F3FA1D162F9900BCE328 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -288,6 +310,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FCA7F3FA1D162F9900BCE328 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/Yaml.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FCDCFAFF1CF6DA36009ABCEB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -295,6 +334,7 @@
 			files = (
 				FCCB381B1D01C05400EFC908 /* ViewController.swift in Sources */,
 				FCFD06771D0302A40005D284 /* AboutViewControoler.swift in Sources */,
+				FCA7F3FC1D16303300BCE328 /* Config.swift in Sources */,
 				FCCB5B651D094CAB00AD8902 /* Keybind.swift in Sources */,
 				FCD93D621D054B04000184B8 /* Log.swift in Sources */,
 				FCFD06751D02FB8F0005D284 /* AboutWindowController.swift in Sources */,
@@ -302,6 +342,8 @@
 				FC740B541D024CEB00CCE546 /* HotKeys.swift in Sources */,
 				FC740B501D01D6CB00CCE546 /* Util.swift in Sources */,
 				FC1EE6ED1CF888B500ABC6A6 /* GradView.swift in Sources */,
+				FC407E0B1D1687C10035ABCF /* SimpleMode.swift in Sources */,
+				FCA7F4011D163DCF00BCE328 /* Mode.swift in Sources */,
 				FC740B5E1D02766D00CCE546 /* Constents.swift in Sources */,
 				FC9FDD5B1CF7419600533B23 /* MainWindow.swift in Sources */,
 				FC2677A91CF74D3600EB7E9D /* MainWindowController.swift in Sources */,
@@ -314,7 +356,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCDCFB191CF6DA36009ABCEB /* keynavTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +363,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCDCFB241CF6DA36009ABCEB /* keynavUITests.swift in Sources */,
+				FC17406A1D168CB10016B1B3 /* XEasyMotionTests.swift in Sources */,
+				FC1740681D168C2C0016B1B3 /* XEasyMotionUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,8 +483,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = XEasyMotion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = h2ero.XEasyMotion;
 				PRODUCT_NAME = XEasyMotion;
 				SDKROOT = macosx;
@@ -457,8 +504,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = XEasyMotion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = h2ero.XEasyMotion;
 				PRODUCT_NAME = XEasyMotion;
 				SDKROOT = macosx;
@@ -495,11 +547,13 @@
 		FCDCFB2F1CF6DA36009ABCEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = keynavUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = h2ero.keynavUITests;
 				PRODUCT_NAME = XEasyMotion;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_TARGET_NAME = keynav;
 			};
 			name = Debug;
@@ -507,6 +561,7 @@
 		FCDCFB301CF6DA36009ABCEB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = keynavUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";

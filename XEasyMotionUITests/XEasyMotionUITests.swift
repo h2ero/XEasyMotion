@@ -8,7 +8,7 @@
 
 import XCTest
 
-class keynavUITests: XCTestCase {
+class XEasyMotionUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

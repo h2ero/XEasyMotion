@@ -46,7 +46,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         menu.addItem(NSMenuItem(title: "Abount \(Util.getAppName())", action: #selector(AppDelegate.showAbout(_:)), keyEquivalent: "A"))
         
-        menu.addItem(NSMenuItem(title: "Setting", action: #selector(AppDelegate.showSetting(_:)), keyEquivalent: "S"))
+//        menu.addItem(NSMenuItem(title: "Setting", action: #selector(AppDelegate.showSetting(_:)), keyEquivalent: "S"))
         
         menu.addItem(NSMenuItem.separatorItem())
         
