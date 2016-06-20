@@ -22,7 +22,7 @@ There are many things to do.
 * add dotfile for config
 
 
-## Relate projects
+## Related projects
 
 * [jordansissel/keynav](https://github.com/jordansissel/keynav)
 * [trishume/QuickMouse](https://github.com/trishume/QuickMouse)
