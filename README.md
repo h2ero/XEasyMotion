@@ -8,11 +8,12 @@ https://github.com/h2ero/XEasyMotion/releases
 
 ## Usage
 
-* `hjkl` zoom area
-* `shift+hjkl` move area
-* `enter` click
-* `shift enter` right click
-* `cmd+i` call XEasyMotion
+* <kbd>h</kbd>  <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd>  zoom area
+* <kbd>Shift</kbd> + <kbd>h</kbd>  <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd>  move area
+* <kbd>Enter</kbd>   click
+* <kbd>Shift</kbd> + <kbd>Enter</kbd>  right click
+* <kbd>CMD</kbd> + <kbd>i</kbd>   call XEasyMotion
+* <kbd>ESC</kbd>  exit
 
 ## Todo
 There are many things to do.
