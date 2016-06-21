@@ -20,8 +20,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         NSMenu.setMenuBarVisible(false)
-        MainWindowController.maxWindow()
         var configs = Config.loadConfig()
+        Mode.maxWindow()
         // todo reflection
         if configs["enableModes"][0] == "simpleMode" {
             SimpleMode.load()

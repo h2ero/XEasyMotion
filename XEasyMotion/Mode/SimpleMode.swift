@@ -1,5 +1,5 @@
 //
-//  SimpleMode.swift
+//  self.swift
 //  XEasyMotion
 //
 //  Created by h2ero on 6/19/16.
@@ -12,11 +12,11 @@ import Carbon
 class SimpleMode : Mode{
     
     static func load(){
-        SimpleMode.addActiveKeyBind()
-        SimpleMode.addHitKeyBind()
-        SimpleMode.addClickBind()
-        SimpleMode.addMoveKeyBind()
-        SimpleMode.addCancelKeyBind()
+        self.addActiveKeyBind()
+        self.addHitKeyBind()
+        self.addClickBind()
+        self.addMoveKeyBind()
+        self.addCancelKeyBind()
     }
     
     static func finish(){
@@ -25,11 +25,11 @@ class SimpleMode : Mode{
     
 //    static func addActiveKeyBind()  {
 //        HotKeys.register(UInt32(kVK_ANSI_I), modifiers: UInt32(cmdKey), block:{_ in
-//            MainWindowController.maxWindow()
-//            SimpleMode.addHitKeyBind()
-//            SimpleMode.addClickBind()
-//            SimpleMode.addMoveKeyBind()
-//            SimpleMode.addCancelKeyBind()
+//            self.maxWindow()
+//            self.addHitKeyBind()
+//            self.addClickBind()
+//            self.addMoveKeyBind()
+//            self.addCancelKeyBind()
 //        })
 //    }
     
@@ -38,8 +38,8 @@ class SimpleMode : Mode{
         for (keyCode, _) in Constents.hintCharsKeyCodeMap{
             Log.write(Log.INFO, catelog: "register key code", value: keyCode)
             HotKeys.register(UInt32(keyCode), modifiers: UInt32(activeFlag), block:{
-                (id:EventHotKeyID) in MainWindowController.resizeWindow(Int(id.id))
-                //                let (x,y) = MainWindowController.getWinCenterPoint()
+                (id:EventHotKeyID) in self.resizeWindow(Int(id.id))
+                //                let (x,y) = self.getWinCenterPoint()
                 //                Util.moveMouse(x, y: y)
             })
         }
@@ -52,7 +52,7 @@ class SimpleMode : Mode{
             HotKeys.register(UInt32(keyCode), modifiers: UInt32(shiftKey), block:{
                 (id:EventHotKeyID) in
                 Log.write(Log.INFO, catelog: "move", value: String(id.id))
-                MainWindowController.moveWindow(Int(id.id))
+                self.moveWindow(Int(id.id))
             })
         }
         
@@ -62,9 +62,9 @@ class SimpleMode : Mode{
         HotKeys.register(UInt32(kVK_Return), modifiers: UInt32(activeFlag), block:{_ in
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
                 // do some async stuff
-                let (x,y) = MainWindowController.getWinCenterPoint()
-                MainWindowController.hideWindow()
-                SimpleMode.removeKeyBind();
+                let (x,y) = self.getWinCenterPoint()
+                self.hideWindow()
+                self.removeKeyBind();
                 NSOperationQueue.mainQueue().addOperationWithBlock {
                     // do some main thread stuff stuff
                     Util.click(x, y: y)
@@ -75,9 +75,9 @@ class SimpleMode : Mode{
         
         HotKeys.register(UInt32(kVK_Return), modifiers: UInt32(shiftKey), block:{_ in
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                let (x,y) = MainWindowController.getWinCenterPoint()
-                MainWindowController.hideWindow()
-                SimpleMode.removeKeyBind();
+                let (x,y) = self.getWinCenterPoint()
+                self.hideWindow()
+                self.removeKeyBind();
                 NSOperationQueue.mainQueue().addOperationWithBlock {
                     Util.rightClick(x, y: y)
                 }
