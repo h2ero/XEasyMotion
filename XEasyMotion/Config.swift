@@ -29,4 +29,9 @@ class Config {
         return Yaml.load(fileConent).value!
     }
     
+    static func getEnableMode() -> String {
+        let configs = Config.loadConfig()
+        return configs["enableMode"].string!
+    }
+    
 }

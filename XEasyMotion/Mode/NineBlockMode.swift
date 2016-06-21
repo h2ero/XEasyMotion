@@ -1,16 +1,15 @@
 //
-//  self.swift
+//  NineBlockBox.swift
 //  XEasyMotion
 //
-//  Created by h2ero on 6/19/16.
+//  Created by h2ero on 6/21/16.
 //  Copyright © 2016 h2ero. All rights reserved.
 //
 
 import Foundation
 import Carbon
 
-class SimpleMode : Mode{
-    
+class NineBlockMode: Mode {
     static func load(){
         self.addActiveKeyBind()
         self.addHitKeyBind()
@@ -96,12 +95,28 @@ class SimpleMode : Mode{
         HotKeys.unregister(UInt32(kVK_Escape + activeFlag))
     }
     static func draw(){
-        GradView.drawHorizLine(0)
-        GradView.drawHorizLine(1/2.0)
-        GradView.drawHorizLine(1.0)
-        GradView.drawVertLine(0)
-        GradView.drawVertLine(1/2.0)
-        GradView.drawVertLine(1.0)
+        GradView.drawHorizLine(1/3.0)
+        GradView.drawHorizLine(2/3.0)
+        GradView.drawVertLine(1/3.0)
+        GradView.drawVertLine(2/3.0)
+        // draw chars
+        let size = GradView.getSize()
+        let xAxis:[CGFloat] = [
+            size.width / 6,
+            size.width / 6 * 3,
+            size.width / 6 * 5
+        ]
+        let yAxis:[CGFloat] = [
+            size.height / 6 * 5,
+            size.height / 6 * 3,
+            size.height / 6
+        ]
+        
+        for (y, row) in Constents.hintChars.enumerate(){
+            for(x, hintChar) in row.enumerate(){
+                GradView.drawChar(hintChar, x:  xAxis[x] - (GradView.getHintCharFontSize()/2), y: yAxis[y] - (GradView.getHintCharFontSize() / 2))
+            }
+        }
     }
     
     static func resizeWindow(id:Int) {
@@ -109,26 +124,16 @@ class SimpleMode : Mode{
         var windowFrame = windowFirst.frame
         
         let hitChar = Constents.hintCharsKeyCodeMap[id - activeFlag]
+        Log.write(Log.INFO, catelog: "resize", value: hitChar!)
         let oldWidth = windowFrame.size.width
         let oldHeight = windowFrame.size.height
-        var newWidth = oldWidth
-        var newHeight = oldHeight
-        if hitChar == "H" {
-            newWidth = oldWidth  * 0.5
-        } else if hitChar == "L" {
-            newWidth = oldWidth  * 0.5
-            windowFrame.origin.x += newWidth
-        } else if hitChar == "K" {
-            newHeight = oldHeight  * 0.5
-            windowFrame.origin.y += newHeight
-        } else {
-            newHeight = oldHeight  * 0.5
-        }
+        let toAdd = CGFloat(0.33333)
+        let newWidth = oldWidth  * toAdd
+        let newHeight = oldHeight * toAdd
+        // get x , y
         windowFrame.size = NSMakeSize(newWidth, newHeight)
+        (windowFrame.origin.x, windowFrame.origin.y) =  Util.getPostion(hitChar!, startX: (windowFrame.origin.x), startY: (windowFrame.origin.y), width: oldWidth, height: oldHeight)
         windowFirst.setFrame(windowFrame,display: true,animate: Constents.animation)
-        
     }
-    
-    
     
 }

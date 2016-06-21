@@ -25,59 +25,33 @@ class GradView: NSView{
         NSColor.grayColor().setFill()
         circlePath.fill()
     }
+    
     func drawGrad() {
-        if Constents.mode == Constents.modeHintChars {
-            drawHorizLine(1/3.0)
-            drawHorizLine(2/3.0)
-            drawVertLine(1/3.0)
-            drawVertLine(2/3.0)
-        // draw chars
-        let xAxis:[CGFloat] = [
-            bounds.size.width / 6,
-            bounds.size.width / 6 * 3,
-            bounds.size.width / 6 * 5
-        ]
-        let yAxis:[CGFloat] = [
-            bounds.size.height / 6 * 5,
-            bounds.size.height / 6 * 3,
-            bounds.size.height / 6
-        ]
-        
-            for (y, row) in Constents.hintChars.enumerate(){
-                for(x, hintChar) in row.enumerate(){
-                    drawChar(hintChar, x:  xAxis[x] - (getHintCharFontSize()/2), y: yAxis[y] - (getHintCharFontSize() / 2))
-                }
-            }
+        if Constents.mode == Constents.nineBlockMode {
+            NineBlockMode.draw()
         } else {
-            
-            drawHorizLine(0)
-            drawHorizLine(1/2.0)
-            drawHorizLine(1.0)
-            
-            drawVertLine(0)
-            drawVertLine(1/2.0)
-            drawVertLine(1.0)
+            SimpleMode.draw()
         }
         drawPoint()
     }
     
-    func drawLine(p1:CGPoint ,p2 :CGPoint){
+    static func drawLine(p1:CGPoint ,p2 :CGPoint){
         NSColor.redColor().set()
         NSBezierPath.setDefaultLineWidth(1.0)
         NSBezierPath.strokeLineFromPoint(p1, toPoint: p2)
     }
     
-    func drawHorizLine(frac:CGFloat){
-        let x = frac * bounds.size.width
-        drawLine(NSMakePoint(x, 0),p2: NSMakePoint(x,bounds.size.height))
+    static func drawHorizLine(frac:CGFloat){
+        let x = frac * getSize().width
+        drawLine(NSMakePoint(x, 0),p2: NSMakePoint(x,getSize().height))
     }
     
-    func drawVertLine(frac:CGFloat){
-        let y = frac * bounds.size.height
-        drawLine(NSMakePoint(0, y),p2: NSMakePoint(bounds.size.width,y))
+    static func drawVertLine(frac:CGFloat){
+        let y = frac * getSize().height
+        drawLine(NSMakePoint(0, y),p2: NSMakePoint(getSize().width,y))
     }
     
-    func drawChar(text:NSString,x:CGFloat, y:CGFloat)  {
+    static func drawChar(text:NSString,x:CGFloat, y:CGFloat)  {
         let p = NSMakePoint(x, y)
         let font = NSFont.systemFontOfSize(getHintCharFontSize())
         let paraStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
@@ -90,8 +64,13 @@ class GradView: NSView{
         ]
         text.drawAtPoint(p, withAttributes: attrs)
     }
-    func getHintCharFontSize() -> CGFloat {
-        return max(Constents.hitCharBaseFontSize * bounds.size.width / 1000 , Constents.hitCharMinFontSize);
+    static func getHintCharFontSize() -> CGFloat {
+        return max(Constents.hitCharBaseFontSize * self.getSize().width / 1000 , Constents.hitCharMinFontSize);
+    }
+    
+    static func getSize() -> CGSize {
+        let windowFirst = Util.getWindowFirst()
+        return windowFirst.frame.size
     }
     
 }

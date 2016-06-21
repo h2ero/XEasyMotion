@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC1740681D168C2C0016B1B3 /* XEasyMotionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1740671D168C2C0016B1B3 /* XEasyMotionUITests.swift */; };
 		FC17406A1D168CB10016B1B3 /* XEasyMotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1740691D168CB10016B1B3 /* XEasyMotionTests.swift */; };
-		FC1BB5641D1996B300539FF0 /* NineBlockBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BB5631D1996B300539FF0 /* NineBlockBox.swift */; };
+		FC1BB5641D1996B300539FF0 /* NineBlockMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BB5631D1996B300539FF0 /* NineBlockMode.swift */; };
 		FC1EE6ED1CF888B500ABC6A6 /* GradView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EE6EC1CF888B500ABC6A6 /* GradView.swift */; };
 		FC2677A91CF74D3600EB7E9D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2677A81CF74D3600EB7E9D /* MainWindowController.swift */; };
 		FC407E0B1D1687C10035ABCF /* SimpleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC407E0A1D1687C10035ABCF /* SimpleMode.swift */; };
@@ -51,7 +51,7 @@
 /* Begin PBXFileReference section */
 		FC1740671D168C2C0016B1B3 /* XEasyMotionUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEasyMotionUITests.swift; sourceTree = "<group>"; };
 		FC1740691D168CB10016B1B3 /* XEasyMotionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEasyMotionTests.swift; sourceTree = "<group>"; };
-		FC1BB5631D1996B300539FF0 /* NineBlockBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NineBlockBox.swift; sourceTree = "<group>"; };
+		FC1BB5631D1996B300539FF0 /* NineBlockMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NineBlockMode.swift; sourceTree = "<group>"; };
 		FC1EE6EC1CF888B500ABC6A6 /* GradView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradView.swift; sourceTree = "<group>"; };
 		FC2677A81CF74D3600EB7E9D /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		FC407E0A1D1687C10035ABCF /* SimpleMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleMode.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 			children = (
 				FCA7F4001D163DCF00BCE328 /* Mode.swift */,
 				FC407E0A1D1687C10035ABCF /* SimpleMode.swift */,
-				FC1BB5631D1996B300539FF0 /* NineBlockBox.swift */,
+				FC1BB5631D1996B300539FF0 /* NineBlockMode.swift */,
 			);
 			path = Mode;
 			sourceTree = "<group>";
@@ -345,7 +345,7 @@
 				FCA7F4011D163DCF00BCE328 /* Mode.swift in Sources */,
 				FC740B5E1D02766D00CCE546 /* Constents.swift in Sources */,
 				FC9FDD5B1CF7419600533B23 /* MainWindow.swift in Sources */,
-				FC1BB5641D1996B300539FF0 /* NineBlockBox.swift in Sources */,
+				FC1BB5641D1996B300539FF0 /* NineBlockMode.swift in Sources */,
 				FC2677A91CF74D3600EB7E9D /* MainWindowController.swift in Sources */,
 				FC5A2C291D15124A00472D06 /* SettingWindowController.swift in Sources */,
 				FCDCFB071CF6DA36009ABCEB /* AppDelegate.swift in Sources */,
