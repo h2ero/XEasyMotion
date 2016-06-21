@@ -21,12 +21,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         NSMenu.setMenuBarVisible(false)
         MainWindowController.maxWindow()
-        Keybind.addActiveKeyBind()
-        Keybind.addHitKeyBind()
-        Keybind.addClickBind()
-        Keybind.addMoveKeyBind()
-        Keybind.addCancelKeyBind()
-        //        MainWindowController.hideWindow()
+        var configs = Config.loadConfig()
+        // todo reflection
+        if configs["enableModes"][0] == "simpleMode" {
+            SimpleMode.load()
+        }
+        // MainWindowController.hideWindow()
         showStatusBarMenu()
     }
     

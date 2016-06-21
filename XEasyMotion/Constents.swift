@@ -11,9 +11,9 @@ import Carbon
 
 class Constents {
     // mode: simple, hit_chars, orc
-    static let modeSimple = "simple";
+    static let simpleMode = "simpleMode";
     static let modeHintChars = "hitChars";
-    static let mode = Constents.modeSimple
+    static let mode = Constents.simpleMode
     static let animation = false
     static let debug = false
     

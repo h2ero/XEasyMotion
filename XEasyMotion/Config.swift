@@ -8,29 +8,25 @@
 
 import Foundation
 import Yaml
+import Cocoa
+import Carbon
+
 class Config {
     
     static let dotfile = ".xeasymotionrc"
-    static var configs :[Yaml] = []
     static func getConfigPath() -> String{
         return NSHomeDirectory() + "/" + Config.dotfile
     }
     
     
     init() {
-        Config.loadConfig()
+//        Config.loadConfig()
     }
     
-    static func loadConfig() {
-        if Config.configs == [] {
-            let fileConent = Util.getFileContent(Config.getConfigPath())
-            Config.configs = Yaml.loadMultiple(fileConent).value!
-            Log.write(Log.INFO, catelog: "config", value: "load config")
-        }
-    }
-    
-    //
-    static func getHitChars() {
+    static func loadConfig() -> Yaml {
+        // todo only load once
+        let fileConent = Util.getFileContent(Config.getConfigPath())
+        return Yaml.load(fileConent).value!
     }
     
 }

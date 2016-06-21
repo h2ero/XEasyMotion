@@ -7,11 +7,24 @@
 //
 
 import Foundation
+import Carbon
 
-protocol Mode {
-    static func draw()
-    static func moveWindow()
-    static func resizeWindow()
-    static func addMoveKeyBind()
-    static func addResizeKeyBind()
+class Mode {
+    static func addActiveKeyBind()  {
+        HotKeys.register(UInt32(kVK_ANSI_I), modifiers: UInt32(cmdKey), block:{_ in
+            MainWindowController.maxWindow()
+//            Keybind.addHitKeyBind()
+//            Keybind.addClickBind()
+//            Keybind.addMoveKeyBind()
+//            Keybind.addCancelKeyBind()
+        })
+    }
+    
+    static func addCancelKeyBind() {
+        HotKeys.register(UInt32(kVK_Escape), modifiers: UInt32(activeFlag), block:{
+            (id:EventHotKeyID) in
+            MainWindowController.hideWindow()
+//            Keybind.removeKeyBind();
+        })
+    }
 }
