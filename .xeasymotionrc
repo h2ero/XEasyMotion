@@ -1,6 +1,6 @@
 # mode: 
-enableMode: nineBoxMode
-enableModes: [simpleMode, nineBoxMode]
+enableMode: simpleMode
+enableModes: [simpleMode, nineBlockMode]
  
 # keymap [Modifiers-Key] eg: [cmdKey-shiftKey-h, cmdKey-optionKey-j, cmdKey-controlKey-k, shiftKey-l], or [h,j,k,l]
 # Modifiers keys [cmdKey,shiftKey,alphaLock,optionKey,controlKey]
