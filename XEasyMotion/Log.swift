@@ -19,10 +19,11 @@ class Log {
     
     
     static func write(errLevel:String, catelog:String, value:AnyObject) {
+        let value = "[\(errLevel)][\(catelog)] " + String(value)
         if Constents.debug == false {
+            NSLog(value)
             return
         }
-        let value = "[\(errLevel)][\(catelog)] " + String(value)
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         

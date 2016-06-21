@@ -31,6 +31,7 @@ class Config {
     
     static func getEnableMode() -> String {
         let configs = Config.loadConfig()
+        Log.write(Log.INFO, catelog: "conf", value: configs["enableMode"].string!)
         return configs["enableMode"].string!
     }
     

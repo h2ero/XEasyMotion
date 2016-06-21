@@ -27,7 +27,7 @@ class GradView: NSView{
     }
     
     func drawGrad() {
-        if Constents.mode == Constents.nineBlockMode {
+        if Config.getEnableMode() == Constents.nineBlockMode {
             NineBlockMode.draw()
         } else {
             SimpleMode.draw()
