@@ -12,23 +12,14 @@ import Carbon
 class NineBlockMode: Mode {
     static func load(){
         self.addActiveKeyBind()
+        self.addRestoreKeyBind()
         self.addHitKeyBind()
         self.addClickBind()
         self.addMoveKeyBind()
         self.addCancelKeyBind()
     }
     
-    static func addActiveKeyBind()  {
-        HotKeys.register(UInt32(kVK_ANSI_I), modifiers: UInt32(cmdKey), block:{_ in
-            self.maxWindow()
-            self.addHitKeyBind()
-            self.addClickBind()
-            self.addMoveKeyBind()
-            self.addCancelKeyBind()
-        })
-    }
-    
-    static func addHitKeyBind()  {
+    override static func addHitKeyBind()  {
         Log.write(Log.INFO, catelog: "register key code", value: "start")
         for (keyCode, _) in Constents.hintCharsKeyCodeMap{
             Log.write(Log.INFO, catelog: "register key code", value: keyCode)
@@ -41,7 +32,7 @@ class NineBlockMode: Mode {
         Log.write(Log.INFO, catelog: "register key code", value: "end")
     }
     
-    static func addMoveKeyBind()  {
+    override static func addMoveKeyBind()  {
         for (_, keyCode) in Constents.moveKeyCode {
             Log.write(Log.INFO, catelog: "register key code", value: keyCode)
             HotKeys.register(UInt32(keyCode), modifiers: UInt32(shiftKey), block:{
@@ -53,7 +44,7 @@ class NineBlockMode: Mode {
         
     }
     
-    static func addClickBind()  {
+    override static func addClickBind()  {
         HotKeys.register(UInt32(kVK_Return), modifiers: UInt32(activeFlag), block:{_ in
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
                 // do some async stuff
@@ -93,12 +84,19 @@ class NineBlockMode: Mode {
         HotKeys.unregister(UInt32(kVK_Return + activeFlag))
         HotKeys.unregister(UInt32(kVK_Return + shiftKey))
         HotKeys.unregister(UInt32(kVK_Escape + activeFlag))
+        HotKeys.unregister(UInt32(kVK_ANSI_U + activeFlag))
     }
     static func draw(){
+        
+        GradView.drawHorizLine(0)
+        GradView.drawHorizLine(1)
         GradView.drawHorizLine(1/3.0)
         GradView.drawHorizLine(2/3.0)
+        
         GradView.drawVertLine(1/3.0)
         GradView.drawVertLine(2/3.0)
+        GradView.drawVertLine(0)
+        GradView.drawVertLine(1)
         // draw chars
         let size = GradView.getSize()
         let xAxis:[CGFloat] = [
@@ -120,11 +118,12 @@ class NineBlockMode: Mode {
     }
     
     static func resizeWindow(id:Int) {
+        self.addPostionStack()
         let windowFirst = Util.getWindowFirst()
         var windowFrame = windowFirst.frame
         
         let hitChar = Constents.hintCharsKeyCodeMap[id - activeFlag]
-        Log.write(Log.INFO, catelog: "resize", value: hitChar!)
+        Log.write(Log.INFO, catelog: "nine block resize", value: hitChar!)
         let oldWidth = windowFrame.size.width
         let oldHeight = windowFrame.size.height
         let toAdd = CGFloat(0.33333)
@@ -133,6 +132,8 @@ class NineBlockMode: Mode {
         // get x , y
         windowFrame.size = NSMakeSize(newWidth, newHeight)
         (windowFrame.origin.x, windowFrame.origin.y) =  Util.getPostion(hitChar!, startX: (windowFrame.origin.x), startY: (windowFrame.origin.y), width: oldWidth, height: oldHeight)
+        
+        
         windowFirst.setFrame(windowFrame,display: true,animate: Constents.animation)
     }
     
