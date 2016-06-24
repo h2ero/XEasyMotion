@@ -13,6 +13,7 @@ https://github.com/h2ero/XEasyMotion/releases
 * <kbd>Enter</kbd>   click
 * <kbd>Shift</kbd> + <kbd>Enter</kbd>  right click
 * <kbd>CMD</kbd> + <kbd>i</kbd>   call XEasyMotion
+* <kbd>U</kbd>  undo
 * <kbd>ESC</kbd>  exit
 
 ## Todo
