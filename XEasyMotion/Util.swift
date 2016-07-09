@@ -78,7 +78,20 @@ class Util {
     }
     
     static func getFileContent(path : String) -> String {
+        let checkValidation = NSFileManager.defaultManager()
+        if checkValidation.fileExistsAtPath(path) == false {
+            return ""
+        }
         return (try? NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)) as! String
     }
     
+    static func getFileContentFromBundle(path:String) -> String{
+        let checkValidation = NSFileManager.defaultManager()
+        let filePath = NSBundle.mainBundle().pathForResource("", ofType:"*")! as String;
+        if checkValidation.fileExistsAtPath(filePath) == false {
+            return ""
+            
+        }
+        return (try? NSString(contentsOfFile: filePath, encoding: NSUTF8StringEncoding)) as! String
+    }
 }

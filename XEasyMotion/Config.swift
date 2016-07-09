@@ -25,14 +25,22 @@ class Config {
     
     static func loadConfig() -> Yaml {
         // todo only load once
-        let fileConent = Util.getFileContent(Config.getConfigPath())
+        var fileConent = Util.getFileContent(Config.getConfigPath())
+        if fileConent.isEmpty {
+            fileConent = Util.getFileContentFromBundle(Config.dotfile)
+        }
         return Yaml.load(fileConent).value!
     }
     
     static func getEnableMode() -> String {
-        let configs = Config.loadConfig()
-        Log.write(Log.INFO, catelog: "conf", value: configs["enableMode"].string!)
-        return configs["enableMode"].string!
+        return Constents.simpleMode
+//        let configs = Config.loadConfig()
+//        Log.write(Log.INFO, catelog: "conf", value: configs["enableMode"].string!)
+//        let mode = configs["enableMode"].string!
+//        if mode.isEmpty {
+//            return Constents.simpleMode
+//        }
+//        return mode
     }
     
 }
