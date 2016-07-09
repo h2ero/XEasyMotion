@@ -746,14 +746,6 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Avq-Gk-KOh">
-                                <rect key="frame" x="167" y="127" width="146" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="h2ero&lt;root@h2ero.cn&gt;" id="psd-MA-sjE">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8FE-xB-P6L">
                                 <rect key="frame" x="286" y="159" width="25" height="25"/>
                                 <buttonCell key="cell" type="help" title="XEasyMotion" alternateTitle="XEasyMotion" bezelStyle="helpButton" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="NKq-Os-w5H">
@@ -761,6 +753,14 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Avq-Gk-KOh">
+                                <rect key="frame" x="130" y="119" width="221" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="github.com/h2ero/XEasyMotion" id="psd-MA-sjE">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
