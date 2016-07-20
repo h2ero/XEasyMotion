@@ -22,6 +22,23 @@ There are many things to do.
 * hint by text, color or object (btn, label... etc)
 * add dotfile for config
 
+## Development Setup
+
+You must be using Xcode 7.3 or later.
+
+1. Install [Carthage](https://github.com/Carthage/Carthage#installing-carthage)
+
+1. Download/build dependencies with carthage:
+
+```sh
+carthage update
+```
+
+Open the project with Xcode
+
+```
+open XEasyMotion.xcodeproj
+```
 
 ## Related projects
 
