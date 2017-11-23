@@ -19,7 +19,7 @@ class SettingViewController: NSViewController  {
     override func viewWillAppear() {
     }
     
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
         }
     }

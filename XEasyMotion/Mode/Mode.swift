@@ -15,7 +15,7 @@ class Mode {
     static var postionStack : [(x:CGFloat, y:CGFloat, width:CGFloat, height:CGFloat)] = []
     
     static func addActiveKeyBind()  {
-        HotKeys.register(UInt32(kVK_ANSI_I), modifiers: UInt32(cmdKey), block:{_ in
+        HotKeys.register(keycode: UInt32(kVK_ANSI_I), modifiers: UInt32(cmdKey), block:{_ in
             self.postionStack = []
             self.maxWindow()
             self.addHitKeyBind()
@@ -31,14 +31,14 @@ class Mode {
     class func addMoveKeyBind(){}
     
     static func addRestoreKeyBind() {
-         HotKeys.register(UInt32(kVK_ANSI_U), modifiers: UInt32(activeFlag), block:{
+        HotKeys.register(keycode: UInt32(kVK_ANSI_U), modifiers: UInt32(activeFlag), block:{
             (id:EventHotKeyID) in
             self.restoreWindow()
         })
     }
     
     static func addCancelKeyBind() {
-        HotKeys.register(UInt32(kVK_Escape), modifiers: UInt32(activeFlag), block:{
+        HotKeys.register(keycode: UInt32(kVK_Escape), modifiers: UInt32(activeFlag), block:{
             (id:EventHotKeyID) in
             self.hideWindow()
 //            Keybind.removeKeyBind();
@@ -47,7 +47,7 @@ class Mode {
       static func maxWindow() {
         let windowFirst = Util.getWindowFirst()
         var windowFrame = windowFirst.frame
-        windowFrame.size =  NSScreen.mainScreen()!.frame.size
+        windowFrame.size =  NSScreen.main()!.frame.size
         windowFrame.origin  = NSMakePoint(0, 0)
         
         windowFirst.setFrame(windowFrame,display: true)
@@ -65,7 +65,7 @@ class Mode {
         let windowFirst = Util.getWindowFirst()
         let x = (windowFirst.frame.origin.x)  + ((windowFirst.frame.size.width) / 2 )
         let y = (windowFirst.frame.origin.y) + ((windowFirst.frame.size.height) / 2 )
-        Log.write(Log.INFO, catelog: "nomarl", value: "win center: x:\(x), \(y)")
+//        Log.write(errLevel: Log.INFO, catelog: "nomarl", value: "win center: x:\(x), \(y)" as AnyObject)
         return (CGFloat(x) , CGFloat(y))
     }
     
@@ -91,7 +91,7 @@ class Mode {
         let windowFrame = windowFirst.frame
         let potionInfo = (windowFrame.origin.x, y: windowFrame.origin.y, width: windowFrame.size.width, height: windowFrame.size.height)
         self.postionStack.append(potionInfo)
-        Log.write(Log.INFO, catelog: "postion", value: self.postionStack.count)
+//        Log.write(errLevel: Log.INFO, catelog: "postion", value: self.postionStack.count)
     }
     
     static func restoreWindow(){

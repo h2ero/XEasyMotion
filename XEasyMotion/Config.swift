@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Yaml
 import Cocoa
 import Carbon
 
@@ -23,14 +22,7 @@ class Config {
 //        Config.loadConfig()
     }
     
-    static func loadConfig() -> Yaml {
-        // todo only load once
-        var fileConent = Util.getFileContent(Config.getConfigPath())
-        if fileConent.isEmpty {
-            fileConent = Util.getFileContentFromBundle(Config.dotfile)
-        }
-        return Yaml.load(fileConent).value!
-    }
+
     
     static func getEnableMode() -> String {
         return Constents.simpleMode

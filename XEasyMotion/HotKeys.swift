@@ -11,33 +11,33 @@ import Carbon
 
 class HotKeys {
     private let hotKey: UInt32
-    private let block: (id:EventHotKeyID) -> ()
-    private static var eventHandler: EventHandlerRef = nil
+    private let block: (_ id:EventHotKeyID) -> ()
+    private static var eventHandler: EventHandlerRef? = nil
     private static var keycodeHotKeys:[UInt32:EventHotKeyRef] = [:]
-    private static let signature:FourCharCode = UTGetOSTypeFromString("HotKeys")
+    private static let signature:FourCharCode = UTGetOSTypeFromString("HotKeys" as CFString)
     
-    typealias action = (id:EventHotKeyID) -> Void
-    private static var onceToken : dispatch_once_t = 0
+    typealias action = (_ id:EventHotKeyID) -> Void
+    static var  onceToken : Int = 0
     static var blocks = [UInt32:action]()
     
-    private init(hotKeyID: UInt32, block: (id:EventHotKeyID) -> ()) {
+    private init(hotKeyID: UInt32, block: @escaping (_ id:EventHotKeyID) -> ()) {
         self.hotKey = hotKeyID
         self.block = block
         HotKeys.blocks[hotKey] = block
     }
     
     static func registerHandler() -> Bool {
-        var eventHandler: EventHandlerRef = nil
+        var eventHandler: EventHandlerRef? = nil
         var eventType = EventTypeSpec(eventClass: OSType(kEventClassKeyboard), eventKind: UInt32(kEventHotKeyPressed))
         
-        guard InstallEventHandler(GetApplicationEventTarget(), {(handlerRef: EventHandlerCallRef, eventRef: EventRef, ptr: UnsafeMutablePointer<Void>) -> OSStatus in
+        guard InstallEventHandler(GetApplicationEventTarget(), {(handlerRef: EventHandlerCallRef, eventRef: EventRef, ptr: UnsafeMutableRawPointer) -> OSStatus in
             var hotKeyID: EventHotKeyID = EventHotKeyID()
             let status = GetEventParameter(
                 eventRef,
                 EventParamName( kEventParamDirectObject ),
                 EventParamType( typeEventHotKeyID ),
                 nil,
-                sizeof(EventHotKeyID),
+                MemoryLayout<EventHotKeyID>.size,
                 nil,
                 &hotKeyID
             )
@@ -46,9 +46,9 @@ class HotKeys {
                 return errSecBadReq
             }
             
-            HotKeys.blocks[hotKeyID.id]!(id: hotKeyID)
+            HotKeys.blocks[hotKeyID.id]!(hotKeyID)
                 return noErr
-            }, 1, &eventType, nil, &eventHandler) != noErr else {
+            } as! EventHandlerUPP, 1, &eventType, nil, &eventHandler) != noErr else {
                 return false
         }
         HotKeys.eventHandler = eventHandler
@@ -56,21 +56,22 @@ class HotKeys {
     }
     
     
-    class func register(keycode: UInt32, modifiers: UInt32, block: (id:EventHotKeyID) -> ()) -> HotKeys? {
-        dispatch_once(&onceToken) {
+    class func register(keycode: UInt32, modifiers: UInt32, block: @escaping (_ id:EventHotKeyID) -> ()) -> HotKeys? {
+        if(onceToken == 0){
             let status = HotKeys.registerHandler()
-            Log.write(Log.ERROR, catelog: "registerHandler", value: String(status))
+//            Log.write(errLevel: Log.ERROR, catelog: "registerHandler", value: String(status))
+            onceToken = 1
         }
         
         let id:UInt32 = keycode + modifiers
         
-        if HotKeys.isRegister(id) {
+        if HotKeys.isRegister(id: id) {
             return nil
         }
         
-        Log.write(Log.INFO, catelog: "register key", value: HotKeys.transKeycodeToStr(UInt16(keycode)) + "-" + String(id))
+//        Log.write(errLevel: Log.INFO, catelog: "register key", value: HotKeys.transKeycodeToStr(keyCode: UInt16(keycode)) + "-" + String(id))
         
-        var hotKey: EventHotKeyRef = nil
+        var hotKey: EventHotKeyRef? = nil
         let hotKeyID = EventHotKeyID(signature:HotKeys.signature, id: id)
         RegisterEventHotKey(keycode, modifiers, hotKeyID, GetApplicationEventTarget(), OptionBits(0), &hotKey)
         HotKeys.keycodeHotKeys[id] = hotKey
@@ -78,9 +79,9 @@ class HotKeys {
     }
     
     static func unregister(id:UInt32) {
-            Log.write(Log.INFO, catelog: "unregister key", value: String(transKeycodeToStr(UInt16(id))))
-        if HotKeys.isRegister(id) {
-            Log.write(Log.INFO, catelog: "unregister key", value: String(transKeycodeToStr(UInt16(id))))
+//        Log.write(errLevel: Log.INFO, catelog: "unregister key", value: String(transKeycodeToStr(keyCode: UInt16(id))))
+        if HotKeys.isRegister(id: id) {
+//            Log.write(errLevel: Log.INFO, catelog: "unregister key", value: String(transKeycodeToStr(UInt16(id))))
             UnregisterEventHotKey(HotKeys.keycodeHotKeys[id]!)
             HotKeys.keycodeHotKeys[id] = nil
         }
@@ -89,7 +90,7 @@ class HotKeys {
     static func  unregisterAll()
     {
         for (keycode, _) in HotKeys.keycodeHotKeys {
-            HotKeys.unregister(UInt32(keycode))
+            HotKeys.unregister(id: UInt32(keycode))
         }
         // RemoveEventHandler(HotKeys.eventHandler)
     }
@@ -112,19 +113,19 @@ class HotKeys {
         }
         
         let layoutDataRef_ptr = TISGetInputSourceProperty( inputSource, kTISPropertyUnicodeKeyLayoutData)
-        let layoutDataRef:CFDataRef! = unsafeBitCast( layoutDataRef_ptr, CFDataRef.self )
+        let layoutDataRef:CFData! = unsafeBitCast( layoutDataRef_ptr, to: CFData.self )
         
         if layoutDataRef == nil {
             return keystroke as! String
         }
         
         let layoutData
-            = unsafeBitCast( CFDataGetBytePtr(layoutDataRef), UnsafePointer<CoreServices.UCKeyboardLayout>.self )
+            = unsafeBitCast( CFDataGetBytePtr(layoutDataRef), to: UnsafePointer<CoreServices.UCKeyboardLayout>.self )
         
         let key_translate_options = OptionBits(CoreServices.kUCKeyTranslateNoDeadKeysBit)
         var deadKeyState = UInt32( 0 )
         let max_chars = 256
-        var chars = [UniChar]( count:max_chars, repeatedValue:0 )
+        var chars = [UniChar]( repeating:0, count:max_chars )
         var length = 0
         
         error = CoreServices.UCKeyTranslate(

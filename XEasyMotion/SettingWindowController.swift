@@ -23,10 +23,10 @@ class SettingWindowController: NSWindowController {
         super.windowDidLoad()
         window!.title = "Setting"
         window!.center()
-        window!.level = Int(CGWindowLevelForKey(CGWindowLevelKey.StatusWindowLevelKey)) +
-            Int(CGWindowLevelForKey(CGWindowLevelKey.DockWindowLevelKey)) +
-            Int(CGWindowLevelForKey(CGWindowLevelKey.PopUpMenuWindowLevelKey))
-            Int(CGWindowLevelForKey(CGWindowLevelKey.MainMenuWindowLevelKey))
+        window!.level = Int(CGWindowLevelForKey(CGWindowLevelKey.statusWindow)) +
+            Int(CGWindowLevelForKey(CGWindowLevelKey.dockWindow)) +
+            Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
+        Int(CGWindowLevelForKey(CGWindowLevelKey.mainMenuWindow))
         
     }
     

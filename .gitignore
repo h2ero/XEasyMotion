@@ -1,3 +1,9 @@
 Carthage/*
 Cartfile.resolved
 XEasyMotion/*.playground/*
+*.sw*
+.DS_Store
+tags
+vendor/*
+XEasyMotion.xcodeproj/project.xcworkspace/xcuserdata/*
+XEasyMotion.xcodeproj/xcuserdata/*

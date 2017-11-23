@@ -14,14 +14,14 @@ class AboutViewController: NSViewController  {
     @IBOutlet weak var appNameTextFiled : NSTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        appNameTextFiled.selectable = true
+        appNameTextFiled.isSelectable = true
         appNameTextFiled.stringValue =  Util.getAppName() + "  " + Util.getAppVersion()
     }
     
     override func viewWillAppear() {
     }
     
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
         }
     }

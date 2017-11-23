@@ -19,7 +19,6 @@
 		FC740B541D024CEB00CCE546 /* HotKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC740B531D024CEB00CCE546 /* HotKeys.swift */; };
 		FC740B5E1D02766D00CCE546 /* Constents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC740B5D1D02766D00CCE546 /* Constents.swift */; };
 		FC9FDD5B1CF7419600533B23 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FDD5A1CF7419600533B23 /* MainWindow.swift */; };
-		FCA7F3F91D162F6000BCE328 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA7F3F81D162F6000BCE328 /* Yaml.framework */; };
 		FCA7F3FC1D16303300BCE328 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F3FB1D16303300BCE328 /* Config.swift */; };
 		FCA7F4011D163DCF00BCE328 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F4001D163DCF00BCE328 /* Mode.swift */; };
 		FCCB381B1D01C05400EFC908 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB381A1D01C05400EFC908 /* ViewController.swift */; };
@@ -61,7 +60,6 @@
 		FC740B531D024CEB00CCE546 /* HotKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotKeys.swift; sourceTree = "<group>"; };
 		FC740B5D1D02766D00CCE546 /* Constents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constents.swift; sourceTree = "<group>"; };
 		FC9FDD5A1CF7419600533B23 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
-		FCA7F3F81D162F6000BCE328 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/Mac/Yaml.framework; sourceTree = "<group>"; };
 		FCA7F3FB1D16303300BCE328 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		FCA7F4001D163DCF00BCE328 /* Mode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		FCCB381A1D01C05400EFC908 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCA7F3F91D162F6000BCE328 /* Yaml.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +117,6 @@
 		FCDCFAFA1CF6DA36009ABCEB = {
 			isa = PBXGroup;
 			children = (
-				FCA7F3F81D162F6000BCE328 /* Yaml.framework */,
 				FCDCFB051CF6DA36009ABCEB /* XEasyMotion */,
 				FCDCFB171CF6DA36009ABCEB /* XEasyMotionTests */,
 				FCDCFB221CF6DA36009ABCEB /* XEasyMotionUITests */,
@@ -317,7 +313,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/Yaml.framework",
 			);
 			outputPaths = (
 			);
@@ -495,6 +490,7 @@
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -515,6 +511,7 @@
 				PRODUCT_NAME = XEasyMotion;
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

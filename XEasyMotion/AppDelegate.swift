@@ -37,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func showStatusBarMenu(){
         
-        self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2 )
+        self.statusItem = NSStatusBar.system().statusItem(withLength: -2 )
         self.statusItem!.menu = self.statusMenu
         if let button = self.statusItem!.button {
             button.image = NSImage(named: "statusBarIcon")
@@ -45,29 +45,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // show menu
         let menu = NSMenu()
         
-        menu.addItem(NSMenuItem(title: "About \(Util.getAppName())", action: #selector(AppDelegate.showAbout(_:)), keyEquivalent: "A"))
+//        menu.addItem(NSMenuItem(title: "About \(Util.getAppName())", action: #selector(AppDelegate.showAbout(_:)), keyEquivalent: "A"))
         
 //        menu.addItem(NSMenuItem(title: "Setting", action: #selector(AppDelegate.showSetting(_:)), keyEquivalent: "S"))
         
-        menu.addItem(NSMenuItem.separatorItem())
+        menu.addItem(NSMenuItem.separator())
         
-        menu.addItem(NSMenuItem(title: "Exit", action: #selector(AppDelegate.exitNow(_:)), keyEquivalent: "Q"))
+//        menu.addItem(NSMenuItem(title: "Exit", action: #selector(AppDelegate.exitNow(_:)), keyEquivalent: "Q"))
         
         self.statusItem!.menu = menu
     }
     
     @IBAction func showAbout(sender : AnyObject) {
         let storyboard : NSStoryboard = NSStoryboard(name: "Main", bundle: nil)
-        self.aboutWindowController = storyboard.instantiateControllerWithIdentifier("AboutWindowController") as! AboutWindowController
+        self.aboutWindowController = storyboard.instantiateController(withIdentifier: "AboutWindowController") as! AboutWindowController
         self.aboutWindowController.showWindow(self)
     }
     @IBAction func exitNow(sender: AnyObject) {
-        NSApplication.sharedApplication().terminate(self)
+//        NSApplication.sharedshared().terminate(self)
     }
     
     @IBAction func showSetting(sender : AnyObject) {
         let storyboard : NSStoryboard = NSStoryboard(name: "Main", bundle: nil)
-        self.settingWindowController = storyboard.instantiateControllerWithIdentifier("SettingWindowController") as! SettingWindowController
+        self.settingWindowController = storyboard.instantiateController(withIdentifier: "SettingWindowController") as! SettingWindowController
         self.settingWindowController.showWindow(self)
     }
 }

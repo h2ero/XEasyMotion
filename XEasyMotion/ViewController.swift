@@ -17,10 +17,10 @@ class ViewController: NSViewController  {
     }
     
     override func viewWillAppear() {
-        gradView.layer?.backgroundColor = NSColor.clearColor().CGColor
+        gradView.layer?.backgroundColor = NSColor.clear.cgColor
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
         }
     }
