@@ -30,6 +30,7 @@ class Mode {
     class func addHitKeyBind() {}
     class func addClickBind() {}
     class func addMoveKeyBind(){}
+    class func removeKeyBind(){}
     
     static func addRestoreKeyBind() {
         HotKeys.register(keycode: UInt32(kVK_ANSI_U), modifiers: UInt32(activeFlag), block:{
@@ -44,6 +45,8 @@ class Mode {
             NSLog("cancel")
 
             self.hideWindow()
+            self.removeKeyBind()
+            
 //            Keybind.removeKeyBind();
         })
     }
@@ -112,4 +115,5 @@ class Mode {
             windowFirst.setFrame(windowFrame,display: true,animate: Constents.animation)
         }
     }
+   
 }
