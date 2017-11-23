@@ -17,6 +17,23 @@ https://github.com/h2ero/XEasyMotion/releases
 * <kbd>ESC</kbd>  exit
 
 
+## Development Setup
+
+You must be using Xcode 7.3 or later.
+
+1. Install [Carthage](https://github.com/Carthage/Carthage#installing-carthage)
+
+1. Download/build dependencies with carthage:
+
+```sh
+carthage update
+```
+
+Open the project with Xcode
+
+```
+open XEasyMotion.xcodeproj
+```
 
 ## Related projects
 
