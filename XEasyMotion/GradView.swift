@@ -19,7 +19,7 @@ class GradView: NSView{
     }
     func drawPoint(){
         let s = bounds.size
-        let rect = NSMakeRect(0.5 * s.width - 1, 0.5 * s.height - 1, 5, 5);
+        let rect = NSMakeRect(0.5 * s.width - 2.5, 0.5 * s.height - 2.5, 5, 5);
         let circlePath = NSBezierPath()
         circlePath.appendOval(in: rect)
         NSColor.gray.setFill()
