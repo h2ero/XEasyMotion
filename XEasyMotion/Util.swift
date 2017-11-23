@@ -94,4 +94,13 @@ class Util {
         }
         return (try? NSString(contentsOfFile: filePath, encoding: String.Encoding.utf8.rawValue)) as! String
     }
+    
+    static func openUrl(url:String){
+        if let url = URL(string: url), NSWorkspace.shared.open(url) {
+        }
+    }
+    static func getVersion() -> String {
+        return Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+    }
+ 
 }
