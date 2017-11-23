@@ -15,6 +15,7 @@ class Mode {
     static var postionStack : [(x:CGFloat, y:CGFloat, width:CGFloat, height:CGFloat)] = []
     
     static func addActiveKeyBind()  {
+        NSLog("add active Key bind")
         HotKeys.register(keycode: UInt32(kVK_ANSI_I), modifiers: UInt32(cmdKey), block:{_ in
             self.postionStack = []
             self.maxWindow()
@@ -40,6 +41,8 @@ class Mode {
     static func addCancelKeyBind() {
         HotKeys.register(keycode: UInt32(kVK_Escape), modifiers: UInt32(activeFlag), block:{
             (id:EventHotKeyID) in
+            NSLog("cancel")
+
             self.hideWindow()
 //            Keybind.removeKeyBind();
         })

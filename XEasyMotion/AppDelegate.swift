@@ -19,14 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var settingWindowController : SettingWindowController!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        NSMenu.setMenuBarVisible(false)
-        Mode.maxWindow()
-        // todo reflection
-        if Config.getEnableMode()  == Constents.simpleMode {
-            SimpleMode.load()
-        }else{
-            NineBlockMode.load()
-        }
+
         // MainWindowController.hideWindow()
         showStatusBarMenu()
     }

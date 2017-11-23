@@ -14,7 +14,7 @@ class MainWindow: NSWindow {
 //        super.init(coder: coder)
 //    }
     override init(contentRect: NSRect, styleMask style: NSWindow.StyleMask, backing backingStoreType: NSWindow.BackingStoreType, defer flag: Bool) {
-        
+
         super.init(contentRect: contentRect, styleMask: NSWindow.StyleMask(rawValue: NSWindow.StyleMask.RawValue(NSWindow.StyleMask.borderless.rawValue|NSWindow.StyleMask.fullSizeContentView.rawValue)), backing: NSWindow.BackingStoreType.buffered, defer: false)
         
         // z-index

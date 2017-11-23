@@ -27,10 +27,11 @@ class HotKeys {
     }
     
     static func registerHandler() -> Bool {
-        var eventHandler: EventHandlerRef? = nil
-        var eventType = EventTypeSpec(eventClass: OSType(kEventClassKeyboard), eventKind: UInt32(kEventHotKeyPressed))
-        
-        guard InstallEventHandler(GetApplicationEventTarget(), {(handlerRef: EventHandlerCallRef, eventRef: EventRef, ptr: UnsafeMutableRawPointer) -> OSStatus in
+        let eventSpec = [
+            EventTypeSpec(eventClass: OSType(kEventClassKeyboard), eventKind: UInt32(kEventHotKeyPressed)),
+            EventTypeSpec(eventClass: OSType(kEventClassKeyboard), eventKind: UInt32(kEventHotKeyReleased))
+        ]
+        InstallEventHandler(GetEventDispatcherTarget(), { (handlerRef: EventHandlerCallRef?, eventRef: EventRef?, ptr: UnsafeMutableRawPointer?) in
             var hotKeyID: EventHotKeyID = EventHotKeyID()
             let status = GetEventParameter(
                 eventRef,
@@ -47,20 +48,17 @@ class HotKeys {
             }
             
             HotKeys.blocks[hotKeyID.id]!(hotKeyID)
-                return noErr
-            } as! EventHandlerUPP, 1, &eventType, nil, &eventHandler) != noErr else {
-                return false
-        }
-        HotKeys.eventHandler = eventHandler
+            return noErr
+        }, 1, eventSpec, nil, &eventHandler)
         return  true
     }
+    
     
     
     class func register(keycode: UInt32, modifiers: UInt32, block: @escaping (_ id:EventHotKeyID) -> ()) -> HotKeys? {
         if(onceToken == 0){
             let status = HotKeys.registerHandler()
-//            Log.write(errLevel: Log.ERROR, catelog: "registerHandler", value: String(status))
-            onceToken = 1
+            //            Log.write(errLevel: Log.ERROR, catelog: "registerHandler", value: String(status))
         }
         
         let id:UInt32 = keycode + modifiers
@@ -69,7 +67,7 @@ class HotKeys {
             return nil
         }
         
-//        Log.write(errLevel: Log.INFO, catelog: "register key", value: HotKeys.transKeycodeToStr(keyCode: UInt16(keycode)) + "-" + String(id))
+        //        Log.write(errLevel: Log.INFO, catelog: "register key", value: HotKeys.transKeycodeToStr(keyCode: UInt16(keycode)) + "-" + String(id))
         
         var hotKey: EventHotKeyRef? = nil
         let hotKeyID = EventHotKeyID(signature:HotKeys.signature, id: id)
@@ -79,9 +77,9 @@ class HotKeys {
     }
     
     static func unregister(id:UInt32) {
-//        Log.write(errLevel: Log.INFO, catelog: "unregister key", value: String(transKeycodeToStr(keyCode: UInt16(id))))
+        //        Log.write(errLevel: Log.INFO, catelog: "unregister key", value: String(transKeycodeToStr(keyCode: UInt16(id))))
         if HotKeys.isRegister(id: id) {
-//            Log.write(errLevel: Log.INFO, catelog: "unregister key", value: String(transKeycodeToStr(UInt16(id))))
+            //            Log.write(errLevel: Log.INFO, catelog: "unregister key", value: String(transKeycodeToStr(UInt16(id))))
             UnregisterEventHotKey(HotKeys.keycodeHotKeys[id]!)
             HotKeys.keycodeHotKeys[id] = nil
         }

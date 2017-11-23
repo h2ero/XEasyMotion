@@ -14,7 +14,18 @@ import Carbon
 class MainWindowController: NSWindowController {
     
     override func windowDidLoad() {
+        
+        NSMenu.setMenuBarVisible(false)
+        Mode.maxWindow()
+        // todo reflection
+       
+        
+        if Config.getEnableMode()  == Constents.simpleMode {
+            SimpleMode.load()
+        }else{
+            NineBlockMode.load()
+        }
         super.windowDidLoad()
     }
-  
+    
 }
