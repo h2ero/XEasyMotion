@@ -13,14 +13,14 @@ class MainWindow: NSWindow {
 //    required init?(coder: NSCoder) {
 //        super.init(coder: coder)
 //    }
-    override init(contentRect: NSRect, styleMask style: NSWindowStyleMask, backing backingStoreType: NSBackingStoreType, defer flag: Bool) {
+    override init(contentRect: NSRect, styleMask style: NSWindow.StyleMask, backing backingStoreType: NSWindow.BackingStoreType, defer flag: Bool) {
         
-        super.init(contentRect: contentRect, styleMask: NSWindowStyleMask(rawValue: NSWindow.StyleMask.RawValue(NSBorderlessWindowMask.rawValue|NSFullSizeContentViewWindowMask.rawValue)), backing: NSBackingStoreType.buffered, defer: false)
+        super.init(contentRect: contentRect, styleMask: NSWindow.StyleMask(rawValue: NSWindow.StyleMask.RawValue(NSWindow.StyleMask.borderless.rawValue|NSWindow.StyleMask.fullSizeContentView.rawValue)), backing: NSWindow.BackingStoreType.buffered, defer: false)
         
         // z-index
-        self.level = Int(CGWindowLevelForKey(CGWindowLevelKey.statusWindow)) +
+        self.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(CGWindowLevelKey.statusWindow)) +
             Int(CGWindowLevelForKey(CGWindowLevelKey.dockWindow)) +
-            Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
+            Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow)))
         Int(CGWindowLevelForKey(CGWindowLevelKey.mainMenuWindow))
         
         self.animationBehavior = .none

@@ -14,9 +14,9 @@ class AboutWindowController: NSWindowController {
         super.windowDidLoad()
         window!.title = "About \(Util.getAppName())"
         window!.center()
-        window!.level = Int(CGWindowLevelForKey(CGWindowLevelKey.statusWindow)) +
+        window!.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(CGWindowLevelKey.statusWindow)) +
             Int(CGWindowLevelForKey(CGWindowLevelKey.dockWindow)) +
-            Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow))
+            Int(CGWindowLevelForKey(CGWindowLevelKey.popUpMenuWindow)))
         Int(CGWindowLevelForKey(CGWindowLevelKey.mainMenuWindow))
         
     }

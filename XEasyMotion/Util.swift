@@ -12,7 +12,7 @@ import Carbon
 
 class Util {
     static func moveMouse(x:CGFloat,y:CGFloat) ->NSPoint{
-        let screenFrame = NSScreen.main()?.frame
+        let screenFrame = NSScreen.main?.frame
         let point = NSPoint.init(x: x,y: screenFrame!.size.height - y)
         CGDisplayMoveCursorToPoint(CGMainDisplayID(), point)
 //        point = CGPointMake(point.x, point.y)
@@ -21,7 +21,7 @@ class Util {
     }
     
     static func click(x:CGFloat,y:CGFloat){
-        let screenFrame = NSScreen.screens()?.first?.frame
+        let screenFrame = NSScreen.screens.first?.frame
         let point = NSMakePoint(x, (screenFrame?.size.height)!-y)
 //        Log.write(errLevel: Log.INFO, catelog: "event", value: "== Click == POS: x:\(point.x) , y:\(point.y)")
         postMouseEvent(button: CGMouseButton.left, type: CGEventType.leftMouseDown, point: point);
@@ -29,7 +29,7 @@ class Util {
     }
     
     static func rightClick(x: CGFloat, y: CGFloat){
-        let screenFrame = NSScreen.main()?.frame
+        let screenFrame = NSScreen.main?.frame
         let point = NSMakePoint(x, screenFrame!.size.height - y)
 //        Log.write(errLevel: Log.INFO, catelog: "event", value: "== Right Click == POS: x:\(point.x) , y:\(point.y)")
         postMouseEvent(button: CGMouseButton.right, type: CGEventType.rightMouseDown, point: point);
@@ -70,7 +70,7 @@ class Util {
     }
     
     static func getWindowFirst() -> NSWindow {
-        return NSApplication.shared().windows.first!
+        return NSApplication.shared.windows.first!
     }
     
     static func getChar( ch: UInt32 ) -> String {

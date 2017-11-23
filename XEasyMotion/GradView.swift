@@ -37,7 +37,7 @@ class GradView: NSView{
     
     static func drawLine(p1:CGPoint ,p2 :CGPoint){
         NSColor.red.set()
-        NSBezierPath.setDefaultLineWidth(1.0)
+        NSBezierPath.defaultLineWidth = 1.0
         NSBezierPath.strokeLine(from: p1, to: p2)
     }
     
@@ -54,13 +54,13 @@ class GradView: NSView{
     static func drawChar(text:NSString,x:CGFloat, y:CGFloat)  {
         let p = NSMakePoint(x, y)
         let font = NSFont.systemFont(ofSize: getHintCharFontSize())
-        let paraStyle = NSParagraphStyle.default().mutableCopy() as! NSMutableParagraphStyle
+        let paraStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         let fontColor = NSColor.green
         
         let attrs = [
-            NSFontAttributeName: font,
-            NSParagraphStyleAttributeName: paraStyle,
-            NSForegroundColorAttributeName: fontColor
+            NSAttributedStringKey.font: font,
+            NSAttributedStringKey.paragraphStyle: paraStyle,
+            NSAttributedStringKey.foregroundColor: fontColor
         ]
         text.draw(at: p, withAttributes: attrs)
     }

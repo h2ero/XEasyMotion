@@ -47,7 +47,7 @@ class Mode {
       static func maxWindow() {
         let windowFirst = Util.getWindowFirst()
         var windowFrame = windowFirst.frame
-        windowFrame.size =  NSScreen.main()!.frame.size
+        windowFrame.size =  NSScreen.main!.frame.size
         windowFrame.origin  = NSMakePoint(0, 0)
         
         windowFirst.setFrame(windowFrame,display: true)

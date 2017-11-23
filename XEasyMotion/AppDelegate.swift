@@ -37,10 +37,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func showStatusBarMenu(){
         
-        self.statusItem = NSStatusBar.system().statusItem(withLength: -2 )
+        self.statusItem = NSStatusBar.system.statusItem(withLength: -2 )
         self.statusItem!.menu = self.statusMenu
         if let button = self.statusItem!.button {
-            button.image = NSImage(named: "statusBarIcon")
+            button.image = NSImage(named: NSImage.Name(rawValue: "statusBarIcon"))
         }
         // show menu
         let menu = NSMenu()
@@ -57,8 +57,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func showAbout(sender : AnyObject) {
-        let storyboard : NSStoryboard = NSStoryboard(name: "Main", bundle: nil)
-        self.aboutWindowController = storyboard.instantiateController(withIdentifier: "AboutWindowController") as! AboutWindowController
+        let storyboard : NSStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        self.aboutWindowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "AboutWindowController")) as! AboutWindowController
         self.aboutWindowController.showWindow(self)
     }
     @IBAction func exitNow(sender: AnyObject) {
@@ -66,8 +66,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func showSetting(sender : AnyObject) {
-        let storyboard : NSStoryboard = NSStoryboard(name: "Main", bundle: nil)
-        self.settingWindowController = storyboard.instantiateController(withIdentifier: "SettingWindowController") as! SettingWindowController
+        let storyboard : NSStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        self.settingWindowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "SettingWindowController")) as! SettingWindowController
         self.settingWindowController.showWindow(self)
     }
 }
