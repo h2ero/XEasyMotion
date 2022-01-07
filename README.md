@@ -16,7 +16,9 @@ https://github.com/h2ero/XEasyMotion/releases
 * <kbd>u</kbd>  undo
 * <kbd>ESC</kbd>  exit
 
+## Development
 
+Once XEasyMotion is running, go to `System Preferences > Security & Privacy > Accessibility` and either add and check XEasyMotion, or uncheck and check it again. This must be done each time XEasyMotion is built and run since the permissions are lost after building. Keep this window open and unlocked to facilitate this process.
 
 ## Related projects
 

@@ -16,6 +16,7 @@ class SimpleMode : Mode{
         self.addRestoreKeyBind()
         self.addHitKeyBind()
         self.addClickBind()
+        self.addHoverCursorBind()
         self.addMoveKeyBind()
         self.addCancelKeyBind()
     }
@@ -71,6 +72,19 @@ class SimpleMode : Mode{
             
         });
     }
+    
+    override static func addHoverCursorBind()  {
+        HotKeys.register(keycode: UInt32(kVK_ANSI_I), modifiers: UInt32(activeFlag), block:{_ in
+            DispatchQueue.global().async {
+                let (x,y) = self.getWinCenterPoint()
+                DispatchQueue.global().async{
+                    Util.hoverMouse(x: x, y: y)
+                }
+            }
+        });
+    }
+    
+    
     override static func removeKeyBind(){
         for (keyCode, _) in Constents.hintCharsKeyCodeMap{
             HotKeys.unregister(id: UInt32(keyCode + activeFlag))
@@ -86,7 +100,9 @@ class SimpleMode : Mode{
         HotKeys.unregister(id: UInt32(kVK_Return + shiftKey))
         HotKeys.unregister(id: UInt32(kVK_Escape + activeFlag))
         HotKeys.unregister(id: UInt32(kVK_ANSI_U + activeFlag))
+        HotKeys.unregister(id: UInt32(kVK_ANSI_I + activeFlag))
     }
+    
     static func draw(){
         GradView.drawHorizLine(frac: 0)
         GradView.drawHorizLine(frac: 1/2.0)
