@@ -12,13 +12,14 @@ https://github.com/h2ero/XEasyMotion/releases
 * <kbd>Shift</kbd> + <kbd>h</kbd>  <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd>  move area
 * <kbd>Enter</kbd>   click
 * <kbd>Shift</kbd> + <kbd>Enter</kbd>  right click
+* <kbd>i</kbd>   hover
 * <kbd>CMD</kbd> + <kbd>i</kbd>   call XEasyMotion
 * <kbd>u</kbd>  undo
 * <kbd>ESC</kbd>  exit
 
 ## Development
 
-Once XEasyMotion is running, go to `System Preferences > Security & Privacy > Accessibility` and either add and check XEasyMotion, or uncheck and check it again. This must be done each time XEasyMotion is built and run since the permissions are lost after building. Keep this window open and unlocked to facilitate this process.
+Once XEasyMotion is running, open System Preferences and go to `Security & Privacy > Accessibility` and either add and check XEasyMotion, or uncheck and check it again. This must be done each time XEasyMotion is built and run since the permissions are lost after building. Keep the System Preferences window open and unlocked to facilitate this process.
 
 ## Related projects
 
