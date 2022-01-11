@@ -15,6 +15,7 @@ https://github.com/h2ero/XEasyMotion/releases
 * <kbd>CMD</kbd> + <kbd>i</kbd>   call XEasyMotion
 * <kbd>u</kbd>  undo
 * <kbd>CTRL</kbd> + <kbd>o</kbd>   go to previous click position
+* <kbd>.</kbd>   repeat last click
 * <kbd>ESC</kbd>  exit
 
 

@@ -27,6 +27,7 @@ class Mode {
             self.addMoveKeyBind()
             self.addCancelKeyBind()
             self.addGoToPreviousClickPositionKeyBind()
+            self.addRepeatLastClickBind()
         })
     }
     
@@ -46,6 +47,13 @@ class Mode {
         HotKeys.register(keycode: UInt32(kVK_ANSI_O), modifiers: UInt32(controlKey), block:{
             (id:EventHotKeyID) in
             self.goToPreviousClickPosition()
+        })
+    }
+    
+    static func addRepeatLastClickBind() {
+        HotKeys.register(keycode: UInt32(kVK_ANSI_Period), modifiers: UInt32(activeFlag), block:{
+            (id:EventHotKeyID) in
+            self.repeatLastClick()
         })
     }
     
@@ -82,9 +90,12 @@ class Mode {
     }
     
     static func getWinCenterPoint() -> (CGFloat,CGFloat){
-        let windowFrame = getWindowFrame()
-        let x = (windowFrame.origin.x)  + ((windowFrame.size.width) / 2 )
-        let y = (windowFrame.origin.y) + ((windowFrame.size.height) / 2 )
+        return getCenterPoint(positionInfo: getPosition())
+    }
+    
+    private static func getCenterPoint(positionInfo: (x:CGFloat, y:CGFloat, width:CGFloat, height:CGFloat)) -> (CGFloat, CGFloat) {
+        let x = (positionInfo.x)  + ((positionInfo.width) / 2 )
+        let y = (positionInfo.y) + ((positionInfo.height) / 2 )
 //        Log.write(errLevel: Log.INFO, catelog: "nomarl", value: "win center: x:\(x), \(y)" as AnyObject)
         return (CGFloat(x) , CGFloat(y))
     }
@@ -172,5 +183,26 @@ class Mode {
         
         Util.getWindowFirst().setFrame(windowFrame ,display: true, animate: Constents.animation)
     }
-   
+    
+    private static func repeatLastClick() {
+        if let positionInfo = getLastClickPosition() {
+            self.hideWindow()
+            self.removeKeyBind()
+            let clickPoint = getCenterPoint(positionInfo: positionInfo)
+            DispatchQueue.main.async{
+                Util.click(x: clickPoint.0, y: clickPoint.1)
+            }
+        }
+    }
+    
+    private static func getLastClickPosition() -> (x:CGFloat, y:CGFloat, width:CGFloat, height:CGFloat)? {
+        if self.clickHistory.count + self.clickHistoryTraversal.count > 0 {
+            if !self.clickHistoryTraversal.isEmpty {
+                return self.clickHistoryTraversal.first!
+            } else {
+                return self.clickHistory.last!
+            }
+        }
+        return nil
+    }
 }
