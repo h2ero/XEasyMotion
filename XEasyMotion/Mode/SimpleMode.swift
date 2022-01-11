@@ -15,7 +15,7 @@ class SimpleMode : Mode{
         self.addActiveKeyBind()
         self.addRestoreKeyBind()
         self.addHitKeyBind()
-        self.addClickBind()
+        self.addClickBinds()
         self.addMoveKeyBind()
         self.addCancelKeyBind()
     }
@@ -45,32 +45,28 @@ class SimpleMode : Mode{
         
     }
     
-    override static func addClickBind()  {
+    override static func addClickBinds() {
         HotKeys.register(keycode: UInt32(kVK_Return), modifiers: UInt32(activeFlag), block:{_ in
-           
-            DispatchQueue.global().async {
-                let (x,y) = self.getWinCenterPoint()
-                self.hideWindow()
-                self.removeKeyBind();
-                DispatchQueue.main.async{
-                    Util.click(x: x, y: y)
-                }
-            }
-            
+            addClickBind(clickFunc: Util.click)
         });
         
         HotKeys.register(keycode: UInt32(kVK_Return), modifiers: UInt32(shiftKey), block:{_ in
-            DispatchQueue.global().async {
-                let (x,y) = self.getWinCenterPoint()
-                self.hideWindow()
-                self.removeKeyBind();
-                DispatchQueue.main.async{
-                    Util.rightClick(x: x, y: y)
-                }
-            }
-            
+            addClickBind(clickFunc: Util.rightClick)
         });
     }
+    
+    private static func addClickBind(clickFunc: @escaping (CGFloat, CGFloat) -> Void) {
+        DispatchQueue.global().async {
+            self.addLastClickPosition()
+            let (x,y) = self.getWinCenterPoint()
+            self.hideWindow()
+            self.removeKeyBind();
+            DispatchQueue.main.async{
+                clickFunc(x, y)
+            }
+        }
+    }
+    
     override static func removeKeyBind(){
         for (keyCode, _) in Constents.hintCharsKeyCodeMap{
             HotKeys.unregister(id: UInt32(keyCode + activeFlag))
@@ -86,6 +82,7 @@ class SimpleMode : Mode{
         HotKeys.unregister(id: UInt32(kVK_Return + shiftKey))
         HotKeys.unregister(id: UInt32(kVK_Escape + activeFlag))
         HotKeys.unregister(id: UInt32(kVK_ANSI_U + activeFlag))
+        HotKeys.unregister(id: UInt32(kVK_ANSI_O + controlKey))
     }
     static func draw(){
         GradView.drawHorizLine(frac: 0)
@@ -97,7 +94,7 @@ class SimpleMode : Mode{
     }
     
     static func resizeWindow(id:Int) {
-        self.addPostionStack()
+        self.addLastPosition()
         let windowFirst = Util.getWindowFirst()
         var windowFrame = windowFirst.frame
         
