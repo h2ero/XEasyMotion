@@ -67,6 +67,11 @@ class Mode {
         windowFirst.orderOut(self)
     }
     
+    static func showWindow(){
+        let windowFirst = Util.getWindowFirst()
+        windowFirst.setIsVisible(true)
+    }
+    
     static func getWinCenterPoint() -> (CGFloat,CGFloat){
         let windowFirst = Util.getWindowFirst()
         let x = (windowFirst.frame.origin.x)  + ((windowFirst.frame.size.width) / 2 )
