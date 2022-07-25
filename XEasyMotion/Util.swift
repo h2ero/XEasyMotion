@@ -20,6 +20,14 @@ class Util {
         return point
     }
     
+    static func hoverMouse(x:CGFloat,y:CGFloat) {
+        let screenFrame = NSScreen.screens.first?.frame
+        let point = NSMakePoint(x, (screenFrame?.size.height)!-y)
+
+        let moveEvent = CGEvent(mouseEventSource: nil, mouseType: .mouseMoved, mouseCursorPosition: point, mouseButton: .left)
+        moveEvent?.post(tap: CGEventTapLocation.cghidEventTap)
+    }
+    
     static func click(x:CGFloat,y:CGFloat){
         let screenFrame = NSScreen.screens.first?.frame
         let point = NSMakePoint(x, (screenFrame?.size.height)!-y)

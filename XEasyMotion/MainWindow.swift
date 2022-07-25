@@ -31,9 +31,9 @@ class MainWindow: NSWindow {
         //        self.hidesOnDeactivate = true
         self.backgroundColor = NSColor.clear
         self.titleVisibility = .hidden
+        self.ignoresMouseEvents = true
     }
     
-  
     override var canBecomeKey: Bool {
         return false
     }

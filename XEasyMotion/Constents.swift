@@ -33,7 +33,6 @@ class Constents {
         kVK_ANSI_D          : "D",
         kVK_ANSI_J          : "J",
         kVK_ANSI_Semicolon  : ";"
-
     ]
     
     static let hitCharBaseFontSize:CGFloat = 40;

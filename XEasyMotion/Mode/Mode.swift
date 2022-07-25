@@ -23,6 +23,7 @@ class Mode {
             self.addRestoreKeyBind()
             self.addClickBind()
             self.addMoveKeyBind()
+            self.addHoverCursorBind()
             self.addCancelKeyBind()
         })
     }
@@ -30,6 +31,7 @@ class Mode {
     class func addHitKeyBind() {}
     class func addClickBind() {}
     class func addMoveKeyBind(){}
+    class func addHoverCursorBind(){}
     class func removeKeyBind(){}
     
     static func addRestoreKeyBind() {
@@ -66,7 +68,7 @@ class Mode {
         windowFirst.setIsVisible(false)
         windowFirst.orderOut(self)
     }
-    
+        
     static func getWinCenterPoint() -> (CGFloat,CGFloat){
         let windowFirst = Util.getWindowFirst()
         let x = (windowFirst.frame.origin.x)  + ((windowFirst.frame.size.width) / 2 )
