@@ -109,7 +109,7 @@ class SimpleMode : Mode{
         HotKeys.unregister(id: UInt32(kVK_Escape + activeFlag))
         HotKeys.unregister(id: UInt32(kVK_ANSI_U + activeFlag))
         HotKeys.unregister(id: UInt32(kVK_ANSI_I + activeFlag))
-        HotKeys.unregister(id: UInt32(kVK_ANSI_O + controlKey))
+        HotKeys.unregister(id: UInt32(kVK_ANSI_O + activeFlag))
         HotKeys.unregister(id: UInt32(kVK_ANSI_Period + activeFlag))
         HotKeys.unregister(id: UInt32(kVK_ANSI_U + activeFlag))
         HotKeys.unregister(id: UInt32(kVK_Space + activeFlag))

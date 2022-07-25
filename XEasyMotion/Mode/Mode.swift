@@ -46,7 +46,7 @@ class Mode {
     }
     
     static func addGoToPreviousClickPositionKeyBind() {
-        HotKeys.register(keycode: UInt32(kVK_ANSI_O), modifiers: UInt32(controlKey), block:{
+        HotKeys.register(keycode: UInt32(kVK_ANSI_O), modifiers: UInt32(activeFlag), block:{
             (id:EventHotKeyID) in
             self.goToPreviousClickPosition()
         })
