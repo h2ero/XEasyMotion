@@ -65,6 +65,19 @@ class SimpleMode : Mode{
                 }
             }
         });
+        
+        // Binds Space to click without dismissing the grid.
+        HotKeys.register(keycode: UInt32(kVK_Space), modifiers: UInt32(activeFlag), block:{_ in
+            DispatchQueue.global().async {
+                let (x,y) = self.getWinCenterPoint()
+                self.hideWindow()
+                DispatchQueue.main.async{
+                    Util.click(x: x, y: y)
+                    self.showWindow()
+                }
+            }
+            
+        });
     }
     
     
@@ -98,6 +111,10 @@ class SimpleMode : Mode{
         HotKeys.unregister(id: UInt32(kVK_ANSI_I + activeFlag))
         HotKeys.unregister(id: UInt32(kVK_ANSI_O + controlKey))
         HotKeys.unregister(id: UInt32(kVK_ANSI_Period + activeFlag))
+        HotKeys.unregister(id: UInt32(kVK_ANSI_U + activeFlag))
+        HotKeys.unregister(id: UInt32(kVK_Space + activeFlag))
+
+
     }
     
     static func draw(){
