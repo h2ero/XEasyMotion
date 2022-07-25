@@ -50,6 +50,25 @@ class Util {
         theEvent?.post(tap: CGEventTapLocation.cghidEventTap)
     }
     
+    static func doubleClick(x:CGFloat,y:CGFloat) {
+        print("doubleClick")
+        let screenFrame = NSScreen.screens.first?.frame
+        let point = NSMakePoint(x, (screenFrame?.size.height)!-y)
+        var e = CGEvent(mouseEventSource: nil, mouseType: .leftMouseDown, mouseCursorPosition: point, mouseButton: .left)!
+          e.post(tap: .cghidEventTap)
+          e = CGEvent(mouseEventSource: nil, mouseType: .leftMouseUp, mouseCursorPosition: point, mouseButton: .left)!
+          e.post(tap: .cghidEventTap)
+
+          e = CGEvent(mouseEventSource: nil, mouseType: .leftMouseDown, mouseCursorPosition: point, mouseButton: .left)!
+          e.setIntegerValueField(.mouseEventClickState, value: 2)
+          e.post(tap: .cghidEventTap)
+
+          e = CGEvent(mouseEventSource: nil, mouseType: .leftMouseUp, mouseCursorPosition: point, mouseButton: .left)!
+          e.setIntegerValueField(.mouseEventClickState, value: 2)
+          e.post(tap: .cghidEventTap)
+        
+    }
+    
     static func getPostion(hintChar:String, startX :CGFloat, startY:CGFloat, width:CGFloat, height:CGFloat) -> (CGFloat, CGFloat) {
         let xStep = width / 3
         let yStep = height / 3

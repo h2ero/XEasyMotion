@@ -51,6 +51,13 @@ class SimpleMode : Mode{
             performClick(clickFunc: Util.click)
         });
         
+        print("register click")
+        HotKeys.register(keycode: UInt32(kVK_ANSI_C), modifiers: UInt32(activeFlag), block:{_ in
+            print("doubleClick")
+            performClick(clickFunc: Util.doubleClick)
+        });
+
+        
         HotKeys.register(keycode: UInt32(kVK_Return), modifiers: UInt32(shiftKey), block:{_ in
             performClick(clickFunc: Util.rightClick)
         });
@@ -113,6 +120,7 @@ class SimpleMode : Mode{
         HotKeys.unregister(id: UInt32(kVK_ANSI_Period + activeFlag))
         HotKeys.unregister(id: UInt32(kVK_ANSI_U + activeFlag))
         HotKeys.unregister(id: UInt32(kVK_Space + activeFlag))
+        HotKeys.unregister(id: UInt32(kVK_ANSI_C + activeFlag))
 
 
     }
