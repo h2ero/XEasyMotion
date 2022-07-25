@@ -15,8 +15,12 @@ class SimpleMode : Mode{
         self.addActiveKeyBind()
         self.addRestoreKeyBind()
         self.addHitKeyBind()
+<<<<<<< HEAD
         self.addClickBind()
         self.addHoverCursorBind()
+=======
+        self.addClickBinds()
+>>>>>>> edb03d7e2e654d0df6d823ea6599eaf19f6b9d53
         self.addMoveKeyBind()
         self.addCancelKeyBind()
     }
@@ -46,33 +50,17 @@ class SimpleMode : Mode{
         
     }
     
-    override static func addClickBind()  {
+    override static func addClickBinds() {
         HotKeys.register(keycode: UInt32(kVK_Return), modifiers: UInt32(activeFlag), block:{_ in
-           
-            DispatchQueue.global().async {
-                let (x,y) = self.getWinCenterPoint()
-                self.hideWindow()
-                self.removeKeyBind();
-                DispatchQueue.main.async{
-                    Util.click(x: x, y: y)
-                }
-            }
-            
+            performClick(clickFunc: Util.click)
         });
         
         HotKeys.register(keycode: UInt32(kVK_Return), modifiers: UInt32(shiftKey), block:{_ in
-            DispatchQueue.global().async {
-                let (x,y) = self.getWinCenterPoint()
-                self.hideWindow()
-                self.removeKeyBind();
-                DispatchQueue.main.async{
-                    Util.rightClick(x: x, y: y)
-                }
-            }
-            
+            performClick(clickFunc: Util.rightClick)
         });
     }
     
+<<<<<<< HEAD
     override static func addHoverCursorBind()  {
         HotKeys.register(keycode: UInt32(kVK_ANSI_I), modifiers: UInt32(activeFlag), block:{_ in
             DispatchQueue.global().async {
@@ -85,6 +73,20 @@ class SimpleMode : Mode{
     }
     
     
+=======
+    private static func performClick(clickFunc: @escaping (CGFloat, CGFloat) -> Void) {
+        DispatchQueue.global().async {
+            self.addLastClickPosition()
+            let (x,y) = self.getWinCenterPoint()
+            self.hideWindow()
+            self.removeKeyBind();
+            DispatchQueue.main.async{
+                clickFunc(x, y)
+            }
+        }
+    }
+    
+>>>>>>> edb03d7e2e654d0df6d823ea6599eaf19f6b9d53
     override static func removeKeyBind(){
         for (keyCode, _) in Constents.hintCharsKeyCodeMap{
             HotKeys.unregister(id: UInt32(keyCode + activeFlag))
@@ -100,7 +102,12 @@ class SimpleMode : Mode{
         HotKeys.unregister(id: UInt32(kVK_Return + shiftKey))
         HotKeys.unregister(id: UInt32(kVK_Escape + activeFlag))
         HotKeys.unregister(id: UInt32(kVK_ANSI_U + activeFlag))
+<<<<<<< HEAD
         HotKeys.unregister(id: UInt32(kVK_ANSI_I + activeFlag))
+=======
+        HotKeys.unregister(id: UInt32(kVK_ANSI_O + controlKey))
+        HotKeys.unregister(id: UInt32(kVK_ANSI_Period + activeFlag))
+>>>>>>> edb03d7e2e654d0df6d823ea6599eaf19f6b9d53
     }
     
     static func draw(){
@@ -113,7 +120,7 @@ class SimpleMode : Mode{
     }
     
     static func resizeWindow(id:Int) {
-        self.addPostionStack()
+        self.addLastPosition()
         let windowFirst = Util.getWindowFirst()
         var windowFrame = windowFirst.frame
         

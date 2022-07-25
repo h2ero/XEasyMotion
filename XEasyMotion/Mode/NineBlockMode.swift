@@ -14,7 +14,7 @@ class NineBlockMode: Mode {
         self.addActiveKeyBind()
         self.addRestoreKeyBind()
         self.addHitKeyBind()
-        self.addClickBind()
+        self.addClickBinds()
         self.addMoveKeyBind()
         self.addCancelKeyBind()
     }
@@ -44,7 +44,7 @@ class NineBlockMode: Mode {
         
     }
     
-    override static func addClickBind()  {
+    override static func addClickBinds()  {
         HotKeys.register(keycode: UInt32(kVK_Return), modifiers: UInt32(activeFlag), block:{_ in
             DispatchQueue.global().async {
                 // do some async stuff
@@ -118,7 +118,7 @@ class NineBlockMode: Mode {
     }
     
     static func resizeWindow(id:Int) {
-        self.addPostionStack()
+        self.addLastPosition()
         let windowFirst = Util.getWindowFirst()
         var windowFrame = windowFirst.frame
         

@@ -6,4 +6,6 @@ XEasyMotion/*.playground/*
 tags
 vendor/*
 XEasyMotion.xcodeproj/project.xcworkspace/xcuserdata/*
+XEasyMotion.xcodeproj/project.xcworkspace/xcshareddata/
 XEasyMotion.xcodeproj/xcuserdata/*
+*~
