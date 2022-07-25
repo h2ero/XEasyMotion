@@ -10,7 +10,8 @@ https://github.com/h2ero/XEasyMotion/releases
 
 * <kbd>h</kbd>  <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd>  zoom area
 * <kbd>Shift</kbd> + <kbd>h</kbd>  <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd>  move area
-* <kbd>Enter</kbd>   click
+* <kbd>Enter</kbd>   click (dismisses grid)
+* <kbd>Space</kbd>   click (retains grid, e.g., for double click)
 * <kbd>Shift</kbd> + <kbd>Enter</kbd>  right click
 * <kbd>i</kbd>   hover
 * <kbd>CMD</kbd> + <kbd>i</kbd>   call XEasyMotion

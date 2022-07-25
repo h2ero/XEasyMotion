@@ -90,7 +90,12 @@ class Mode {
         self.clickHistory.append(contentsOf: self.clickHistoryTraversal.reversed())
         self.clickHistoryTraversal = []
     }
-        
+    
+    static func showWindow(){
+        let windowFirst = Util.getWindowFirst()
+        windowFirst.setIsVisible(true)
+    }
+    
     static func getWinCenterPoint() -> (CGFloat,CGFloat){
         return getCenterPoint(positionInfo: getPosition())
     }
