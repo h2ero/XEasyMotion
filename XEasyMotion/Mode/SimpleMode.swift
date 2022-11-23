@@ -92,10 +92,12 @@ class SimpleMode : Mode{
         DispatchQueue.global().async {
             self.addLastClickPosition()
             let (x,y) = self.getWinCenterPoint()
-            self.hideWindow()
+            //  print
+            print("hide window")
             self.removeKeyBind();
             DispatchQueue.main.async{
                 clickFunc(x, y)
+                self.hideWindow()
             }
         }
     }
