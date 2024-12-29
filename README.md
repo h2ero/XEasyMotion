@@ -1,6 +1,3 @@
-# Alternative
-https://github.com/rvaiya/warpd
-
 # XEasyMotion
 using keyboard control mouse on MacOS ( OS X ), like keynav.
 
